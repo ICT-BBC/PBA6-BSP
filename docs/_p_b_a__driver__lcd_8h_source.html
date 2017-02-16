@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>PIC Board Advanced 6: inc/PBA_driver_lcd.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="bbc_logo_68h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PIC Board Advanced 6
+   &#160;<span id="projectnumber">V 1.2.0</span>
+   </div>
+   <div id="projectbrief">Board Support Package</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="modules.html"><span>Module</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_p_b_a__driver__lcd_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">PBA_driver_lcd.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_p_b_a__driver__lcd_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef _PBA_DRIVER_LCD_</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define _PBA_DRIVER_LCD_</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/*Display-Pins*/</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if defined (__16F1787)</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define     LCD_D4          LATE2</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define     LCD_D5          LATA2</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define     LCD_D6          LATA4</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define     LCD_D7          LATA5</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define     LCD_RW          LATC0</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define     LCD_EN          LATC1</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define     LCD_RS          LATC2</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#gade7e247311032a474711416da480ed8b">   61</a></span>&#160;<span class="preprocessor">#define     LCD_D4          RE2</span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga5b91fe480c768d4f246f3890207bfbfc">   62</a></span>&#160;<span class="preprocessor">#define     LCD_D5          RA2</span></div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga72e105fcda5fd1c07b5f391379a439d4">   63</a></span>&#160;<span class="preprocessor">#define     LCD_D6          RA4</span></div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#gabd65075e01c7413419581aedee5bcc24">   64</a></span>&#160;<span class="preprocessor">#define     LCD_D7          RA5</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga26089a10ddd59a0dc7283c19ccc02533">   65</a></span>&#160;<span class="preprocessor">#define     LCD_RW          RC0</span></div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga1640ffbc0d8ec0f7edb04a2b93918072">   66</a></span>&#160;<span class="preprocessor">#define     LCD_EN          RC1</span></div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga4781e073871c6f27f89b9463ad3a4ed1">   67</a></span>&#160;<span class="preprocessor">#define     LCD_RS          RC2</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/*Defines für Curson-Funktion (dispcurs(mode);)*/</span></div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#gabf764a93ccecfc79fed90d889d820508">   77</a></span>&#160;<span class="preprocessor">#define CURSOR_ON           0x06</span></div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#gab8896b2f528ef9b5bc78880530ee5ca0">   78</a></span>&#160;<span class="preprocessor">#define CURSOR_OFF          0x04</span></div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga4735de43821beaa9e2e47b723436a159">   79</a></span>&#160;<span class="preprocessor">#define CURSOR_OFF_BLINK    0x05</span></div><div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga35ee9d057ebbc59c1698977b1692838d">   80</a></span>&#160;<span class="preprocessor">#define CURSOR_ON_BLINK     0x07</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga62ad39fd0f5458f1bc8f1299a3a98624">   88</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span>  </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624abe885ad53f3300b790b465a3eed6a05a">   90</a></span>&#160;    <a class="code" href="group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624abe885ad53f3300b790b465a3eed6a05a">V_3V3</a>,  </div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624a989a728faa761532d429c55fb577c266">   91</a></span>&#160;    <a class="code" href="group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624a989a728faa761532d429c55fb577c266">V_5V</a>    </div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}<a class="code" href="group___p_b_a___l_c_d.html#ga62ad39fd0f5458f1bc8f1299a3a98624">displayVoltage_t</a>;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">/*Makros für das Senden eines Befehl*/</span></div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#gabccd5b584057dc78fb9586343bb84aee">   95</a></span>&#160;<span class="preprocessor">#define LCD_SEND_COMMAND(Command)   LCD_Send(Command)</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/*Makros für das Senden eines Datenbytes (Zeichen)*/</span></div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="group___p_b_a___l_c_d.html#ga69ccb0a605f771fc7c75178ff2be0b9e">   97</a></span>&#160;<span class="preprocessor">#define LCD_SEND_DATA(value)        LCD_RS=1;LCD_Send(value);LCD_RS=0</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#ga9090701d0b25ff804f53e43b4168e12e">LCD_Send</a>(uint8_t value);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#gae60d0b62d7eb3fa31266c095d7b3c245">LCD_Clear</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#gaff81ad208241ea7c4cbf62d6f681dc82">LCD_Home</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#ga9b0484af7727a8345f72e177edae0513">LCD_ShiftLeft</a>(uint8_t numPos);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#gadc136475bfc6050032768f1fd407a438">LCD_ShiftRight</a>(uint8_t numPos);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#gad018795dbdfe9e2d122dbaeae67af101">LCD_GotoXY</a>(uint8_t posX, uint8_t posY);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#gacc9219ee2c0e4f3e7860ac36e7e8c012">LCD_Putc</a>(uint8_t ch);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#ga9b82ebe603b0d7f6945b724fe57b7f93">LCD_Puts</a>(uint8_t *p_string);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#gada300fc573a56173ae7f80b197f985b9">LCD_PutsRom</a>(<span class="keyword">const</span> uint8_t *p_romString);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#ga3adab8eab262bc17bd73e4cd0239d73f">LCD_SetCursorMode</a>(uint8_t cursorMode);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___p_b_a___l_c_d.html#ga247e941eab0d81ac80e8dc6a5c84823d">LCD_Init</a>(<a class="code" href="group___p_b_a___l_c_d.html#ga62ad39fd0f5458f1bc8f1299a3a98624">displayVoltage_t</a> displayVoltage);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div><div class="ttc" id="group___p_b_a___l_c_d_html_gada300fc573a56173ae7f80b197f985b9"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gada300fc573a56173ae7f80b197f985b9">LCD_PutsRom</a></div><div class="ttdeci">void LCD_PutsRom(const uint8_t *p_romString)</div><div class="ttdoc">ROM-String an LCD ausgeben mit Verwendung der lcd_putc-Funktion. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00187">PBA_driver_lcd.c:187</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_gad018795dbdfe9e2d122dbaeae67af101"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gad018795dbdfe9e2d122dbaeae67af101">LCD_GotoXY</a></div><div class="ttdeci">void LCD_GotoXY(uint8_t posX, uint8_t posY)</div><div class="ttdoc">Setzt die Cursor-Position für ein 2 Zeilen-Display. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00122">PBA_driver_lcd.c:122</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_ga3adab8eab262bc17bd73e4cd0239d73f"><div class="ttname"><a href="group___p_b_a___l_c_d.html#ga3adab8eab262bc17bd73e4cd0239d73f">LCD_SetCursorMode</a></div><div class="ttdeci">void LCD_SetCursorMode(uint8_t cursorMode)</div><div class="ttdoc">Cursor oder blinkender Cursor ein-/ausschalten. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00198">PBA_driver_lcd.c:198</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_gga62ad39fd0f5458f1bc8f1299a3a98624a989a728faa761532d429c55fb577c266"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624a989a728faa761532d429c55fb577c266">V_5V</a></div><div class="ttdoc">5V –&gt; ältere Boards </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8h_source.html#l00091">PBA_driver_lcd.h:91</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_gadc136475bfc6050032768f1fd407a438"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gadc136475bfc6050032768f1fd407a438">LCD_ShiftRight</a></div><div class="ttdeci">void LCD_ShiftRight(uint8_t numPos)</div><div class="ttdoc">Display-RAM im Anzeigebereich nach rechts schieben. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00110">PBA_driver_lcd.c:110</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_ga9b0484af7727a8345f72e177edae0513"><div class="ttname"><a href="group___p_b_a___l_c_d.html#ga9b0484af7727a8345f72e177edae0513">LCD_ShiftLeft</a></div><div class="ttdeci">void LCD_ShiftLeft(uint8_t numPos)</div><div class="ttdoc">Display-RAM im Anzeigebereich nach links schieben. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00099">PBA_driver_lcd.c:99</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_ga62ad39fd0f5458f1bc8f1299a3a98624"><div class="ttname"><a href="group___p_b_a___l_c_d.html#ga62ad39fd0f5458f1bc8f1299a3a98624">displayVoltage_t</a></div><div class="ttdeci">displayVoltage_t</div><div class="ttdoc">Betriebsspannung LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8h_source.html#l00088">PBA_driver_lcd.h:88</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_gacc9219ee2c0e4f3e7860ac36e7e8c012"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gacc9219ee2c0e4f3e7860ac36e7e8c012">LCD_Putc</a></div><div class="ttdeci">void LCD_Putc(uint8_t ch)</div><div class="ttdoc">Ein Zeichen an das LCD senden (inkl. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00159">PBA_driver_lcd.c:159</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_ga9090701d0b25ff804f53e43b4168e12e"><div class="ttname"><a href="group___p_b_a___l_c_d.html#ga9090701d0b25ff804f53e43b4168e12e">LCD_Send</a></div><div class="ttdeci">void LCD_Send(uint8_t value)</div><div class="ttdoc">Sendet ein Datenbyte (z.B. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00051">PBA_driver_lcd.c:51</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_gaff81ad208241ea7c4cbf62d6f681dc82"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gaff81ad208241ea7c4cbf62d6f681dc82">LCD_Home</a></div><div class="ttdeci">void LCD_Home(void)</div><div class="ttdoc">Rurücksetzen Anzeigeberich und Cursor. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00088">PBA_driver_lcd.c:88</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_gae60d0b62d7eb3fa31266c095d7b3c245"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gae60d0b62d7eb3fa31266c095d7b3c245">LCD_Clear</a></div><div class="ttdeci">void LCD_Clear(void)</div><div class="ttdoc">Display löschen. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00077">PBA_driver_lcd.c:77</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_gga62ad39fd0f5458f1bc8f1299a3a98624abe885ad53f3300b790b465a3eed6a05a"><div class="ttname"><a href="group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624abe885ad53f3300b790b465a3eed6a05a">V_3V3</a></div><div class="ttdoc">3.3V–&gt; PBA6 </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8h_source.html#l00090">PBA_driver_lcd.h:90</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_ga247e941eab0d81ac80e8dc6a5c84823d"><div class="ttname"><a href="group___p_b_a___l_c_d.html#ga247e941eab0d81ac80e8dc6a5c84823d">LCD_Init</a></div><div class="ttdeci">void LCD_Init(displayVoltage_t displayVoltage)</div><div class="ttdoc">Initialisiert das dog-m-Text-LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00215">PBA_driver_lcd.c:215</a></div></div>
+<div class="ttc" id="group___p_b_a___l_c_d_html_ga9b82ebe603b0d7f6945b724fe57b7f93"><div class="ttname"><a href="group___p_b_a___l_c_d.html#ga9b82ebe603b0d7f6945b724fe57b7f93">LCD_Puts</a></div><div class="ttdeci">void LCD_Puts(uint8_t *p_string)</div><div class="ttdoc">String an LCD ausgeben mit Verwendung der lcd_putc-Funktion. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a__driver__lcd_8c_source.html#l00176">PBA_driver_lcd.c:176</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="_p_b_a__driver__lcd_8h.html">PBA_driver_lcd.h</a></li>
+    <li class="footer">Erzeugt von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

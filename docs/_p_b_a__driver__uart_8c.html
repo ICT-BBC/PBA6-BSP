@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>PIC Board Advanced 6: src/PBA_driver_uart.c-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="bbc_logo_68h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PIC Board Advanced 6
+   &#160;<span id="projectnumber">V 1.2.0</span>
+   </div>
+   <div id="projectbrief">Board Support Package</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="modules.html"><span>Module</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_p_b_a__driver__uart_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Makrodefinitionen</a> &#124;
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">PBA_driver_uart.c-Dateireferenz<div class="ingroups"><a class="el" href="group___p_b_a___u_a_r_t.html">PBA_UART</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>UART-Library für PBA4/5/6.  
+<a href="#details">Mehr ...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_p_b_a__config_8h_source.html">../inc/PBA_config.h</a>&quot;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div>
+<p><a href="_p_b_a__driver__uart_8c_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Makrodefinitionen</h2></td></tr>
+<tr class="memitem:ga26b31760ab264d73beca20c9d966de2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga26b31760ab264d73beca20c9d966de2d">SPBRG_VAL</a>&#160;&#160;&#160;((uint16_t)(<a class="el" href="group___d_e_f___d_e_l_a_y.html#ga024148e99a7143db044a48216664d03d">_XTAL_FREQ</a>/(4UL * UART_BAUD) -1))</td></tr>
+<tr class="memdesc:ga26b31760ab264d73beca20c9d966de2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Berechnung Taktgenerator.  <a href="group___p_b_a___u_a_r_t.html#ga26b31760ab264d73beca20c9d966de2d">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga26b31760ab264d73beca20c9d966de2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Konfiguration UART Baudarate</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Anpassen falls nötig </p>
+</div></td></tr>
+<tr class="memitem:ga1fac9153314479ad0ad495d752f0224a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga1fac9153314479ad0ad495d752f0224a">UART_BAUD</a>&#160;&#160;&#160;115200</td></tr>
+<tr class="memdesc:ga1fac9153314479ad0ad495d752f0224a"><td class="mdescLeft">&#160;</td><td class="mdescRight">BAUD-Rate 300-115200 (115.2k nur bei FOSC&gt;=3.6864 MHz)  <a href="group___p_b_a___u_a_r_t.html#ga1fac9153314479ad0ad495d752f0224a">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga1fac9153314479ad0ad495d752f0224a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:gad5cbed2a2222bb84e8b5c1caaa50634e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#gad5cbed2a2222bb84e8b5c1caaa50634e">UART_Init</a> (void)</td></tr>
+<tr class="memdesc:gad5cbed2a2222bb84e8b5c1caaa50634e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisierung der Schnittstelle.  <a href="group___p_b_a___u_a_r_t.html#gad5cbed2a2222bb84e8b5c1caaa50634e">Mehr ...</a><br /></td></tr>
+<tr class="separator:gad5cbed2a2222bb84e8b5c1caaa50634e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa507eb1e91ac76154d52ac584bd7e66e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#gaa507eb1e91ac76154d52ac584bd7e66e">UART_Getc</a> (void)</td></tr>
+<tr class="memdesc:gaa507eb1e91ac76154d52ac584bd7e66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein Zeichen empfangen.  <a href="group___p_b_a___u_a_r_t.html#gaa507eb1e91ac76154d52ac584bd7e66e">Mehr ...</a><br /></td></tr>
+<tr class="separator:gaa507eb1e91ac76154d52ac584bd7e66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga334a7fc8a96ecb641d2dadce8341cafc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga334a7fc8a96ecb641d2dadce8341cafc">UART_Putc</a> (uint8_t c)</td></tr>
+<tr class="memdesc:ga334a7fc8a96ecb641d2dadce8341cafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein Zeichen senden.  <a href="group___p_b_a___u_a_r_t.html#ga334a7fc8a96ecb641d2dadce8341cafc">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga334a7fc8a96ecb641d2dadce8341cafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga590a3cb0514d81fa567655dc6a593828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga590a3cb0514d81fa567655dc6a593828">UART_WriteLine</a> (uint8_t *p_string)</td></tr>
+<tr class="memdesc:ga590a3cb0514d81fa567655dc6a593828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein RAM-String mit anschliessendem Zeilenumbruch senden.  <a href="group___p_b_a___u_a_r_t.html#ga590a3cb0514d81fa567655dc6a593828">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga590a3cb0514d81fa567655dc6a593828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4134b0e6ac73752dd4efc35424b85a9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga4134b0e6ac73752dd4efc35424b85a9a">UART_Puts</a> (uint8_t *p_string)</td></tr>
+<tr class="memdesc:ga4134b0e6ac73752dd4efc35424b85a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein RAM-String ohne anschliessenden Zeilenumbruch senden.  <a href="group___p_b_a___u_a_r_t.html#ga4134b0e6ac73752dd4efc35424b85a9a">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga4134b0e6ac73752dd4efc35424b85a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9888746eea8e1f775502b511808cddd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga9888746eea8e1f775502b511808cddd6">UART_WriteLineRom</a> (const uint8_t *p_string)</td></tr>
+<tr class="memdesc:ga9888746eea8e1f775502b511808cddd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein ROM-String mit anschliessendem Zeilenumbruch senden.  <a href="group___p_b_a___u_a_r_t.html#ga9888746eea8e1f775502b511808cddd6">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga9888746eea8e1f775502b511808cddd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f4ed788a22da5a02842b05f6c61a8f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga4f4ed788a22da5a02842b05f6c61a8f1">UART_PutsRom</a> (const uint8_t *p_string)</td></tr>
+<tr class="memdesc:ga4f4ed788a22da5a02842b05f6c61a8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein ROM-String ohne anschliessendem Zeilenumbruch senden.  <a href="group___p_b_a___u_a_r_t.html#ga4f4ed788a22da5a02842b05f6c61a8f1">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga4f4ed788a22da5a02842b05f6c61a8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab10b449a62a938b5d09e0576e0d60df5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#gab10b449a62a938b5d09e0576e0d60df5">UART_Gets</a> (uint8_t *p_string, uint16_t maxLen)</td></tr>
+<tr class="memdesc:gab10b449a62a938b5d09e0576e0d60df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">String mit definierter max.  <a href="group___p_b_a___u_a_r_t.html#gab10b449a62a938b5d09e0576e0d60df5">Mehr ...</a><br /></td></tr>
+<tr class="separator:gab10b449a62a938b5d09e0576e0d60df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf774e133a57aa2870eec83542bf73abb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#gaf774e133a57aa2870eec83542bf73abb">UART_GetHexDigit</a> (void)</td></tr>
+<tr class="memdesc:gaf774e133a57aa2870eec83542bf73abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein Hex-Digit (ASCII) empfangen und zurückgeben.  <a href="group___p_b_a___u_a_r_t.html#gaf774e133a57aa2870eec83542bf73abb">Mehr ...</a><br /></td></tr>
+<tr class="separator:gaf774e133a57aa2870eec83542bf73abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ac212966d756f22681f915c774573bb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga2ac212966d756f22681f915c774573bb">UART_GetHexByte</a> (void)</td></tr>
+<tr class="memdesc:ga2ac212966d756f22681f915c774573bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein Hex-Byte (ASCII) empfangen und zurückgeben.  <a href="group___p_b_a___u_a_r_t.html#ga2ac212966d756f22681f915c774573bb">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga2ac212966d756f22681f915c774573bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga837b76987ca517473ff43ead38a97777"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga837b76987ca517473ff43ead38a97777">UART_GetByte</a> (void)</td></tr>
+<tr class="memdesc:ga837b76987ca517473ff43ead38a97777"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 Byte emfangen und zurückgeben.  <a href="group___p_b_a___u_a_r_t.html#ga837b76987ca517473ff43ead38a97777">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga837b76987ca517473ff43ead38a97777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga94b58be252ae3a3bb0ed09369d339142"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#ga94b58be252ae3a3bb0ed09369d339142">UART_GetInt</a> (void)</td></tr>
+<tr class="memdesc:ga94b58be252ae3a3bb0ed09369d339142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Einen Integer emfpangen und zurückgeben.  <a href="group___p_b_a___u_a_r_t.html#ga94b58be252ae3a3bb0ed09369d339142">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga94b58be252ae3a3bb0ed09369d339142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1709c6f2653f3616e30c435e433452c"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#gaf1709c6f2653f3616e30c435e433452c">UART_GetLong</a> (void)</td></tr>
+<tr class="memdesc:gaf1709c6f2653f3616e30c435e433452c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Einen Long-Integer empfangen und zurückgeben.  <a href="group___p_b_a___u_a_r_t.html#gaf1709c6f2653f3616e30c435e433452c">Mehr ...</a><br /></td></tr>
+<tr class="separator:gaf1709c6f2653f3616e30c435e433452c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae78b43f8da255595daeee6bf3d0f25d5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___u_a_r_t.html#gae78b43f8da255595daeee6bf3d0f25d5">UART_GetFloat</a> (void)</td></tr>
+<tr class="memdesc:gae78b43f8da255595daeee6bf3d0f25d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eine Floatingpoint-Zahl empfangen und zurückgeben.  <a href="group___p_b_a___u_a_r_t.html#gae78b43f8da255595daeee6bf3d0f25d5">Mehr ...</a><br /></td></tr>
+<tr class="separator:gae78b43f8da255595daeee6bf3d0f25d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>UART-Library für PBA4/5/6. </p>
+<dl class="section author"><dt>Autor</dt><dd>ICT Berufsbildungscenter AG</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd></dd></dl>
+<p>Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.</p>
+<p>Copyright &copy; 2016 ICT Berufsbildungscenter AG</p>
+<h5>MIT License</h5>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
+
+<p>Definiert in Datei <a class="el" href="_p_b_a__driver__uart_8c_source.html">PBA_driver_uart.c</a>.</p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_p_b_a__driver__uart_8c.html">PBA_driver_uart.c</a></li>
+    <li class="footer">Erzeugt von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

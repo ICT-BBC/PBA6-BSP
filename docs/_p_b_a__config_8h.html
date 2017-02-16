@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>PIC Board Advanced 6: inc/PBA_config.h-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="bbc_logo_68h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PIC Board Advanced 6
+   &#160;<span id="projectnumber">V 1.2.0</span>
+   </div>
+   <div id="projectbrief">Board Support Package</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="modules.html"><span>Module</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_p_b_a__config_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Makrodefinitionen</a> &#124;
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">PBA_config.h-Dateireferenz<div class="ingroups"><a class="el" href="group___p_b_a___c_o_n_f_i_g.html">PBA_CONFIG</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Konfiguration des Board-Support-Packages für PBA4/5/6.  
+<a href="#details">Mehr ...</a></p>
+<div class="textblock"><code>#include &lt;xc.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__helpers_8h_source.html">PBA_helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__driver__i2c_8h_source.html">PBA_driver_i2c.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__driver__lcd_8h_source.html">PBA_driver_lcd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__driver__adc_8h_source.html">PBA_driver_adc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__driver__lm75_8h_source.html">PBA_driver_lm75.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__driver__uart_8h_source.html">PBA_driver_uart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__loopdelay_8h_source.html">PBA_loopdelay.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__events_8h_source.html">PBA_events.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__interrupts_8h_source.html">PBA_interrupts.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__menu_8h_source.html">PBA_menu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_p_b_a__driver__eeprom_8h_source.html">PBA_driver_eeprom.h</a>&quot;</code><br />
+</div>
+<p><a href="_p_b_a__config_8h_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Makrodefinitionen</h2></td></tr>
+<tr class="memitem:ga68525f59432ef9b1d9021c9cb22c7190"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga68525f59432ef9b1d9021c9cb22c7190">PBA6</a></td></tr>
+<tr class="memdesc:ga68525f59432ef9b1d9021c9cb22c7190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auskommentieren, falls nicht PBA6 verwendet wird.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga68525f59432ef9b1d9021c9cb22c7190">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga68525f59432ef9b1d9021c9cb22c7190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf81bd024a9dde06f99f7095aea0817b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gaf81bd024a9dde06f99f7095aea0817b5">USE_ADC_LIBRARY</a></td></tr>
+<tr class="memdesc:gaf81bd024a9dde06f99f7095aea0817b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC-Support Funktionen.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gaf81bd024a9dde06f99f7095aea0817b5">Mehr ...</a><br /></td></tr>
+<tr class="separator:gaf81bd024a9dde06f99f7095aea0817b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae588fb3af88bfa1183faa83a81778783"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gae588fb3af88bfa1183faa83a81778783">USE_LCD_LIBRARY</a></td></tr>
+<tr class="memdesc:gae588fb3af88bfa1183faa83a81778783"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD DOGM162 Funktionen.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gae588fb3af88bfa1183faa83a81778783">Mehr ...</a><br /></td></tr>
+<tr class="separator:gae588fb3af88bfa1183faa83a81778783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga732754e23079df4074b313c2954c8fdd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga732754e23079df4074b313c2954c8fdd">USE_UART_LIBRARY</a></td></tr>
+<tr class="memdesc:ga732754e23079df4074b313c2954c8fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART Funktionen.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga732754e23079df4074b313c2954c8fdd">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga732754e23079df4074b313c2954c8fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadecf3cc8489aa68f4d49ab080edd0ded"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gadecf3cc8489aa68f4d49ab080edd0ded">USE_I2C_LIBRARY</a></td></tr>
+<tr class="memdesc:gadecf3cc8489aa68f4d49ab080edd0ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C Funktionen.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gadecf3cc8489aa68f4d49ab080edd0ded">Mehr ...</a><br /></td></tr>
+<tr class="separator:gadecf3cc8489aa68f4d49ab080edd0ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44006ab447633df6deb8dbad842b1a8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga44006ab447633df6deb8dbad842b1a8c">USE_LM75_LIBRARY</a></td></tr>
+<tr class="memdesc:ga44006ab447633df6deb8dbad842b1a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ansteuerung I2C-Temperatursensor.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga44006ab447633df6deb8dbad842b1a8c">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga44006ab447633df6deb8dbad842b1a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8878985ffe17c225d34c445ece32b5e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga8878985ffe17c225d34c445ece32b5e3">USE_EEPROM_LIBRARY</a></td></tr>
+<tr class="memdesc:ga8878985ffe17c225d34c445ece32b5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verwendung internes EEPROM.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga8878985ffe17c225d34c445ece32b5e3">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga8878985ffe17c225d34c445ece32b5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga035215010ec69d60d004ebabf55c3e34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga035215010ec69d60d004ebabf55c3e34">USE_HELPERS_LIBRARY</a></td></tr>
+<tr class="memdesc:ga035215010ec69d60d004ebabf55c3e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nützliche Makros und Funktionen.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga035215010ec69d60d004ebabf55c3e34">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga035215010ec69d60d004ebabf55c3e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga069dd7b027a3ea2668d06b2f5dbcabd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga069dd7b027a3ea2668d06b2f5dbcabd1">USE_INTERRUPT_LIBRARY</a></td></tr>
+<tr class="memdesc:ga069dd7b027a3ea2668d06b2f5dbcabd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globaler Interrupt-Handler.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga069dd7b027a3ea2668d06b2f5dbcabd1">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga069dd7b027a3ea2668d06b2f5dbcabd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e266d1f450fa5fb71ca733cbae85ec8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga4e266d1f450fa5fb71ca733cbae85ec8">USE_LOOPDELAY_LIBRARY</a></td></tr>
+<tr class="memdesc:ga4e266d1f450fa5fb71ca733cbae85ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timerbasiertes Delay.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga4e266d1f450fa5fb71ca733cbae85ec8">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga4e266d1f450fa5fb71ca733cbae85ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga916849f8f091f77403e2f9b42efb163b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga916849f8f091f77403e2f9b42efb163b">USE_EVENTS_LIBRARY</a></td></tr>
+<tr class="memdesc:ga916849f8f091f77403e2f9b42efb163b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeit- und Taster-Events.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga916849f8f091f77403e2f9b42efb163b">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga916849f8f091f77403e2f9b42efb163b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf8b2f38be86240437d87bf8aec5b32c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gacf8b2f38be86240437d87bf8aec5b32c">USE_MENU_LIBRARY</a></td></tr>
+<tr class="memdesc:gacf8b2f38be86240437d87bf8aec5b32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funktionen Erstellung und Darstellung eines Menus auf LCD.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gacf8b2f38be86240437d87bf8aec5b32c">Mehr ...</a><br /></td></tr>
+<tr class="separator:gacf8b2f38be86240437d87bf8aec5b32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fea36cbf21d37549c5702411677d6c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga0fea36cbf21d37549c5702411677d6c9">STDOUT_LCD</a></td></tr>
+<tr class="memdesc:ga0fea36cbf21d37549c5702411677d6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ausgabe printf auf LCD.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga0fea36cbf21d37549c5702411677d6c9">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga0fea36cbf21d37549c5702411677d6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga024148e99a7143db044a48216664d03d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___d_e_l_a_y.html#ga024148e99a7143db044a48216664d03d">_XTAL_FREQ</a>&#160;&#160;&#160;32000000</td></tr>
+<tr class="memdesc:ga024148e99a7143db044a48216664d03d"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIC16F1787&ndash;&gt; 8MHz &amp; 4xPLL.  <a href="group___d_e_f___d_e_l_a_y.html#ga024148e99a7143db044a48216664d03d">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga024148e99a7143db044a48216664d03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75502661d72998f702c12478e1e8db64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#ga75502661d72998f702c12478e1e8db64">TASTER0</a>&#160;&#160;&#160;RB0</td></tr>
+<tr class="separator:ga75502661d72998f702c12478e1e8db64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ad96775204dece94e68e35c087c5ccb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#ga4ad96775204dece94e68e35c087c5ccb">TASTER1</a>&#160;&#160;&#160;RB1</td></tr>
+<tr class="separator:ga4ad96775204dece94e68e35c087c5ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa436cae990b04abae8597109b5ddb8d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#gaa436cae990b04abae8597109b5ddb8d3">TASTER2</a>&#160;&#160;&#160;RB2</td></tr>
+<tr class="separator:gaa436cae990b04abae8597109b5ddb8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38cd094312baff8333e9292e84a9887e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#ga38cd094312baff8333e9292e84a9887e">TASTER3</a>&#160;&#160;&#160;RB3</td></tr>
+<tr class="separator:ga38cd094312baff8333e9292e84a9887e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cbfee4b96a10f2beaaacf197bd16bbe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#ga6cbfee4b96a10f2beaaacf197bd16bbe">TASTER4</a>&#160;&#160;&#160;RB4</td></tr>
+<tr class="separator:ga6cbfee4b96a10f2beaaacf197bd16bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf343a76993531ead0b51959ff4913b48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#gaf343a76993531ead0b51959ff4913b48">TASTER5</a>&#160;&#160;&#160;RB5</td></tr>
+<tr class="separator:gaf343a76993531ead0b51959ff4913b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58532eed50ae8a57b18941e2f5712318"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#ga58532eed50ae8a57b18941e2f5712318">TASTER6</a>&#160;&#160;&#160;RB6</td></tr>
+<tr class="separator:ga58532eed50ae8a57b18941e2f5712318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56c44d4813d8c7c54751b48de7dbe015"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___t_a_s_t_e_r.html#ga56c44d4813d8c7c54751b48de7dbe015">TASTER7</a>&#160;&#160;&#160;RB7</td></tr>
+<tr class="separator:ga56c44d4813d8c7c54751b48de7dbe015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8d5b4e7e2d9d21caaa4744d385d7cc7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gae8d5b4e7e2d9d21caaa4744d385d7cc7">LED0</a>&#160;&#160;&#160;LATD0</td></tr>
+<tr class="separator:gae8d5b4e7e2d9d21caaa4744d385d7cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8aa85ae9867fabf70ec72cd3bf6fb6b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga8aa85ae9867fabf70ec72cd3bf6fb6b9">LED1</a>&#160;&#160;&#160;LATD1</td></tr>
+<tr class="separator:ga8aa85ae9867fabf70ec72cd3bf6fb6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad09fe5bf321b9a2de26bd5e5b9af6424"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gad09fe5bf321b9a2de26bd5e5b9af6424">LED2</a>&#160;&#160;&#160;LATD2</td></tr>
+<tr class="separator:gad09fe5bf321b9a2de26bd5e5b9af6424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b7ff8e253a7412f83deba3a447028a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga4b7ff8e253a7412f83deba3a447028a8">LED3</a>&#160;&#160;&#160;LATD3</td></tr>
+<tr class="separator:ga4b7ff8e253a7412f83deba3a447028a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae048837f20072bed467332b1bd1da9fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gae048837f20072bed467332b1bd1da9fa">LED4</a>&#160;&#160;&#160;LATD4</td></tr>
+<tr class="separator:gae048837f20072bed467332b1bd1da9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaefae505e2588183f1921a9e840b16044"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gaefae505e2588183f1921a9e840b16044">LED5</a>&#160;&#160;&#160;LATD5</td></tr>
+<tr class="separator:gaefae505e2588183f1921a9e840b16044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab922b15d42b90025c9e13c087d86ce81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gab922b15d42b90025c9e13c087d86ce81">LED6</a>&#160;&#160;&#160;LATD6</td></tr>
+<tr class="separator:gab922b15d42b90025c9e13c087d86ce81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35bf8e7b8f9e9257ca184bbe0c95e929"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga35bf8e7b8f9e9257ca184bbe0c95e929">LED7</a>&#160;&#160;&#160;LATD7</td></tr>
+<tr class="separator:ga35bf8e7b8f9e9257ca184bbe0c95e929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga828bed975a6f3a24231309200b24cf23"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga828bed975a6f3a24231309200b24cf23">LED8</a>&#160;&#160;&#160;LATE0</td></tr>
+<tr class="separator:ga828bed975a6f3a24231309200b24cf23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30235e67cb99c928b3ed9655ad10b6ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga30235e67cb99c928b3ed9655ad10b6ea">LED9</a>&#160;&#160;&#160;LATE1</td></tr>
+<tr class="separator:ga30235e67cb99c928b3ed9655ad10b6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69190f7493ba0cbb3887bae3bd67e523"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga69190f7493ba0cbb3887bae3bd67e523">LEDS_D</a>&#160;&#160;&#160;LATD</td></tr>
+<tr class="separator:ga69190f7493ba0cbb3887bae3bd67e523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab331df46e3b40c000a7f2b0d76f1722f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gab331df46e3b40c000a7f2b0d76f1722f">LEDS_E</a>&#160;&#160;&#160;LATE</td></tr>
+<tr class="separator:gab331df46e3b40c000a7f2b0d76f1722f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5fc31ed09ee00b6969fec07b96f43e18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga5fc31ed09ee00b6969fec07b96f43e18">SUMMER</a>&#160;&#160;&#160;LATC5</td></tr>
+<tr class="separator:ga5fc31ed09ee00b6969fec07b96f43e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:gafb5f95002b7e470a9e29ef4f253ba56a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a">PBA_Init</a> (void)</td></tr>
+<tr class="memdesc:gafb5f95002b7e470a9e29ef4f253ba56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisiert die PBA Hardware und Peripherie.  <a href="group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a">Mehr ...</a><br /></td></tr>
+<tr class="separator:gafb5f95002b7e470a9e29ef4f253ba56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga929c76236c43415b855552513e902293"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___c_o_n_f_i_g.html#ga929c76236c43415b855552513e902293">putch</a> (uint8_t c)</td></tr>
+<tr class="separator:ga929c76236c43415b855552513e902293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Konfiguration des Board-Support-Packages für PBA4/5/6. </p>
+<dl class="section author"><dt>Autor</dt><dd>ICT Berufsbildungscenter AG </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.2.0 </dd></dl>
+<dl class="section date"><dt>Datum</dt><dd>06.12.2013: Aufbau PBA6-BSP mit Basis PBA5-BSP, Unterstützung von PIC16F1787, Anpassungen für XC8-Compiler, Interrupt-Library </dd>
+<dd>
+17.02.2016: stdint.h hinzugefügt&ndash;&gt;Wechsel auf std-integer Typen </dd>
+<dd>
+04.03.2016: Renamed RS232 to UART </dd>
+<dd>
+06.04.2016: Menu-Bibliothek hinzugefügt, Events erweitert </dd>
+<dd>
+08.04.2016: EEPROM-Bibliothek hinzugefügt </dd>
+<dd>
+15.04.2016: PBA Init-Funktion umbenennt zu pba_init()&ndash;&gt; alle Funktionen beginnen mit Name der Peripherie </dd>
+<dd>
+25.05.2016: Umstrukturierung statemachine library. loop-delay- library wird immer benötigt, Events in eigener Bibliothek ohne loop-delay </dd>
+<dd>
+07.02.2017 Renaming, Fehlermeldungen optimiert</dd></dl>
+<dl class="section attention"><dt>Achtung</dt><dd>PBA_Init zur Initialiserung und Konfigurations des PBAs. Um die Libraries zu verwenden, kopieren Sie die beiden Ordner "Source" und "Include" in Ihren MPLABX-Projektordner. Erstellen Sie ein Main-Sourcefile, speichern Sie dies im "Source"-Ordner und fügen Sie die Dateien in den beiden Ordnern ihrem MPLAB-Projekt hinzu. Fügen Sie folgende Codezeile ihrem Source-File hinzu: <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../inc/PBA_config.h&quot;</span> </div></div><!-- fragment --></dd>
+<dd>
+Wenn Sie bestimmte Bibliotheken nicht benötigen, kommentieren Sie die zugehörigen Defines in der Datei <a class="el" href="_p_b_a__config_8h.html">PBA_config.h</a> aus. Entfernen Sie die nicht benötigten Source-Files aus ihrem Projekt.</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd></dd></dl>
+<p>Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.</p>
+<p>Copyright &copy; 2016 ICT Berufsbildungscenter AG</p>
+<h5>MIT License</h5>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
+
+<p>Definiert in Datei <a class="el" href="_p_b_a__config_8h_source.html">PBA_config.h</a>.</p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="_p_b_a__config_8h.html">PBA_config.h</a></li>
+    <li class="footer">Erzeugt von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

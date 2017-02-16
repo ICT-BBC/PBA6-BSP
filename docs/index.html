@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>PIC Board Advanced 6: PBA BSP Library</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="bbc_logo_68h.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PIC Board Advanced 6
+   &#160;<span id="projectnumber">V 1.2.0</span>
+   </div>
+   <div id="projectbrief">Board Support Package</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="modules.html"><span>Module</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('index.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">PBA BSP Library </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2>Lizenzierung</h2>
+<p>Diese Software kann unter den Bestimmungen der MIT-Lizenz verwendet werden.</p>
+<p>Copyright © 2016 ICT Berufsbildungscenter AG</p>
+<h3>The MIT Licence (MIT)</h3>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<h2>Einbinden des BSP in ein MPLABX Projekt</h2>
+<ol type="1">
+<li>Neues MPLABX Projekt erstellen</li>
+<li>Die beiden Ordner "src" und "inc" in den Projektordner kopieren</li>
+<li>Im Projekt Rechtsklick auf Source Files, danach "Add existing Item"</li>
+<li>Im Browse-Dialog in den Source Ordner navigieren, alle C-Files anwählen und diese dem Projekt hinzuzufügen <b>WICHTIG!! Die Auswahl "Store path as:" muss auf "Relative" eingestellt sein</b></li>
+<li>Schritte 3&amp;4 wiederholen für die Include Files</li>
+<li>Neues C-File erstellen und im Ordner "src" abspeichern</li>
+<li>Zur Verwendung der Library muss folgende Code-Zeile im neu erstellten C-File hinzugefügt werden:</li>
+</ol>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../inc/PBA_config.h&quot;</span></div></div><!-- fragment --><h2>BSP-Konfiguration</h2>
+<p>Zur Konfiguration muss die Header-Datei <code><a class="el" href="_p_b_a__config_8h.html" title="Konfiguration des Board-Support-Packages für PBA4/5/6. ">PBA_config.h</a></code> editiert werden. Durch ein- oder auskommentieren der defines im Abschnitt "BSP-Konfiguration" lässt sich das BSP auf die Bedürfnisse anpassen. </p><div class="fragment"><div class="line"><span class="comment">/******************** BSP-Konfiguration ***********************************************/</span></div><div class="line"></div><div class="line"><span class="preprocessor">#define PBA6</span></div><div class="line"><span class="preprocessor">#define USE_ADC_LIBRARY         </span></div><div class="line"><span class="preprocessor">#define USE_LCD_LIBRARY         </span></div><div class="line"><span class="preprocessor">#define USE_UART_LIBRARY        </span></div><div class="line"><span class="preprocessor">#define USE_I2C_LIBRARY         </span></div><div class="line"><span class="preprocessor">#define USE_LM75_LIBRARY        </span></div><div class="line"><span class="preprocessor">#define USE_EEPROM_LIBRARY      </span></div><div class="line"><span class="preprocessor">#define USE_HELPERS_LIBRARY     </span></div><div class="line"><span class="preprocessor">#define USE_INTERRUPT_LIBRARY   </span></div><div class="line"><span class="preprocessor">#define USE_LOOPDELAY_LIBRARY   </span></div><div class="line"><span class="preprocessor">#define USE_EVENTS_LIBRARY      </span></div><div class="line"><span class="preprocessor">#define USE_MENU_LIBRARY        </span></div><div class="line"><span class="preprocessor"></span><span class="comment">/*Auswahl Standard-Output für printf-Funktion*/</span><span class="preprocessor"></span></div><div class="line"><span class="preprocessor">#define STDOUT_LCD      true    </span></div><div class="line"><span class="preprocessor">//#define STDOUT_UART   true    </span></div></div><!-- fragment --> <h2>Hardware initialisieren</h2>
+<p>Zum Initialisieren der Hardware muss die Funktion <code><a class="el" href="group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a" title="Initialisiert die PBA Hardware und Peripherie. ">PBA_Init()</a>;</code> aufgerufen werden.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../inc/PBA_config.h&quot;</span></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga6288eba0f8e8ad3ab1544ad731eb7667">main</a>(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <a class="code" href="group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a">PBA_Init</a>();     <span class="comment">/* Initialisieren der Hardware */</span></div><div class="line">    <span class="keywordflow">while</span>(1)</div><div class="line">    {</div><div class="line">                    <span class="comment">/*My Code*/</span></div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --> <h2>Verwendung der loopdelay-Library</h2>
+<p><b>Wichtig: Um die loopdelay-Library zu verwenden, muss die Interrupt-Library aktiviert sein!</b> Nach der Initialisierung der Hardware muss das loopdelay initialisiert werden. Dafür wird die Funktion <code>void <a class="el" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#gaf8f81c23f0bb76cfad5627ec5ecfee3d" title="Intitialisierung des Loop-Delays. ">LOOPDELAY_Init(uint16_t loopDelayTimeMS)</a>;</code> aufgerufen, wobei der Übergabeparameter dem gewünschten loopdelay in Millisekunden (ms) entspricht. Ausgeführt wird das delay durch die Funktion <code>void <a class="el" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga8d57715817acb8272eac7a57cc0bf8ae" title="Zykluszeit abwareten. ">LOOPDELAY_Wait(void)</a>;</code>. Der Benutzer ist selber verantwortlich, dass der gesamte Programmdurchlauf nicht länger als die angegebene Zykluszeit dauert.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../inc/PBA_config.h&quot;</span></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga6288eba0f8e8ad3ab1544ad731eb7667">main</a>(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <a class="code" href="group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a">PBA_Init</a>();             <span class="comment">/*Initialisieren der Hardware*/</span></div><div class="line">    <a class="code" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#gaf8f81c23f0bb76cfad5627ec5ecfee3d">LOOPDELAY_Init</a>(10);     <span class="comment">/*Loop-delay Init, loop-time=10ms*/</span></div><div class="line">    <span class="keywordflow">while</span>(1)</div><div class="line">    {</div><div class="line">        <a class="code" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga8d57715817acb8272eac7a57cc0bf8ae">LOOPDELAY_Wait</a>();   <span class="comment">/*Zykluszeit 10ms*/</span></div><div class="line">        <a class="code" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gae8d5b4e7e2d9d21caaa4744d385d7cc7">LED0</a>^=1;            <span class="comment">/*LED0 blinkt mit einer Frequenz von 50Hz*/</span></div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><h2>Verwendung der Event-Library</h2>
+<p><b>Wichtig: Wird die Event-Library verwendet, muss die loopdelay-Library gleichzeitig aktiviert sein!</b> Die Event-Library bietet die Möglichkeit mit verschiedenen Events zu arbeiten. Folgende Events sind definiert:</p>
+<table class="doxtable">
+<tr>
+<th>Eventname </th><th>Funktion  </th></tr>
+<tr>
+<td>posEdge </td><td>Abfragen einer positiven Tasterflanke </td></tr>
+<tr>
+<td>negEdge </td><td>Abfragen einer negativen Tasterflanke </td></tr>
+<tr>
+<td>ActiveUntilMS(time) </td><td>Nach dem ersten Aufruf nur während der angegebenen Zeit aktiv </td></tr>
+<tr>
+<td>TimeoutMS(time) </td><td>Nach dem ersten Aufruf immer nach der angegebenen Zeit aktiv </td></tr>
+</table>
+<p>Zur Initialisierung der Bibliothek wird die Funktion <code>void <a class="el" href="group___p_b_a___e_v_e_n_t_s.html#gaec5b207961d3f331bb644c27e84b72db" title="Events initialisieren. ">EVENTS_Init(void *p_state,events_t *p_events)</a>;</code> aufgerufen. Der Übergabeparameter <code>void *p_state</code> ist der Pointer auf die in einer Aufzählung (enum) definierten states. Der zweite Parameter ist der Pointer auf eine Struktur vom Type <a class="el" href="structevents__t.html" title="Events. ">events_t</a>. Über diese Struktur können Events erstellt und abgefragt werden. Das loop-delay wird über die bekannte Funktion <code>void <a class="el" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga8d57715817acb8272eac7a57cc0bf8ae" title="Zykluszeit abwareten. ">LOOPDELAY_Wait(void)</a>;</code>aufgerufen. Zum detektieren der Tasterflanken muss die Funktion <code><a class="el" href="group___p_b_a___e_v_e_n_t_s.html#ga926a101092ad5a3f0858546ccc11a370" title="Einlesen der Taster, Flanken Tastendrücke detektieren. ">EVENTS_Update(void)</a>;</code> zyklisch ausgeführt werden.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../inc/PBA_config.h&quot;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="preprocessor">#define AUS         0</span></div><div class="line"><span class="preprocessor">#define EIN         1</span></div><div class="line"></div><div class="line"><span class="preprocessor">#define LEDANZEIGE      LATD</span></div><div class="line"></div><div class="line"><span class="keyword">enum</span> {ST_TIMEOUT,ACTIVE_UNTIL, ST_POSEDGE_NEGEDGE}state=ST_TIMEOUT; <span class="comment">/*Aufzählung aller Zustände*/</span></div><div class="line"></div><div class="line"><a class="code" href="structevents__t.html">events_t</a> events;                    <span class="comment">/*Event-Struktur*/</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga6288eba0f8e8ad3ab1544ad731eb7667">main</a>(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line"></div><div class="line">    <a class="code" href="group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a">PBA_Init</a>();                     <span class="comment">/*Initialisierung Hardware*/</span></div><div class="line">    <a class="code" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#gaf8f81c23f0bb76cfad5627ec5ecfee3d">LOOPDELAY_Init</a>(10);             <span class="comment">/*Initialsierung loop-delay*/</span></div><div class="line">    <a class="code" href="group___p_b_a___e_v_e_n_t_s.html#gaec5b207961d3f331bb644c27e84b72db">EVENTS_Init</a>(&amp;state,&amp;events);    <span class="comment">/*Initialisierung Events*/</span></div><div class="line"></div><div class="line">    <a class="code" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gae8d5b4e7e2d9d21caaa4744d385d7cc7">LED0</a>=EIN;</div><div class="line">    <span class="keywordflow">while</span>(1)</div><div class="line">    {</div><div class="line">        <a class="code" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga8d57715817acb8272eac7a57cc0bf8ae">LOOPDELAY_Wait</a>();           <span class="comment">/*Zykluszeit 10ms*/</span></div><div class="line">        <a class="code" href="group___p_b_a___e_v_e_n_t_s.html#ga926a101092ad5a3f0858546ccc11a370">EVENTS_Update</a>();            <span class="comment">/*Events aktualisieren*/</span></div><div class="line">        <span class="keywordflow">switch</span>(state)</div><div class="line">        {</div><div class="line">            <span class="keywordflow">case</span> ST_TIMEOUT:</div><div class="line">                <span class="keywordflow">if</span>(events.<a class="code" href="structevents__t.html#aa50bc5bd88fb2b3e981e1a04512b3337">TimeoutMS</a>(3000))  <span class="comment">/*LED0 leuchtet während 3 Sekunden*/</span></div><div class="line">                {</div><div class="line">                    <a class="code" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gae8d5b4e7e2d9d21caaa4744d385d7cc7">LED0</a>=0;</div><div class="line">                    state=ST_ACTIVE_UNTIL;</div><div class="line">                }</div><div class="line">                <span class="keywordflow">break</span>;</div><div class="line">            <span class="keywordflow">case</span> ST_ACTIVE_UNTIL:</div><div class="line">                <span class="keywordflow">if</span>(events.<a class="code" href="structevents__t.html#a94feecb2b079b3a8347eebd958920045">ActiveUntilMS</a>(2000))</div><div class="line">                {</div><div class="line">                    <span class="keywordflow">if</span>(events.<a class="code" href="structevents__t.html#aa50bc5bd88fb2b3e981e1a04512b3337">TimeoutMS</a>(100))</div><div class="line">                    {</div><div class="line">                        <a class="code" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gae8d5b4e7e2d9d21caaa4744d385d7cc7">LED0</a>^=1;            <span class="comment">/*LED0 blinkt mit 5Hz für 2s*/</span></div><div class="line">                    }</div><div class="line">                }</div><div class="line">                <span class="keywordflow">else</span></div><div class="line">                {</div><div class="line">                    <a class="code" href="group___d_e_f___l_e_d___s_u_m_m_e_r.html#gae8d5b4e7e2d9d21caaa4744d385d7cc7">LED0</a>=1;</div><div class="line">                    state=ST_POSEDGE_NEGEDGE;</div><div class="line">                }</div><div class="line">                <span class="keywordflow">break</span>;</div><div class="line">            <span class="keywordflow">case</span> ST_POSEDGE_NEGEDGE:</div><div class="line">                <span class="keywordflow">if</span>(events.<a class="code" href="structevents__t.html#a81ad92fd153f97ca013c4566445a1c61">posEdge</a>.<a class="code" href="structtaster_byte__t.html#aed5f14c4d0cccd3913de47d7007ee9b9">switch0</a>)  <span class="comment">/*Bei jeder Tasterbetätigung wird die */</span></div><div class="line">                {                           <span class="comment">/*Ledanzeige um 1 inkrementiert*/</span></div><div class="line">                    LEDANZEIGE++;</div><div class="line">                }</div><div class="line"></div><div class="line">                <span class="keywordflow">if</span>(events.<a class="code" href="structevents__t.html#aae8639107550b2b745d985de8b808f24">negEdge</a>.<a class="code" href="structtaster_byte__t.html#aeaa7df1f11712093d52edc69313de5f5">switch7</a>)  <span class="comment">/*Beim loslassen des Tasters */</span></div><div class="line">                {</div><div class="line">                    LEDANZEIGE=1;           <span class="comment">/*zurücksetzen der Anzeige*/</span></div><div class="line">                    state=ST_TIMEOUT;       <span class="comment">/*Rückkehr zum 1. Zustand*/</span></div><div class="line">                }</div><div class="line">                <span class="keywordflow">break</span>;</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><p><b>Um genaue Werte bei Timeouts zu erreichen, dürfen nur Werte die das Ein- oder Mehrfache der Zykluszeit betragen verwendet werden!</b> </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Erzeugt von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>
