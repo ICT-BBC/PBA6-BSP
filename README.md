@@ -30,6 +30,11 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
+##Download des PBA6 BSP
+Der Sourcecode des PBA6-BSP ist wird auf Github verwaltet.
+<a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank">https://github.com/ICT-BBC/PBA6-BSP</a>
+1. Klicke auf den Button "Cone or Download" auf der rechten Seite, über der Ordnerübersicht
+2. Lade das Projekt als Zip-Datei herunter
 
 ##Einbinden des BSP in ein MPLABX Projekt
 1. Neues MPLABX Projekt erstellen
