@@ -1,13 +1,14 @@
 # PBA6-BSP
 ## Download des PBA6 BSP
 Der Sourcecode des PBA6-BSP ist wird auf Github verwaltet.
-<a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank">https://github.com/ICT-BBC/PBA6-BSP</a><br>
+<a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank"> https://github.com/ICT-BBC/PBA6-BSP </a> <br>
 1. Klicke auf den Button "Clone or Download" auf der rechten Seite, über der Ordnerübersicht
 2. Lade das Projekt als Zip-Datei herunter
 3. Entpacke die Zip-Datei
 
 ## Inhalt BSP
 Der entpackte Ordner enthält nun folgende Unterordner und Dateien:
+
 Ordner / Datei	| Inhalt
 ---------------	| ---------------------------------------
 docs			| Ordner mit der HTML-Dokumentation des Sourcecodes
