@@ -1,7 +1,7 @@
 var NAVTREE =
 [
-  [ "PIC Board Advanced 6", "index.html", [
-    [ "PBA BSP Library", "index.html", null ],
+  [ "PIC Board Advanced 6 Board Support Package", "index.html", [
+    [ "PBA6-BSP", "index.html", null ],
     [ "LICENSE", "md_LICENSE.html", null ],
     [ "Module", "modules.html", "modules" ],
     [ "Datenstrukturen", "annotated.html", [

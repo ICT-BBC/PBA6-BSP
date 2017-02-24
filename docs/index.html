@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>PIC Board Advanced 6: PBA BSP Library</title>
+<title>PIC Board Advanced 6 Board Support Package: PBA6-BSP</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,12 +30,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="bbc_logo_68h.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="bbc_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">PIC Board Advanced 6
+   <div id="projectname">PIC Board Advanced 6 Board Support Package
    &#160;<span id="projectnumber">V 1.2.0</span>
    </div>
-   <div id="projectbrief">Board Support Package</div>
+   <div id="projectbrief">HAL- und Peripheriefunktionen für das PBA6</div>
   </td>
  </tr>
  </tbody>
@@ -102,21 +102,35 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">PBA BSP Library </div>  </div>
+<div class="title">PBA6-BSP </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>Lizenzierung</h2>
-<p>Diese Software kann unter den Bestimmungen der MIT-Lizenz verwendet werden.</p>
-<p>Copyright © 2016 ICT Berufsbildungscenter AG</p>
-<h3>The MIT Licence (MIT)</h3>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-<h2>Download des PBA6 BSP</h2>
-<p>Der Sourcecode des PBA6-BSP ist wird auf Github verwaltet. <a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank">https://github.com/ICT-BBC/PBA6-BSP</a></p><ol type="1">
-<li>Klicke auf den Button "Cone or Download" auf der rechten Seite, über der Ordnerübersicht</li>
+<div class="textblock"><h2>Download des PBA6 BSP</h2>
+<p>Der Sourcecode des PBA6-BSP ist wird auf Github verwaltet. <a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank">https://github.com/ICT-BBC/PBA6-BSP</a><br />
+</p><ol type="1">
+<li>Klicke auf den Button "Clone or Download" auf der rechten Seite, über der Ordnerübersicht</li>
 <li>Lade das Projekt als Zip-Datei herunter</li>
+<li>Entpacke die Zip-Datei</li>
 </ol>
+<h2>Inhalt BSP</h2>
+<p>Der entpackte Ordner enthält nun folgende Unterordner und Dateien: </p><table class="doxtable">
+<tr>
+<th>Ordner / Datei </th><th>Inhalt  </th></tr>
+<tr>
+<td>docs </td><td>Ordner mit der HTML-Dokumentation des Sourcecodes </td></tr>
+<tr>
+<td>example </td><td>MPLABX-Projekt Hardwaretestsoftware </td></tr>
+<tr>
+<td>inc </td><td>Include-Files des BSP </td></tr>
+<tr>
+<td>src </td><td>Source-Files des BSP </td></tr>
+<tr>
+<td>.gitignore </td><td>Ignorierte Files der Versionsverwaltung &ndash;&gt; kann gelöscht werden </td></tr>
+<tr>
+<td><a class="el" href="_l_i_c_e_n_s_e_8md.html">LICENSE.md</a> </td><td>Lizenz &ndash;&gt; Bitte durchlesen </td></tr>
+<tr>
+<td><a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> </td><td>Rohdaten der Anleitung &ndash;&gt; kann gelöscht werden </td></tr>
+</table>
 <h2>Einbinden des BSP in ein MPLABX Projekt</h2>
 <ol type="1">
 <li>Neues MPLABX Projekt erstellen</li>

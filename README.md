@@ -1,42 +1,25 @@
-PBA BSP Library
-===================
-
-##Lizenzierung
-
-Diese Software kann unter den Bestimmungen der MIT-Lizenz verwendet werden.
-
-Copyright © 2016 ICT Berufsbildungscenter AG
-
-###The MIT Licence (MIT)
-
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the “Software”), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
-##Download des PBA6 BSP
+# PBA6-BSP
+## Download des PBA6 BSP
 Der Sourcecode des PBA6-BSP ist wird auf Github verwaltet.
-<a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank">https://github.com/ICT-BBC/PBA6-BSP</a>
-1. Klicke auf den Button "Cone or Download" auf der rechten Seite, über der Ordnerübersicht
+<a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank">https://github.com/ICT-BBC/PBA6-BSP</a><br>
+1. Klicke auf den Button "Clone or Download" auf der rechten Seite, über der Ordnerübersicht
 2. Lade das Projekt als Zip-Datei herunter
+3. Entpacke die Zip-Datei
 
-##Einbinden des BSP in ein MPLABX Projekt
+## Inhalt BSP
+Der entpackte Ordner enthält nun folgende Unterordner und Dateien:
+Ordner / Datei	| Inhalt
+---------------	| ---------------------------------------
+docs			| Ordner mit der HTML-Dokumentation des Sourcecodes
+example			| MPLABX-Projekt Hardwaretestsoftware
+inc 			| Include-Files des BSP
+src 			| Source-Files des BSP
+.gitignore		| Ignorierte Files der Versionsverwaltung --> kann gelöscht werden
+LICENSE.md		| Lizenz --> Bitte durchlesen
+README.md		| Rohdaten der Anleitung --> kann gelöscht werden
+
+
+## Einbinden des BSP in ein MPLABX Projekt
 1. Neues MPLABX Projekt erstellen
 2. Die beiden Ordner "src" und "inc" in den Projektordner kopieren
 3. Im Projekt Rechtsklick auf Source Files, danach "Add existing Item"
@@ -50,7 +33,7 @@ Der Sourcecode des PBA6-BSP ist wird auf Github verwaltet.
   #include "../inc/PBA_config.h"
   ```
   
-##BSP-Konfiguration
+## BSP-Konfiguration
 Zur Konfiguration muss die Header-Datei ```PBA_config.h ``` editiert werden.
 Durch ein- oder auskommentieren der defines im Abschnitt "BSP-Konfiguration" lässt sich
 das BSP auf die Bedürfnisse anpassen.
@@ -85,7 +68,7 @@ das BSP auf die Bedürfnisse anpassen.
 #define STDOUT_LCD	    true    /**< Ausgabe printf auf LCD*/
 //#define STDOUT_UART	true    /**< Ausgabe printf auf UART-Schnittstelle*/
  ```
-##Hardware initialisieren
+## Hardware initialisieren
 Zum Initialisieren der Hardware muss die Funktion ```PBA_Init();``` aufgerufen werden.
 
 ```C
@@ -99,7 +82,7 @@ void main(void)
     }
 }
   ```
-##Verwendung der loopdelay-Library
+## Verwendung der loopdelay-Library
 **Wichtig: Um die loopdelay-Library zu verwenden, muss die Interrupt-Library aktiviert sein!**
 Nach der Initialisierung der Hardware muss das loopdelay initialisiert werden.
 Dafür wird die Funktion ```void LOOPDELAY_Init(uint16_t loopDelayTimeMS);``` aufgerufen,
@@ -122,7 +105,7 @@ void main(void)
 }
   ```
   
-##Verwendung der Event-Library
+## Verwendung der Event-Library
 **Wichtig: Wird die Event-Library verwendet, muss die loopdelay-Library gleichzeitig aktiviert sein!**
 Die Event-Library bietet die Möglichkeit mit verschiedenen Events zu arbeiten.
 Folgende Events sind definiert:

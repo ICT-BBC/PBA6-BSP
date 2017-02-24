@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pba_20bsp_20library',['PBA BSP Library',['../index.html',1,'']]],
+  ['pba6_2dbsp',['PBA6-BSP',['../index.html',1,'']]],
   ['pba6',['PBA6',['../group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga68525f59432ef9b1d9021c9cb22c7190',1,'PBA_config.h']]],
   ['pba6_5fhardwaretest_2ec',['PBA6_hardwaretest.c',['../_p_b_a6__hardwaretest_8c.html',1,'']]],
   ['pba_5fadc',['PBA_ADC',['../group___p_b_a___a_d_c.html',1,'']]],

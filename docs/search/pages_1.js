@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pba_20bsp_20library',['PBA BSP Library',['../index.html',1,'']]]
+  ['pba6_2dbsp',['PBA6-BSP',['../index.html',1,'']]]
 ];

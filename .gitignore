@@ -19,7 +19,5 @@ example/pba6_hardwaretest/nbdist/
 example/pba6_hardwaretest/funclist
 example/pba6_hardwaretest/disassembly/
 *.map
-Logo_200px.png
 DoxyWizardSettings
-/bbc_logo_68h.png
-bbclogo_200x120.png
+/bbc_logo.png
