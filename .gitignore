@@ -7,6 +7,7 @@
 *.o
 *.sdb
 *.obj.dmp
+doxygen_custom_files
 example/pba6_hardwaretest/nbproject/private/
 example/pba6_hardwaretest/nbproject/Makefile-*
 example/pba6_hardwaretest/nbproject/Package-*.bash
