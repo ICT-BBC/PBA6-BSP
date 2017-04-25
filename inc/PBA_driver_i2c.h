@@ -2,9 +2,9 @@
  * @addtogroup PBA_I2C
  * @{
  *******************************************************************************
- * @file			PBA_driver_i2c.h
- * @brief			I2C-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_i2c.h
+ * @brief           I2C-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright

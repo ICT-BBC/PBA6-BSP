@@ -2,9 +2,9 @@
  * @addtogroup PBA_LOOPDELAY
  * @{
  *******************************************************************************
- * @file			PBA_loopdelay.h
- * @brief			Loopdelay-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_loopdelay.h
+ * @brief           Loopdelay-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -45,9 +45,9 @@
  * Nur eine Auswahl möglich
  * @{
  */
-/*#define	LOOPDELAY_USE_TIMER0*/
-/*#define	LOOPDELAY_USE_TIMER1*/
-#define	LOOPDELAY_USE_TIMER2
+/*#define   LOOPDELAY_USE_TIMER0*/
+/*#define   LOOPDELAY_USE_TIMER1*/
+#define LOOPDELAY_USE_TIMER2
 /**
  * @}
  */

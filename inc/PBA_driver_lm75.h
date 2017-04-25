@@ -2,9 +2,9 @@
  * @addtogroup PBA_LM75
  * @{
  *******************************************************************************
- * @file			PBA_driver_lm75.h
- * @brief			LM75-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_lm75.h
+ * @brief           LM75-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright

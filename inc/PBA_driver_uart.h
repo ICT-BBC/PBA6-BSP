@@ -2,9 +2,9 @@
  * @addtogroup PBA_UART
  * @{
  *******************************************************************************
- * @file			PBA_driver_uart.h
- * @brief			UART-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_uart.h
+ * @brief           UART-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright

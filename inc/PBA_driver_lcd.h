@@ -2,9 +2,9 @@
  * @addtogroup PBA_LCD
  * @{
  *******************************************************************************
- * @file			PBA_driver_lcd.h
- * @brief			LCD-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_lcd.h
+ * @brief           LCD-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -46,13 +46,13 @@
  * Zuordnung der Pins zur Ansteuerung des LCD
  * @{
  */
-#define 	LCD_D4 			LATEbits.LATE2
-#define 	LCD_D5 			LATAbits.LATA2
-#define 	LCD_D6 			LATAbits.LATA4
-#define 	LCD_D7 			LATAbits.LATA5
-#define 	LCD_RW 			LATCbits.LATC0
-#define 	LCD_EN 			LATCbits.LATC1
-#define 	LCD_RS 			LATCbits.LATC2
+#define     LCD_D4          LATEbits.LATE2
+#define     LCD_D5          LATAbits.LATA2
+#define     LCD_D6          LATAbits.LATA4
+#define     LCD_D7          LATAbits.LATA5
+#define     LCD_RW          LATCbits.LATC0
+#define     LCD_EN          LATCbits.LATC1
+#define     LCD_RS          LATCbits.LATC2
 /**
  * @}
  */
@@ -64,27 +64,27 @@
  * @see lcd_curs
  * @{
  */
-#define CURSOR_ON 			0x06
-#define CURSOR_OFF 			0x04
-#define CURSOR_OFF_BLINK 	0x05
-#define CURSOR_ON_BLINK 	0x07
+#define CURSOR_ON           0x06
+#define CURSOR_OFF          0x04
+#define CURSOR_OFF_BLINK    0x05
+#define CURSOR_ON_BLINK     0x07
 /**
  * @}
  */
 
 /**
- * @brief	Betriebsspannung LCD
+ * @brief   Betriebsspannung LCD
  */
 typedef enum  
 {
-	V_3V3,	/**< 3.3V--> PBA6*/
-	V_5V	/**< 5V --> ältere Boards*/
+    V_3V3,  /**< 3.3V--> PBA6*/
+    V_5V    /**< 5V --> ältere Boards*/
 }displayVoltage_t;
 
 /*Makros für das Senden eines Befehl*/
-#define LCD_SEND_COMMAND(Command)	LCD_Send(Command)
+#define LCD_SEND_COMMAND(Command)   LCD_Send(Command)
 /*Makros für das Senden eines Datenbytes (Zeichen)*/
-#define LCD_SEND_DATA(value)		LCD_RS=1;LCD_Send(value);LCD_RS=0
+#define LCD_SEND_DATA(value)        LCD_RS=1;LCD_Send(value);LCD_RS=0
 
 void LCD_Send(uint8_t value);
 

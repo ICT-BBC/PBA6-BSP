@@ -2,9 +2,9 @@
  * @defgroup PBA_EEPROM
  * @{
  *******************************************************************************
- * @file			PBA_driver_eeprom.c
- * @brief			EEPROM-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG, Microchip
+ * @file            PBA_driver_eeprom.c
+ * @brief           EEPROM-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG, Microchip
  *******************************************************************************
  * 
  * @copyright
@@ -43,47 +43,47 @@
 
 /**
  * @brief Schreiben eines Bytes ins interne EEPROM.
- * @param eeAddr	EEPROM-Adresse
- * @param eeData	Zu schreibende Daten
+ * @param eeAddr    EEPROM-Adresse
+ * @param eeData    Zu schreibende Daten
  */
 void EE_WriteByte(uint8_t eeAddr, uint8_t eeData)
 {
-	uint8_t GIEBitValue = 0;
+    uint8_t GIEBitValue = 0;
 
-	EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to write*/
-	EEDATL = eeData;             /* Data Memory Value to write*/
-	EECON1bits.EEPGD = 0;		/* Point to DATA memory*/
-	EECON1bits.CFGS = 0;        /* Deselect Configuration space*/
-	EECON1bits.WREN = 1;        /* Enable writes*/
+    EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to write*/
+    EEDATL = eeData;             /* Data Memory Value to write*/
+    EECON1bits.EEPGD = 0;       /* Point to DATA memory*/
+    EECON1bits.CFGS = 0;        /* Deselect Configuration space*/
+    EECON1bits.WREN = 1;        /* Enable writes*/
 
-	GIEBitValue = INTCONbits.GIE;
-	INTCONbits.GIE = 0;			/* Disable INTs*/
-	EECON2 = 0x55;
-	EECON2 = 0xAA;
-	EECON1bits.WR = 1;			/* Set WR bit to begin write*/
-	/* Wait for write to complete*/
-	while (EECON1bits.WR)
-	{
-	}
+    GIEBitValue = INTCONbits.GIE;
+    INTCONbits.GIE = 0;         /* Disable INTs*/
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1;          /* Set WR bit to begin write*/
+    /* Wait for write to complete*/
+    while (EECON1bits.WR)
+    {
+    }
 
-	EECON1bits.WREN = 0;		/* Disable writes*/
-	INTCONbits.GIE = GIEBitValue;
+    EECON1bits.WREN = 0;        /* Disable writes*/
+    INTCONbits.GIE = GIEBitValue;
 }
 
 /**
  * @brief Lesen eines Bytes vom internen EEPROM.
- * @param eeAddr	EEPROM-Adresse
- * @return			Gelesene Daten
+ * @param eeAddr    EEPROM-Adresse
+ * @return          Gelesene Daten
  */
 uint8_t EE_ReadByte(uint8_t eeAddr)
 {
-	EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to read*/
-	EECON1bits.CFGS = 0;		/* Deselect Configuration space*/
-	EECON1bits.EEPGD = 0;		/* Point to DATA memory*/
-	EECON1bits.RD = 1;			/* EE Read*/
-	NOP();  /* NOPs may be required for latency at high frequencies*/
-	NOP();
-	return (EEDATL);
+    EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to read*/
+    EECON1bits.CFGS = 0;        /* Deselect Configuration space*/
+    EECON1bits.EEPGD = 0;       /* Point to DATA memory*/
+    EECON1bits.RD = 1;          /* EE Read*/
+    NOP();  /* NOPs may be required for latency at high frequencies*/
+    NOP();
+    return (EEDATL);
 }
 
 #endif

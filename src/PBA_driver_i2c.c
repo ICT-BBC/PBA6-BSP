@@ -2,9 +2,9 @@
  * @defgroup PBA_I2C
  * @{
  *******************************************************************************
- * @file			PBA_driver_i2c.c
- * @brief			I2C-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_i2c.c
+ * @brief           I2C-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -44,7 +44,7 @@
  * Anpassen falls nötig
  * @{
  */
-#define FSCL_HZ 	100000	/**< 100kHz I2C-Mode */
+#define FSCL_HZ     100000  /**< 100kHz I2C-Mode */
 /**
  * @}
  */
@@ -52,15 +52,15 @@
 /**
  *@brief Berechnung Taktgenerator
  */
-#define BRGVAL 		_XTAL_FREQ/(4*FSCL_HZ)-1		/**<BRG = (PIC / (4 * SCL)) -1*/
+#define BRGVAL      _XTAL_FREQ/(4*FSCL_HZ)-1        /**<BRG = (PIC / (4 * SCL)) -1*/
 
 /**
  * @brief Warten auf i2c Interrupt-Flag. Blockierend!
  */
 void I2C_WaitIF(void)
 {
-	while(!PIR1bits.SSP1IF);				/*Warten bis I2C-IF gesetzt (MSSP action done)*/
-	PIR1bits.SSP1IF=0;						/*Interrupt-Flag rücksetzen*/							
+    while(!PIR1bits.SSP1IF);                /*Warten bis I2C-IF gesetzt (MSSP action done)*/
+    PIR1bits.SSP1IF=0;                      /*Interrupt-Flag rücksetzen*/                           
 }
 
 /**
@@ -69,10 +69,10 @@ void I2C_WaitIF(void)
  */
 void I2C_Init(void)
 {
-	TRISC|=0b00011000;						/*RC3(SCL), RC4(SDA) als Inputs definieren*/
-	SSPADD=BRGVAL;							/*Takt 100kHz: BRGVAL = (FOSC / (4 * SCL)) -1*/
-	SSPCON=0x08;							/*master mode, clock=Fosc/(4*(SSPADD+1))*/
-	SSP1CON1bits.SSPEN = 1;					/*MSSP-Modul eingeschalten (SSP-Enable)*/							
+    TRISC|=0b00011000;                      /*RC3(SCL), RC4(SDA) als Inputs definieren*/
+    SSPADD=BRGVAL;                          /*Takt 100kHz: BRGVAL = (FOSC / (4 * SCL)) -1*/
+    SSPCON=0x08;                            /*master mode, clock=Fosc/(4*(SSPADD+1))*/
+    SSP1CON1bits.SSPEN = 1;                 /*MSSP-Modul eingeschalten (SSP-Enable)*/                           
 }
 
 /**
@@ -80,8 +80,8 @@ void I2C_Init(void)
  */
 void I2C_Start(void)
 {
-	SSP1CON2bits.SEN = 1;					/*Bus übernemen*/
-	I2C_WaitIF();							/*Warten bis Bus übernommen	*/
+    SSP1CON2bits.SEN = 1;                   /*Bus übernemen*/
+    I2C_WaitIF();                           /*Warten bis Bus übernommen */
 }
 
 /**
@@ -89,8 +89,8 @@ void I2C_Start(void)
  */
 void I2C_Restart(void)
 {
-	SSP1CON2bits.RSEN = 1;					/*Bus erneut übernehmen*/
-	I2C_WaitIF();							/*Warten bis Bus übernommen	*/
+    SSP1CON2bits.RSEN = 1;                  /*Bus erneut übernehmen*/
+    I2C_WaitIF();                           /*Warten bis Bus übernommen */
 }
 
 /**
@@ -98,9 +98,9 @@ void I2C_Restart(void)
  */
 void I2C_Stop(void)
 {
-	SSP1CON2bits.PEN = 1;					/*Bus freigeben*/
-	I2C_WaitIF();							/*Warten bis Bus freigegeben*/
-}	
+    SSP1CON2bits.PEN = 1;                   /*Bus freigeben*/
+    I2C_WaitIF();                           /*Warten bis Bus freigegeben*/
+}   
 
 /**
  * @brief Byte an Slave übertragen.
@@ -108,9 +108,9 @@ void I2C_Stop(void)
  */
 void I2C_WriteByte(uint8_t data)
 {
-	SSPBUF=data;							/*Ein Byte zum I2C-Slave übertragen */
-	I2C_WaitIF();							/*Warten bis Daten geschrieben*/
-}	
+    SSPBUF=data;                            /*Ein Byte zum I2C-Slave übertragen */
+    I2C_WaitIF();                           /*Warten bis Daten geschrieben*/
+}   
 
 /**
  * @brief Daten-Byte lesen.
@@ -119,12 +119,12 @@ void I2C_WriteByte(uint8_t data)
  */
 uint8_t I2C_ReadByte(uint8_t ack)
 {
-	SSP1CON2bits.RCEN = 1;					/*Daten Empfang einschalten*/
-	I2C_WaitIF();							/*Warten bis Bus übernommen*/
-	SSP1CON2bits.ACKDT = !ack;				/*ACK / NoACK von Master*/
-	SSP1CON2bits.ACKEN = 1;					/*Acknowledge Sequenz starten*/
-	I2C_WaitIF();							/*Warten bis Bus übernommen*/
-	return SSPBUF;
+    SSP1CON2bits.RCEN = 1;                  /*Daten Empfang einschalten*/
+    I2C_WaitIF();                           /*Warten bis Bus übernommen*/
+    SSP1CON2bits.ACKDT = !ack;              /*ACK / NoACK von Master*/
+    SSP1CON2bits.ACKEN = 1;                 /*Acknowledge Sequenz starten*/
+    I2C_WaitIF();                           /*Warten bis Bus übernommen*/
+    return SSPBUF;
 }
 #endif
 

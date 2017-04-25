@@ -2,9 +2,9 @@
  * @defgroup PBA_UART
  * @{
  *******************************************************************************
- * @file			PBA_driver_uart.c
- * @brief			UART-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_uart.c
+ * @brief           UART-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -65,12 +65,12 @@
 */
 void UART_Init(void)
 {
-	TXSTA=0x20;
-	RCSTA=0x90;
-	SPBRG=(uint8_t)SPBRG_VAL;				/*Baudrate (untere 8Bit)*/
-	SPBRGH=SPBRG_VAL>>8;				/*Baudrate (obere 8Bit)*/
-	TX1STAbits.BRGH = 1;
-	BAUD1CONbits.BRG16 = 1;
+    TXSTA=0x20;
+    RCSTA=0x90;
+    SPBRG=(uint8_t)SPBRG_VAL;               /*Baudrate (untere 8Bit)*/
+    SPBRGH=SPBRG_VAL>>8;                /*Baudrate (obere 8Bit)*/
+    TX1STAbits.BRGH = 1;
+    BAUD1CONbits.BRG16 = 1;
 }
 
 /**
@@ -79,10 +79,10 @@ void UART_Init(void)
  */
 uint8_t UART_Getc(void)
 {
-	RC1STAbits.CREN = 0;
-	RC1STAbits.CREN = 1;				/*clear OERR-Overflow-Error-Bit*/
-	while(!PIR1bits.RCIF);				/*Warten auf Empfangs-Interrupt-Flag*/
-	return RCREG;						/*Empfangens Byte zurückgeben*/
+    RC1STAbits.CREN = 0;
+    RC1STAbits.CREN = 1;                /*clear OERR-Overflow-Error-Bit*/
+    while(!PIR1bits.RCIF);              /*Warten auf Empfangs-Interrupt-Flag*/
+    return RCREG;                       /*Empfangens Byte zurückgeben*/
 }
 
 /**
@@ -91,14 +91,14 @@ uint8_t UART_Getc(void)
  */
 void UART_Putc(uint8_t c)
 {
-	if(c=='\n')							/*Wenn Zeilenumbruch gefordert*/
-	{
-			TXREG='\n'; 				/*Line Feed in Senderegister schreiben*/
-			while(!TX1STAbits.TRMT); 	/*Warten bis Zeichen gesendet*/
-			c='\r';						/*nächstes Zeichen Carriage Return */
-	}
-	TXREG=c;							/*Zeichen in Senderegister schreiben*/
-	while(!TX1STAbits.TRMT);			/*Warten bis Zeichen gesendet*/
+    if(c=='\n')                         /*Wenn Zeilenumbruch gefordert*/
+    {
+            TXREG='\n';                 /*Line Feed in Senderegister schreiben*/
+            while(!TX1STAbits.TRMT);    /*Warten bis Zeichen gesendet*/
+            c='\r';                     /*nächstes Zeichen Carriage Return */
+    }
+    TXREG=c;                            /*Zeichen in Senderegister schreiben*/
+    while(!TX1STAbits.TRMT);            /*Warten bis Zeichen gesendet*/
 }
 
 /**
@@ -107,9 +107,9 @@ void UART_Putc(uint8_t c)
  */
 void UART_WriteLine(uint8_t *p_string)
 {
-	while(*p_string!=0) 				/*Bis String-Ende*/
-		UART_Putc(*p_string++);			/*Aktuelles String-Zeichen senden*/
-	UART_Putc('\n');					/*Nach String ein Zeilenumbruch senden*/
+    while(*p_string!=0)                 /*Bis String-Ende*/
+        UART_Putc(*p_string++);         /*Aktuelles String-Zeichen senden*/
+    UART_Putc('\n');                    /*Nach String ein Zeilenumbruch senden*/
 }
 
 /**
@@ -118,8 +118,8 @@ void UART_WriteLine(uint8_t *p_string)
  */
 void UART_Puts(uint8_t *p_string)
 {
-	while(*p_string!=0) 				/*Bis String-Ende*/
-		UART_Putc(*p_string++);			/*Aktuelles String-Zeichen senden*/
+    while(*p_string!=0)                 /*Bis String-Ende*/
+        UART_Putc(*p_string++);         /*Aktuelles String-Zeichen senden*/
 }
 
 /**
@@ -128,11 +128,11 @@ void UART_Puts(uint8_t *p_string)
  */
 void UART_WriteLineRom(const uint8_t *p_string)
 {
-	while(*p_string!=0)  				/*Bis String-Ende*/
-	{
-		UART_Putc(*p_string++);			/*Aktuelles String-Zeichen senden*/
-	}
-	UART_Putc('\n');					/*Nach String ein Zeilenumbruch senden*/
+    while(*p_string!=0)                 /*Bis String-Ende*/
+    {
+        UART_Putc(*p_string++);         /*Aktuelles String-Zeichen senden*/
+    }
+    UART_Putc('\n');                    /*Nach String ein Zeilenumbruch senden*/
 }
 
 /**
@@ -141,10 +141,10 @@ void UART_WriteLineRom(const uint8_t *p_string)
  */
 void UART_PutsRom(const uint8_t *p_string)
 {
-	while(*p_string!=0)  					/*Bis String-Ende */
-	{
-		UART_Putc(*p_string++);				/*Aktuelles String-Zeichen senden*/
-	}
+    while(*p_string!=0)                     /*Bis String-Ende */
+    {
+        UART_Putc(*p_string++);             /*Aktuelles String-Zeichen senden*/
+    }
 }
 
 /**
@@ -154,32 +154,32 @@ void UART_PutsRom(const uint8_t *p_string)
  */
 void UART_Gets(uint8_t *p_string, uint16_t maxLen)
 {
-	uint16_t len=0;						/*Anzahl empfangener Zeichen*/
-	uint8_t c;							/*Empfangenes Zeichen*/
-	maxLen--;							/*Nullterminierung abziehen von maximal möglicher Länge*/
-	do 
-	{
-		c=UART_Getc();				 	/*Einzelnes Zeichen empfangen*/
-		if(c==8)					 	/*Wenn ein Backspace empfangen wurde*/
-		{
-			if(len>0)				 	/*Wenn schon Zeichen empfangen wurden*/
-				{
-				len--;				 	/*Zeichen dekrementieren*/
-				UART_Putc(c);		 	/*Backspace zurücksenden*/
-				UART_Putc(' ');			/*gelöschtes Zeichen überschreiben*/
-				UART_Putc(c);		 	/*Backspace zurücksenden*/
-				}
-		}
-		else if ((c>=32)&&(c<=126))	 	/*Wenn druckbares Zeichen empfangen wurde*/
-		{
-			if(len<maxLen) 			 	/*Wenn maximale Stringlänge noch nicht erreicht*/
-			{
-				p_string[len++]=c;		/*Empfangenes Zeichen in String ablegen*/
-				UART_Putc(c);			/*Empfangenes Zeichen zurücksenden*/
-			}
-		}
-	} while(c!=13);						/*Zeichenempfange wiederholen bis CR empfangen*/
-	p_string[len]=0;					/*Nullterminierung anhängen*/
+    uint16_t len=0;                     /*Anzahl empfangener Zeichen*/
+    uint8_t c;                          /*Empfangenes Zeichen*/
+    maxLen--;                           /*Nullterminierung abziehen von maximal möglicher Länge*/
+    do 
+    {
+        c=UART_Getc();                  /*Einzelnes Zeichen empfangen*/
+        if(c==8)                        /*Wenn ein Backspace empfangen wurde*/
+        {
+            if(len>0)                   /*Wenn schon Zeichen empfangen wurden*/
+                {
+                len--;                  /*Zeichen dekrementieren*/
+                UART_Putc(c);           /*Backspace zurücksenden*/
+                UART_Putc(' ');         /*gelöschtes Zeichen überschreiben*/
+                UART_Putc(c);           /*Backspace zurücksenden*/
+                }
+        }
+        else if ((c>=32)&&(c<=126))     /*Wenn druckbares Zeichen empfangen wurde*/
+        {
+            if(len<maxLen)              /*Wenn maximale Stringlänge noch nicht erreicht*/
+            {
+                p_string[len++]=c;      /*Empfangenes Zeichen in String ablegen*/
+                UART_Putc(c);           /*Empfangenes Zeichen zurücksenden*/
+            }
+        }
+    } while(c!=13);                     /*Zeichenempfange wiederholen bis CR empfangen*/
+    p_string[len]=0;                    /*Nullterminierung anhängen*/
 }
 
 /**
@@ -188,13 +188,13 @@ void UART_Gets(uint8_t *p_string, uint16_t maxLen)
  */
 uint8_t UART_GetHexDigit(void) 
 {
-	uint8_t digit;				
-	digit = UART_Getc();
-	UART_Putc(digit);
-	if(digit<='9')
-		return(digit-'0');
-	else
-		return((toupper(digit)-'A')+10);
+    uint8_t digit;              
+    digit = UART_Getc();
+    UART_Putc(digit);
+    if(digit<='9')
+        return(digit-'0');
+    else
+        return((toupper(digit)-'A')+10);
 }
 
 /**
@@ -203,13 +203,13 @@ uint8_t UART_GetHexDigit(void)
  */
 uint16_t UART_GetHexByte(void)
 {
-	uint16_t lo,hi;
-	hi = UART_GetHexDigit();
-	lo = UART_GetHexDigit();
-	if(lo==0xdd)
-		return hi;
-	else
-		return hi*16+lo;
+    uint16_t lo,hi;
+    hi = UART_GetHexDigit();
+    lo = UART_GetHexDigit();
+    if(lo==0xdd)
+        return hi;
+    else
+        return hi*16+lo;
 }
 
 /**
@@ -218,12 +218,12 @@ uint16_t UART_GetHexByte(void)
  */
 int8_t UART_GetByte(void)
 {
-	uint8_t recBuffer[5];
-	int8_t byteVal;
-	UART_Gets(recBuffer, 5);
-	byteVal=(int8_t)atoi(recBuffer);
-	return byteVal;
-}	
+    uint8_t recBuffer[5];
+    int8_t byteVal;
+    UART_Gets(recBuffer, 5);
+    byteVal=(int8_t)atoi(recBuffer);
+    return byteVal;
+}   
 
 /**
  * @brief Einen Integer emfpangen und zurückgeben.
@@ -231,11 +231,11 @@ int8_t UART_GetByte(void)
  */
 int16_t UART_GetInt(void) 
 {
-	uint8_t recBuffer[7];
-	int16_t intVal;
-	UART_Gets(recBuffer, 7);
-	intVal=atoi(recBuffer);
-	return intVal;
+    uint8_t recBuffer[7];
+    int16_t intVal;
+    UART_Gets(recBuffer, 7);
+    intVal=atoi(recBuffer);
+    return intVal;
 }
 
 /**
@@ -244,11 +244,11 @@ int16_t UART_GetInt(void)
  */
 int32_t UART_GetLong(void) 
 {
-	uint8_t recBuffer[9];
-	int32_t longVal;
-	UART_Gets(recBuffer, 9);
-	longVal=atol(recBuffer);
-	return longVal;
+    uint8_t recBuffer[9];
+    int32_t longVal;
+    UART_Gets(recBuffer, 9);
+    longVal=atol(recBuffer);
+    return longVal;
 }
 
 /**
@@ -257,11 +257,11 @@ int32_t UART_GetLong(void)
  */
 float UART_GetFloat(void) 
 {
-	uint8_t recBuffer[20];
-	float floatVal;
-	UART_Gets(recBuffer, 20);
-	floatVal = atof(recBuffer);
-	return(floatVal);
+    uint8_t recBuffer[20];
+    float floatVal;
+    UART_Gets(recBuffer, 20);
+    floatVal = atof(recBuffer);
+    return(floatVal);
 }
 #endif
 

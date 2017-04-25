@@ -2,9 +2,9 @@
  * @defgroup PBA_ADC
  * @{
  *******************************************************************************
- * @file			PBA_driver_adc.c
- * @brief			ADC-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_adc.c
+ * @brief           ADC-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -44,10 +44,10 @@
  * @name Ladezeit Hold-Kondensator
  * @{
  */
-#define AQUISITION_TIME_US		10 /**< Ladezeit des Hold-Kondensators */
+#define AQUISITION_TIME_US      10 /**< Ladezeit des Hold-Kondensators */
 /**
  *@} 
- */			
+ */         
 
 /**
  * @brief Setzt die gewünschten Pins als Analogeingänge. 
@@ -70,9 +70,9 @@ ANSELE=(uint8_t) pin;
 */
 void ADC_Init(uint32_t settings)
 {
-	ADCON0=settings>>16;
-	ADCON1=settings>>8;
-	ADCON2=(uint8_t) settings;
+    ADCON0=settings>>16;
+    ADCON1=settings>>8;
+    ADCON2=(uint8_t) settings;
 }
 
 /**
@@ -84,7 +84,7 @@ void ADC_SetChannel(uint8_t channel)
 {
     ADCON0&=0x83;
     ADCON0|=channel<<2;
-    DelayUS(AQUISITION_TIME_US);					/*Aquisition-Time abwarten*/
+    DelayUS(AQUISITION_TIME_US);                    /*Aquisition-Time abwarten*/
 }
 
 /**
@@ -94,15 +94,15 @@ void ADC_SetChannel(uint8_t channel)
 uint16_t ADC_Read(void)
 {
     uint16_t result;
-	ADCON0bits.GO_nDONE = 1;						/*Wandlung starten (one shot)*/						
-    while(ADCON0bits.GO_nDONE);						/*Warten bis Wandlung abgeschlossen*/
+    ADCON0bits.GO_nDONE = 1;                        /*Wandlung starten (one shot)*/                     
+    while(ADCON0bits.GO_nDONE);                     /*Warten bis Wandlung abgeschlossen*/
 
-    result=(uint16_t)ADRESH<<8;						/*Resultat auslesen*/
+    result=(uint16_t)ADRESH<<8;                     /*Resultat auslesen*/
     result|=ADRESL;
-    return result;									/*Rückgabe des AD-Wertes*/
+    return result;                                  /*Rückgabe des AD-Wertes*/
 }
 #endif
-	
+    
 /**
  * @}
  */

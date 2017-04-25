@@ -76,7 +76,7 @@
 	/**
 	* @brief Interrupt-Routine Loop-Delay-Timer.
 	*/
-	inline void  LOOPDELAY_TimerISR(void)
+	inline void	 LOOPDELAY_TimerISR(void)
 	{
 	#if defined(LOOPDELAY_USE_TIMER0)
 			/*Timer neu laden um genau 1kHz Interruptfrequenz zu erreichen*/
@@ -111,16 +111,16 @@
 		loopDelayCnt = 0;
 	}
 	
-    /**
-     * @brief Abfrage der eingestellten Zykluszeit
-     * @return Eingestellte Zykluszeit in ms
-     */
-    uint16_t LOOPDELAY_GetTime(void)
-    {
-        return loopDelayMS;
-    }
-    
-    
+	/**
+	 * @brief Abfrage der eingestellten Zykluszeit
+	 * @return Eingestellte Zykluszeit in ms
+	 */
+	uint16_t LOOPDELAY_GetTime(void)
+	{
+		return loopDelayMS;
+	}
+	
+	
 	/**
 	* @brief Intitialisierung des Loop-Delays
 	* @param loopDelayTimeMS Zykluszeit in ms
@@ -136,7 +136,7 @@
 		INTCONbits.T0IE	= 1;						/*Timer0-Interrupt einschalten*/
 	#endif
 	#if defined(LOOPDELAY_USE_TIMER1)
-		T1CON 	= 0b00110001;						/*Prescaler = 8, Timer on*/
+		T1CON	= 0b00110001;						/*Prescaler = 8, Timer on*/
 		TMR1H=(TIMER1_RELOAD_VALUE)>>8;
 		TMR1L=(TIMER1_RELOAD_VALUE);
 		PIR1bits.TMR1IF = 0;						/*Timer1-Interrupt-Flag löschen*/
@@ -146,9 +146,9 @@
 		#if _XTAL_FREQ>20000000
 		T2CON	= 0b01001101;						/*Prescaler =4, Timer on, Postscaler = 10*/
 		#else
-		T2CON 	= 0b00100101;						/*Prescaler = 4, Timer on, Postscaler = 5*/
+		T2CON	= 0b00100101;						/*Prescaler = 4, Timer on, Postscaler = 5*/
 		#endif
-		PR2	  	= TIMER2_PERIODE;					/*Timer2 Periode festlegen*/
+		PR2		= TIMER2_PERIODE;					/*Timer2 Periode festlegen*/
 		TMR2	= 0;								/*Timer2-Register löschen*/
 		PIR1bits.TMR2IF = 0;						/*Timer2-Interrupt-Flag löschen*/
 		PIE1bits.TMR2IE	= 1;						/*Timer2-Interrupt einschalten*/

@@ -2,9 +2,9 @@
  * @addtogroup PBA_INTERRUPTS
  * @{
  *******************************************************************************
- * @file			PBA_interrupts.h
- * @brief			Interrupt-Handler für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_interrupts.h
+ * @brief           Interrupt-Handler für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -37,7 +37,7 @@
  * @}
  */
 #ifndef _PBA_INTERRUPTS_
-#define	_PBA_INTERRUPTS_
+#define _PBA_INTERRUPTS_
 
 /******* Interrupt Konfiguration **********************************************/
 /**
@@ -70,7 +70,7 @@ extern inline void ISR_Ext(void);
  *@}
  */
 
-#endif	
+#endif  
 
 
 /**

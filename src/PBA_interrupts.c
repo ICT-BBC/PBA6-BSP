@@ -2,9 +2,9 @@
  * @defgroup PBA_INTERRUPTS
  * @{
  *******************************************************************************
- * @file			PBA_interrupts.c
- * @brief			Interrupt-Handler für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_interrupts.c
+ * @brief           Interrupt-Handler für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -44,73 +44,73 @@
  */
 void interrupt ISR_Global(void)
 {
-	/******* Timer 0 Interrupt **************************************************/
-	#if defined (TMR0_INT)||defined(LOOPDELAY_USE_TIMER0)
-	if(INTCONbits.T0IF && INTCONbits.T0IE)
-	{
-		#if defined (TMR0_INT)
-			ISR_Timer0();
-		#endif
-		#if defined (LOOPDELAY_USE_TIMER0)
-			LOOPDELAY_TimerISR();
+    /******* Timer 0 Interrupt **************************************************/
+    #if defined (TMR0_INT)||defined(LOOPDELAY_USE_TIMER0)
+    if(INTCONbits.T0IF && INTCONbits.T0IE)
+    {
+        #if defined (TMR0_INT)
+            ISR_Timer0();
+        #endif
+        #if defined (LOOPDELAY_USE_TIMER0)
+            LOOPDELAY_TimerISR();
             #if defined (USE_EVENTS_LIBRARY)
             EVENTS_TimerISR();
             #endif
-		#endif
-		T0IF=0;
-	}
-	#endif
-	/******* Timer 1 Interrupt **************************************************/
-	#if defined (TMR1_INT)|| defined (LOOPDELAY_USE_TIMER1)
-	if(PIR1bits.TMR1IF && PIE1bits.TMR1IE)
-	{
-		PIR1bits.TMR1IF=0;
-		#if defined (TMR1_INT)
-			ISR_Timer1();
-		#endif
-		#if defined (LOOPDELAY_USE_TIMER1)
-			LOOPDELAY_TimerISR();
+        #endif
+        T0IF=0;
+    }
+    #endif
+    /******* Timer 1 Interrupt **************************************************/
+    #if defined (TMR1_INT)|| defined (LOOPDELAY_USE_TIMER1)
+    if(PIR1bits.TMR1IF && PIE1bits.TMR1IE)
+    {
+        PIR1bits.TMR1IF=0;
+        #if defined (TMR1_INT)
+            ISR_Timer1();
+        #endif
+        #if defined (LOOPDELAY_USE_TIMER1)
+            LOOPDELAY_TimerISR();
             #if defined (USE_EVENTS_LIBRARY)
             EVENTS_TimerISR();
             #endif
-		#endif
-		
-	}
-	#endif
+        #endif
+        
+    }
+    #endif
 
-	/******* Timer 2 Interrupt **************************************************/
-	#if defined (TMR2_INT)||defined (LOOPDELAY_USE_TIMER2)
-	if(PIR1bits.TMR2IF && PIE1bits.TMR2IE)
-	{
-		PIR1bits.TMR2IF=0;
-		#if defined (TMR2_INT)
-			ISR_Timer2();
-		#endif
-		#if defined (LOOPDELAY_USE_TIMER2)      /*loop-delay lib aktiviert*/
-			LOOPDELAY_TimerISR();
+    /******* Timer 2 Interrupt **************************************************/
+    #if defined (TMR2_INT)||defined (LOOPDELAY_USE_TIMER2)
+    if(PIR1bits.TMR2IF && PIE1bits.TMR2IE)
+    {
+        PIR1bits.TMR2IF=0;
+        #if defined (TMR2_INT)
+            ISR_Timer2();
+        #endif
+        #if defined (LOOPDELAY_USE_TIMER2)      /*loop-delay lib aktiviert*/
+            LOOPDELAY_TimerISR();
             #if defined (USE_EVENTS_LIBRARY)    /*events-lib aktiviert*/
             EVENTS_TimerISR();
             #endif
-		#endif
-	}
-	#endif
+        #endif
+    }
+    #endif
 
-	/******* USART-Receive-Interrupt ********************************************/
-	#if defined (USART_RC_INT)
-	if(PIR1bits.RCIF && PIE1bits.RCIE)
-	{
-		ISR_UartRx();
-	}
-	#endif
+    /******* USART-Receive-Interrupt ********************************************/
+    #if defined (USART_RC_INT)
+    if(PIR1bits.RCIF && PIE1bits.RCIE)
+    {
+        ISR_UartRx();
+    }
+    #endif
 
-	/******* Interrupt an ext. Interrupt-Pin (PORTB0) ***************************/
-	#if defined (EXT_INT)
-	if(INTCONbits.INTF && INTCONbits.INTE)
-	{
-		ISR_Ext();
-		INTCONbits.INTF=0;
-	}
-	#endif
+    /******* Interrupt an ext. Interrupt-Pin (PORTB0) ***************************/
+    #if defined (EXT_INT)
+    if(INTCONbits.INTF && INTCONbits.INTE)
+    {
+        ISR_Ext();
+        INTCONbits.INTF=0;
+    }
+    #endif
 }
 
 #endif

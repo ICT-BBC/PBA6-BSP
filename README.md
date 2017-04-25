@@ -10,16 +10,16 @@ Der Sourcecode des PBA6-BSP wird auf Github verwaltet: <a href="https://github.c
 ## Inhalt BSP
 Der entpackte Ordner enthält nun folgende Unterordner und Dateien:
 
-Ordner / Datei	| Inhalt
----------------	| ---------------------------------------
-docs			| Ordner mit der HTML-Dokumentation des Sourcecodes
-doxygen			| Ordner mit allen benötigten Dateien für Doxygen --> kann gelöscht werden
-example			| MPLABX-Projekt Hardwaretestsoftware
-inc 			| Include-Files des BSP
-src 			| Source-Files des BSP
-.gitignore		| Ignorierte Files der Versionsverwaltung --> kann gelöscht werden
-LICENSE.md		| Lizenz --> Bitte durchlesen
-README.md		| Rohdaten der Anleitung --> kann gelöscht werden
+Ordner / Datei  | Inhalt
+--------------- | ---------------------------------------
+docs            | Ordner mit der HTML-Dokumentation des Sourcecodes
+doxygen         | Ordner mit allen benötigten Dateien für Doxygen --> kann gelöscht werden
+example         | MPLABX-Projekt Hardwaretestsoftware
+inc             | Include-Files des BSP
+src             | Source-Files des BSP
+.gitignore      | Ignorierte Files der Versionsverwaltung --> kann gelöscht werden
+LICENSE.md      | Lizenz --> Bitte durchlesen
+README.md       | Rohdaten der Anleitung --> kann gelöscht werden
 
 
 ## Einbinden des BSP in ein MPLABX Projekt
@@ -45,21 +45,21 @@ das BSP auf die Bedürfnisse anpassen.
 
 #define PBA6/**<Auskommentieren, falls nicht PBA6 verwendet wird*/
 
-#define	USE_ADC_LIBRARY         /**< ADC-Support Funktionen*/
+#define USE_ADC_LIBRARY         /**< ADC-Support Funktionen*/
 
-#define	USE_LCD_LIBRARY         /**< LCD DOGM162 Funktionen*/
+#define USE_LCD_LIBRARY         /**< LCD DOGM162 Funktionen*/
 
-#define	USE_UART_LIBRARY        /**< UART Funktionen*/
+#define USE_UART_LIBRARY        /**< UART Funktionen*/
 
-#define	USE_I2C_LIBRARY         /**< I2C Funktionen*/
+#define USE_I2C_LIBRARY         /**< I2C Funktionen*/
 
-#define	USE_LM75_LIBRARY        /**< Ansteuerung I2C-Temperatursensor*/
+#define USE_LM75_LIBRARY        /**< Ansteuerung I2C-Temperatursensor*/
 
 #define USE_EEPROM_LIBRARY      /**< Verwendung internes EEPROM*/
 
 #define USE_HELPERS_LIBRARY     /**< Nützliche Makros und Funktionen*/
 
-#define USE_INTERRUPT_LIBRARY	/**< Globaler Interrupt-Handler*/
+#define USE_INTERRUPT_LIBRARY   /**< Globaler Interrupt-Handler*/
 
 #define USE_LOOPDELAY_LIBRARY   /**< Timerbasiertes Delay*/
 
@@ -68,8 +68,8 @@ das BSP auf die Bedürfnisse anpassen.
 #define USE_MENU_LIBRARY        /**< Funktionen Erstellung und Darstellung eines Menus auf LCD*/
 
 /*Auswahl Standard-Output für printf-Funktion*/
-#define STDOUT_LCD	    true    /**< Ausgabe printf auf LCD*/
-//#define STDOUT_UART	true    /**< Ausgabe printf auf UART-Schnittstelle*/
+#define STDOUT_LCD      true    /**< Ausgabe printf auf LCD*/
+//#define STDOUT_UART   true    /**< Ausgabe printf auf UART-Schnittstelle*/
  ```
 ## Interrupt-Konfiguration
 Zur Konfiguration muss die Header-Datei ```PBA_Interrupts.h ``` editiert werden.
@@ -102,10 +102,10 @@ Zum Initialisieren der Hardware muss die Funktion ```PBA_Init();``` aufgerufen w
 #include "../inc/PBA_config.h"
 void main(void)
 {
-    PBA_Init();		/* Initialisieren der Hardware */
+    PBA_Init();     /* Initialisieren der Hardware */
     while(1)
     {
-					/*My Code*/
+                    /*My Code*/
     }
 }
   ```
@@ -122,12 +122,12 @@ die angegebene Zykluszeit dauert.
 #include "../inc/PBA_config.h"
 void main(void)
 {
-    PBA_Init();				/*Initialisieren der Hardware*/
-    LOOPDELAY_Init(10);		/*Loop-delay Init, loop-time=10ms*/
+    PBA_Init();             /*Initialisieren der Hardware*/
+    LOOPDELAY_Init(10);     /*Loop-delay Init, loop-time=10ms*/
     while(1)
     {
-        LOOPDELAY_Wait();	/*Zykluszeit 10ms*/
-        LED0^=1;			/*LED0 blinkt mit einer Frequenz von 50Hz*/
+        LOOPDELAY_Wait();   /*Zykluszeit 10ms*/
+        LED0^=1;            /*LED0 blinkt mit einer Frequenz von 50Hz*/
     }
 }
   ```
@@ -137,12 +137,12 @@ void main(void)
 Die Event-Library bietet die Möglichkeit mit verschiedenen Events zu arbeiten.
 Folgende Events sind definiert:
 
-Eventname				| Funktion
-----------------------	| ---------------------------------------
-posEdge					| Abfragen einer positiven Tasterflanke
-negEdge					| Abfragen einer negativen Tasterflanke
-ActiveUntilMS(time) 	| Nach dem ersten Aufruf nur während der angegebenen Zeit aktiv
-TimeoutMS(time) 		| Nach dem ersten Aufruf immer nach der angegebenen Zeit aktiv
+Eventname               | Funktion
+----------------------  | ---------------------------------------
+posEdge                 | Abfragen einer positiven Tasterflanke
+negEdge                 | Abfragen einer negativen Tasterflanke
+ActiveUntilMS(time)     | Nach dem ersten Aufruf nur während der angegebenen Zeit aktiv
+TimeoutMS(time)         | Nach dem ersten Aufruf immer nach der angegebenen Zeit aktiv
 
 Zur Initialisierung der Bibliothek wird die Funktion ```void EVENTS_Init(void *p_state,events_t *p_events);``` aufgerufen. Der Übergabeparameter ```void *p_state``` ist der Pointer auf die in einer Aufzählung (enum) definierten states.
 Der zweite Parameter ist der Pointer auf eine Struktur vom Type events_t. Über diese Struktur können Events erstellt und abgefragt werden.
@@ -153,64 +153,64 @@ Zum detektieren der Tasterflanken muss die Funktion ```EVENTS_Update(void);``` z
 #include "../inc/PBA_config.h"
 
 
-#define AUS			0
-#define EIN			1
+#define AUS         0
+#define EIN         1
 
-#define LEDANZEIGE		LATD
+#define LEDANZEIGE      LATD
 
-enum {ST_TIMEOUT,ACTIVE_UNTIL, ST_POSEDGE_NEGEDGE}state=ST_TIMEOUT;	/*Aufzählung aller Zustände*/
+enum {ST_TIMEOUT,ACTIVE_UNTIL, ST_POSEDGE_NEGEDGE}state=ST_TIMEOUT; /*Aufzählung aller Zustände*/
 
-events_t events;					/*Event-Struktur*/
+events_t events;                    /*Event-Struktur*/
 
 void main(void)
 {
 
-	PBA_Init();						/*Initialisierung Hardware*/
-	LOOPDELAY_Init(10);				/*Initialsierung loop-delay*/
-	EVENTS_Init(&state,&events); 	/*Initialisierung Events*/
+    PBA_Init();                     /*Initialisierung Hardware*/
+    LOOPDELAY_Init(10);             /*Initialsierung loop-delay*/
+    EVENTS_Init(&state,&events);    /*Initialisierung Events*/
 
-	LED0=EIN;
-	while(1)
-	{
-		LOOPDELAY_Wait();			/*Zykluszeit 10ms*/
-		EVENTS_Update();			/*Events aktualisieren*/
-		switch(state)
-		{
-			case ST_TIMEOUT:
-				if(events.TimeoutMS(3000))	/*LED0 leuchtet während 3 Sekunden*/
-				{
-					LED0=0;
-					state=ST_ACTIVE_UNTIL;
-				}
-				break;
-			case ST_ACTIVE_UNTIL:
-				if(events.ActiveUntilMS(2000))
-				{
-					if(events.TimeoutMS(100))
-					{
-						LED0^=1;			/*LED0 blinkt mit 5Hz für 2s*/
-					}
-				}
-				else
-				{
-					LED0=1;
-					state=ST_POSEDGE_NEGEDGE;
-				}
-				break;
-			case ST_POSEDGE_NEGEDGE:
-				if(events.posEdge.switch0)	/*Bei jeder Tasterbetätigung wird die */
-				{							/*Ledanzeige um 1 inkrementiert*/
-					LEDANZEIGE++;
-				}
+    LED0=EIN;
+    while(1)
+    {
+        LOOPDELAY_Wait();           /*Zykluszeit 10ms*/
+        EVENTS_Update();            /*Events aktualisieren*/
+        switch(state)
+        {
+            case ST_TIMEOUT:
+                if(events.TimeoutMS(3000))  /*LED0 leuchtet während 3 Sekunden*/
+                {
+                    LED0=0;
+                    state=ST_ACTIVE_UNTIL;
+                }
+                break;
+            case ST_ACTIVE_UNTIL:
+                if(events.ActiveUntilMS(2000))
+                {
+                    if(events.TimeoutMS(100))
+                    {
+                        LED0^=1;            /*LED0 blinkt mit 5Hz für 2s*/
+                    }
+                }
+                else
+                {
+                    LED0=1;
+                    state=ST_POSEDGE_NEGEDGE;
+                }
+                break;
+            case ST_POSEDGE_NEGEDGE:
+                if(events.posEdge.switch0)  /*Bei jeder Tasterbetätigung wird die */
+                {                           /*Ledanzeige um 1 inkrementiert*/
+                    LEDANZEIGE++;
+                }
 
-				if(events.negEdge.switch7)	/*Beim loslassen des Tasters */
-				{
-					LEDANZEIGE=1;			/*zurücksetzen der Anzeige*/
-					state=ST_TIMEOUT;		/*Rückkehr zum 1. Zustand*/
-				}
-				break;
-		}
-	}
+                if(events.negEdge.switch7)  /*Beim loslassen des Tasters */
+                {
+                    LEDANZEIGE=1;           /*zurücksetzen der Anzeige*/
+                    state=ST_TIMEOUT;       /*Rückkehr zum 1. Zustand*/
+                }
+                break;
+        }
+    }
 }
 ```
 

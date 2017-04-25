@@ -2,9 +2,9 @@
  * @defgroup PBA_EEPROM
  * @{
  *******************************************************************************
- * @file			PBA_driver_eeprom.h
- * @brief			EEPROM-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_driver_eeprom.h
+ * @brief           EEPROM-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright

@@ -2,9 +2,9 @@
  * @addtogroup PBA_HELPERS
  * @{
  *******************************************************************************
- * @file			PBA_helpers.h
- * @brief			Helper-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_helpers.h
+ * @brief           Helper-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -46,28 +46,28 @@
  * @param reg Datenbyte
  * @param bitNumber Bitnummer
  */
-    #define BIT_CLEAR( reg, bitNumber )	((reg) &= ~(1 << (bitNumber)))
+    #define BIT_CLEAR( reg, bitNumber ) ((reg) &= ~(1 << (bitNumber)))
 
 /**
  * @brief Setzt ein bestimmtes Bit in einem Byte.
  * @param reg Datenbyte
  * @param bitNumber Bitnummer
  */
-    #define BIT_SET( reg, bitNumber )		((reg) |= (1 << (bitNumber)))
+    #define BIT_SET( reg, bitNumber )       ((reg) |= (1 << (bitNumber)))
 
 /**
  * @brief Wechselt den Zustand ein bestimmtes Bits in einem Byte.
  * @param reg Datenbyte
  * @param bitNumber Bitnummer
  */
-    #define BIT_TOGGLE( reg, bitNumber )	((reg) ^= (1 << (bitNumber)))
+    #define BIT_TOGGLE( reg, bitNumber )    ((reg) ^= (1 << (bitNumber)))
 
 /**
  * @brief Testet ein bestimmtes Bit in einem Byte und retourniert Zustand.
  * @param reg Datenbyte
  * @param bitNumber Bitnummer
  */
-    #define BIT_TEST( reg, bitNumber )	(((reg) & (1 << (bitNumber)))>0)
+    #define BIT_TEST( reg, bitNumber )  (((reg) & (1 << (bitNumber)))>0)
 
 
 /******************** Prototypen Helper-Funktionen ****************************/

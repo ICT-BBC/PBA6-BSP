@@ -2,9 +2,9 @@
  * @addtogroup PBA_EVENTS
  * @{
  *******************************************************************************
- * @file			PBA_events.h
- * @brief			Events-Library für PBA4/5/6
- * @author			ICT Berufsbildungscenter AG
+ * @file            PBA_events.h
+ * @brief           Events-Library für PBA4/5/6
+ * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  * 
  * @copyright
@@ -62,24 +62,24 @@ typedef struct
 {
     union
     {
-		uint16_t valueEdge;	
-		struct
-		{
-			tasterByte_t posEdge;		/**< Flags Taster positive Flanken*/
-			tasterByte_t negEdge;		/**< Flags Taster negative Flanken*/
-		};
+        uint16_t valueEdge; 
+        struct
+        {
+            tasterByte_t posEdge;       /**< Flags Taster positive Flanken*/
+            tasterByte_t negEdge;       /**< Flags Taster negative Flanken*/
+        };
     };
-	union
-	{
-		uint16_t valuePressed;
-		struct
-		{
-			tasterByte_t pressed500ms;	/**< Flags Taster min. 500ms gedrückt*/
-			tasterByte_t pressed1000ms;	/**< Flags Taster min. 1s gedrückt*/
-		};
-	};
-    uint8_t (* TimeoutMS)(uint16_t);		/**< Starten/Abrufen Timeout-Events*/
-    uint8_t (* ActiveUntilMS)(uint16_t);	/**< Starten/Abrufen Active-Until-Events*/
+    union
+    {
+        uint16_t valuePressed;
+        struct
+        {
+            tasterByte_t pressed500ms;  /**< Flags Taster min. 500ms gedrückt*/
+            tasterByte_t pressed1000ms; /**< Flags Taster min. 1s gedrückt*/
+        };
+    };
+    uint8_t (* TimeoutMS)(uint16_t);        /**< Starten/Abrufen Timeout-Events*/
+    uint8_t (* ActiveUntilMS)(uint16_t);    /**< Starten/Abrufen Active-Until-Events*/
 } events_t;
 
 
