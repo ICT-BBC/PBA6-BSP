@@ -5,9 +5,10 @@
  * @file		PBA6_hardwaretest.c
  * @brief		Hardwaretestsoftware für PIC Board Advanced 6
  * @author		ICT Berufsbildungscenter AG
- * @version		2.0.0
+ * @version		2.0.1
  * @date		23.01.2017: Komplette Überarbeitung, Umsetzung als FSM
  *							Implementierung aller Library-Features
+ * @date		25.04.2047:	SRF Zugriffe geändert (Bitfelder), fix Intro
  *******************************************************************************
  * 
  * @copyright
@@ -144,14 +145,14 @@ void main(void)
 		}
 		
 	}
-	PEIE = 1;											/*Peripherie-Interrupts akivieren*/
-	GIE = 1;											/*Globale Interrupts akivieren*/
+	INTCONbits.PEIE = 1;								/*Peripherie-Interrupts akivieren*/
+	INTCONbits.GIE = 1;									/*Globale Interrupts akivieren*/
 	
 	if(playIntro_g)										/*Falls Intro aktiviert*/
 	{
-		Beep(4000,40);									/*Start-Tonausgabe*/
+		Beep(4000,80);									/*Start-Tonausgabe*/
 		DelayMS(50);
-		Beep(4000,80);
+		Beep(4000,160);
 		printf("\fPIC Board Adv. 6\n  Hardwaretest  ");	/*Start-LCD-Ausgabe während 1s*/
 		DelayMS(1000);
 	}
@@ -202,7 +203,7 @@ void main(void)
 				UART_WriteLineRom("*       Hardware-Testsoftware V7.1.0       *");
 				UART_WriteLineRom("********************************************");
 				UART_PutsRom("\nBitte Text eingeben und mit Enter bestaetigen: ");
-				RCIE = 1;											/*Receive Interrupt einschalten*/
+				PIE1bits.RCIE = 1;									/*Receive Interrupt einschalten*/
 				state=ST_UART;
 			}
 			if(events_g.posEdge.switch5)							/*Temperatursensor Test*/
@@ -315,7 +316,7 @@ void main(void)
 				UART_WriteLineRom("* UART-Test wurde durch Benutzer beendet.  *");
 				UART_WriteLineRom("* Auf Wiedersehen!                         *");
 				UART_WriteLineRom("********************************************");
-				RCIE = 0;										/*Receive Interrupt ausschalten*/
+				PIE1bits.RCIE = 0;								/*Receive Interrupt ausschalten*/
 				printf("\f  Test wählen   \n(Schalter 0..5) ");	/*Übersicht*/
 				state=ST_AUSWAHL;	
 			}
@@ -378,7 +379,7 @@ inline void  ISR_UartRx(void)
 {
 	static uint8_t len=0;				/*Anzahl empfangene Zeichen*/
 	uint8_t c;							/*Aktuell eingelesenes Zeichen*/
-	while(RCIF)							/*Zeichen im Buffer*/
+	while(PIR1bits.RCIF)				/*Zeichen im Buffer*/
 	{
 		c=UART_Getc();					/*Zeichen einlesen*/
 		if(8==c)					 	/*Wenn ein Backspace empfangen wurde*/

@@ -57,12 +57,7 @@
  *@brief Berechnung Taktgenerator
  */
 /*Berechnung Teilerwert für den Baudrate-Generator*/
-#if defined(_16F877A)||defined(_16F874A)||defined(_16F877)||defined(_16F874)
-	#define SPBRG_VAL ((uint16_t)(_XTAL_FREQ/(64UL * UART_BAUD) -1))	
-#elif defined(_16F887)||defined(_16F884)||defined(_16F1787)
-	/*Berechnung Teilerwert für den Baudrate-Generator*/
-	#define SPBRG_VAL ((uint16_t)(_XTAL_FREQ/(4UL * UART_BAUD) -1)) 
-#endif
+#define SPBRG_VAL ((uint16_t)(_XTAL_FREQ/(4UL * UART_BAUD) -1)) 
 
 /**
 * @brief Initialisierung der Schnittstelle. 
@@ -73,13 +68,9 @@ void UART_Init(void)
 	TXSTA=0x20;
 	RCSTA=0x90;
 	SPBRG=(uint8_t)SPBRG_VAL;				/*Baudrate (untere 8Bit)*/
-#if defined(_16F877A)||defined(_16F874A)||defined(_16F877)||defined(_16F874)
-	BRGH=0;
-#elif defined(_16F1787)||defined(_16F887)||defined(_16F884)
 	SPBRGH=SPBRG_VAL>>8;				/*Baudrate (obere 8Bit)*/
-	BRGH=1;
-	BRG16=1;
-#endif
+	TX1STAbits.BRGH = 1;
+	BAUD1CONbits.BRG16 = 1;
 }
 
 /**
@@ -88,8 +79,9 @@ void UART_Init(void)
  */
 uint8_t UART_Getc(void)
 {
-	CREN=0; CREN=1;						/*clear OERR-Overflow-Error-Bit*/
-	while(!RCIF);						/*Warten auf Empfangs-Interrupt-Flag*/
+	RC1STAbits.CREN = 0;
+	RC1STAbits.CREN = 1;				/*clear OERR-Overflow-Error-Bit*/
+	while(!PIR1bits.RCIF);				/*Warten auf Empfangs-Interrupt-Flag*/
 	return RCREG;						/*Empfangens Byte zurückgeben*/
 }
 
@@ -102,11 +94,11 @@ void UART_Putc(uint8_t c)
 	if(c=='\n')							/*Wenn Zeilenumbruch gefordert*/
 	{
 			TXREG='\n'; 				/*Line Feed in Senderegister schreiben*/
-			while(!TRMT); 				/*Warten bis Zeichen gesendet*/
+			while(!TX1STAbits.TRMT); 	/*Warten bis Zeichen gesendet*/
 			c='\r';						/*nächstes Zeichen Carriage Return */
 	}
 	TXREG=c;							/*Zeichen in Senderegister schreiben*/
-	while(!TRMT);						/*Warten bis Zeichen gesendet*/
+	while(!TX1STAbits.TRMT);			/*Warten bis Zeichen gesendet*/
 }
 
 /**

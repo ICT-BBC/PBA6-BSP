@@ -2,7 +2,7 @@
 ## Download des PBA6 BSP
 Der Sourcecode des PBA6-BSP wird auf Github verwaltet: <a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank"> https://github.com/ICT-BBC/PBA6-BSP </a>
 
-1. Öffne die Github-Seite des PBA6-BSP
+1. Öffne die <a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank"> Github-Seite des PBA6-BSP</a>
 2. Klicke auf den Button "Clone or Download" auf der rechten Seite, über der Ordnerübersicht
 3. Lade das Projekt als Zip-Datei herunter
 4. Entpacke die Zip-Datei
@@ -13,6 +13,7 @@ Der entpackte Ordner enthält nun folgende Unterordner und Dateien:
 Ordner / Datei	| Inhalt
 ---------------	| ---------------------------------------
 docs			| Ordner mit der HTML-Dokumentation des Sourcecodes
+doxygen			| Ordner mit allen benötigten Dateien für Doxygen --> kann gelöscht werden
 example			| MPLABX-Projekt Hardwaretestsoftware
 inc 			| Include-Files des BSP
 src 			| Source-Files des BSP
@@ -69,6 +70,30 @@ das BSP auf die Bedürfnisse anpassen.
 /*Auswahl Standard-Output für printf-Funktion*/
 #define STDOUT_LCD	    true    /**< Ausgabe printf auf LCD*/
 //#define STDOUT_UART	true    /**< Ausgabe printf auf UART-Schnittstelle*/
+ ```
+## Interrupt-Konfiguration
+Zur Konfiguration muss die Header-Datei ```PBA_Interrupts.h ``` editiert werden.
+Der Mikrocontroller verfügt nur über einen Interrupt-Vektor. Die globale Interrupt-Routine
+ist in der Datei ```PBA_Interrupts.c ``` umgesetzt. Für die wichtigsten Peripherie-
+Interrupts sind Callback-Funktionen deklariert. Durch ein- oder auskommentieren der
+defines im Abschnitt "Interrupt-Konfiguration" lassen sich die einzelnen Funktionen
+aktivieren oder deaktivieren. Ist ein Interrupt aktiviert, muss die
+Funktion gemäss Deklaration implementiert werden. 
+  ```C
+/******* Interrupt Konfiguration **********************************************/
+
+#define TMR0_INT
+#define TMR1_INT
+#define TMR2_INT
+#define USART_RC_INT
+#define EXT_INT
+
+/******* Interrupt-Callback-Funktionen ****************************************/
+extern inline void ISR_Timer0(void);
+extern inline void ISR_Timer1(void);
+extern inline void ISR_Timer2(void);
+extern inline void ISR_UartRx(void);
+extern inline void ISR_Ext(void);
  ```
 ## Hardware initialisieren
 Zum Initialisieren der Hardware muss die Funktion ```PBA_Init();``` aufgerufen werden.

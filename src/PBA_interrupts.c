@@ -42,11 +42,11 @@
 /**
  * @brief Globale Interruptroutine.
  */
-void interrupt global_interrupt(void)
+void interrupt ISR_Global(void)
 {
 	/******* Timer 0 Interrupt **************************************************/
 	#if defined (TMR0_INT)||defined(LOOPDELAY_USE_TIMER0)
-	if(T0IF && T0IE)
+	if(INTCONbits.T0IF && INTCONbits.T0IE)
 	{
 		#if defined (TMR0_INT)
 			ISR_Timer0();
@@ -62,9 +62,9 @@ void interrupt global_interrupt(void)
 	#endif
 	/******* Timer 1 Interrupt **************************************************/
 	#if defined (TMR1_INT)|| defined (LOOPDELAY_USE_TIMER1)
-	if(TMR1IF && TMR1IE)
+	if(PIR1bits.TMR1IF && PIE1bits.TMR1IE)
 	{
-		TMR1IF=0;
+		PIR1bits.TMR1IF=0;
 		#if defined (TMR1_INT)
 			ISR_Timer1();
 		#endif
@@ -80,9 +80,9 @@ void interrupt global_interrupt(void)
 
 	/******* Timer 2 Interrupt **************************************************/
 	#if defined (TMR2_INT)||defined (LOOPDELAY_USE_TIMER2)
-	if(TMR2IF && TMR2IE)
+	if(PIR1bits.TMR2IF && PIE1bits.TMR2IE)
 	{
-		TMR2IF=0;
+		PIR1bits.TMR2IF=0;
 		#if defined (TMR2_INT)
 			ISR_Timer2();
 		#endif
@@ -97,7 +97,7 @@ void interrupt global_interrupt(void)
 
 	/******* USART-Receive-Interrupt ********************************************/
 	#if defined (USART_RC_INT)
-	if(RCIE && RCIF)
+	if(PIR1bits.RCIF && PIE1bits.RCIE)
 	{
 		ISR_UartRx();
 	}
@@ -105,10 +105,10 @@ void interrupt global_interrupt(void)
 
 	/******* Interrupt an ext. Interrupt-Pin (PORTB0) ***************************/
 	#if defined (EXT_INT)
-	if(INTF && INTE)
+	if(INTCONbits.INTF && INTCONbits.INTE)
 	{
 		ISR_Ext();
-		INTF=0;
+		INTCONbits.INTF=0;
 	}
 	#endif
 }

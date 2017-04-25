@@ -41,31 +41,21 @@
 
 /*Display-Pins*/
 
-#if defined (__16F1787)
 /**
  * @name Display Pins
  * Zuordnung der Pins zur Ansteuerung des LCD
  * @{
  */
-#define 	LCD_D4 			LATE2
-#define 	LCD_D5 			LATA2
-#define 	LCD_D6 			LATA4
-#define 	LCD_D7 			LATA5
-#define 	LCD_RW 			LATC0
-#define 	LCD_EN 			LATC1
-#define 	LCD_RS 			LATC2
+#define 	LCD_D4 			LATEbits.LATE2
+#define 	LCD_D5 			LATAbits.LATA2
+#define 	LCD_D6 			LATAbits.LATA4
+#define 	LCD_D7 			LATAbits.LATA5
+#define 	LCD_RW 			LATCbits.LATC0
+#define 	LCD_EN 			LATCbits.LATC1
+#define 	LCD_RS 			LATCbits.LATC2
 /**
  * @}
  */
-#else
-#define 	LCD_D4 			RE2
-#define 	LCD_D5 			RA2
-#define 	LCD_D6 			RA4
-#define 	LCD_D7 			RA5
-#define 	LCD_RW 			RC0
-#define 	LCD_EN 			RC1
-#define 	LCD_RS 			RC2
-#endif
 
 /*Defines für Curson-Funktion (dispcurs(mode);)*/
 /**

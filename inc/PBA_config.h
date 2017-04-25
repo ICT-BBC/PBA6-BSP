@@ -5,7 +5,7 @@
  * @file		PBA_config.h
  * @brief		Konfiguration des Board-Support-Packages für PBA4/5/6
  * @author		ICT Berufsbildungscenter AG
- * @version		1.2.0
+ * @version		1.2.1
  * @date		06.12.2013:	Aufbau PBA6-BSP mit Basis PBA5-BSP,
  *							Unterstützung von PIC16F1787, Anpassungen
  *							für XC8-Compiler, Interrupt-Library
@@ -19,6 +19,9 @@
  *                          library wird immer benötigt, Events in eigener
  *                          Bibliothek ohne loop-delay	
  * @date		07.02.2017	Renaming, Fehlermeldungen optimiert
+ * @date		25.04.2017	Alle SFR-Zugriffe geändert (Bitfelder), 
+ *							Support für alle PICs ausser PIC16F1787 entfernt, 
+ *							fix Beep-Funktion
  * 
  * @attention	PBA_Init zur Initialiserung und Konfigurations des PBAs.				
  *				Um die Libraries zu verwenden, kopieren Sie die beiden Ordner 
@@ -110,7 +113,6 @@
 	/******************** Compiler-Includes, Clock Definiton **********************************/
 	#include <xc.h>
 	
-	#if defined (_16F1787)
 	/**
 	 * @addtogroup DEF_DELAY Taktkonfiguration für Delay
 	 * Zur Verwendung der Delays muss die Taktfrequenz bekannt sein
@@ -120,10 +122,8 @@
 	/**
 	 * @}
 	*/
-	#else
-		#define _XTAL_FREQ 20000000			/* Alle Anderen 20MHz*/
-	#endif
-	#pragma jis								/* JIS character handling aktivieren (ä,ö,ü), für XC-Compiler*/
+
+	#pragma jis								/* JIS character handling aktivieren (ä,ö,ü) für XC-Compiler*/
 	
 	
 	/******************** Schalter/Taster-, LEDs- und Peripherie-Ports **************************/
@@ -132,18 +132,18 @@
 	* Ermöglichen Zugriff auf die Taster
 	* @{
 	*/
-	#define		TASTER0		RB0
-	#define		TASTER1		RB1
-	#define		TASTER2 	RB2
-	#define		TASTER3		RB3
-	#define		TASTER4		RB4
-	#define		TASTER5		RB5
-	#define		TASTER6		RB6
-	#define		TASTER7		RB7
+	#define		TASTER0		PORTBbits.RB0
+	#define		TASTER1		PORTBbits.RB1
+	#define		TASTER2 	PORTBbits.RB2
+	#define		TASTER3		PORTBbits.RB3
+	#define		TASTER4		PORTBbits.RB4
+	#define		TASTER5		PORTBbits.RB5
+	#define		TASTER6		PORTBbits.RB6
+	#define		TASTER7		PORTBbits.RB7
 	/**
 	 * @}
 	 */
-#if defined (_16F1787)
+
 	/**
 	* @addtogroup DEF_LED_SUMMER Definition LED-und Summer-Bits
 	* Ermöglichen Zugriff auf LEDs und Summer.
@@ -152,43 +152,25 @@
 	* um Fehler bei Bitmanipulationen zu vermeiden
 	* @{
 	*/
-	#define		LED0		LATD0
-	#define		LED1		LATD1
-	#define		LED2 		LATD2
-	#define		LED3		LATD3
-	#define		LED4		LATD4
-	#define		LED5		LATD5
-	#define		LED6		LATD6
-	#define		LED7		LATD7
-	#define		LED8		LATE0
-	#define		LED9		LATE1
+	#define		LED0		LATDbits.LATD0
+	#define		LED1		LATDbits.LATD1
+	#define		LED2 		LATDbits.LATD2
+	#define		LED3		LATDbits.LATD3
+	#define		LED4		LATDbits.LATD4
+	#define		LED5		LATDbits.LATD5
+	#define		LED6		LATDbits.LATD6
+	#define		LED7		LATDbits.LATD7
+	#define		LED8		LATEbits.LATE0
+	#define		LED9		LATEbits.LATE1
 
 	#define		LEDS_D		LATD
 	#define		LEDS_E		LATE
 
-	#define		SUMMER		LATC5
+	#define		SUMMER		LATCbits.LATC5
 	/**
 	 * @}
 	 */
-#else
-	#define		LED0		RD0
-	#define		LED1		RD1
-	#define		LED2 		RD2
-	#define		LED3		RD3
-	#define		LED4		RD4
-	#define		LED5		RD5
-	#define		LED6		RD6
-	#define		LED7		RD7
-	#define		LED8		RE0
-	#define		LED9		RE1
 
-	#define		LEDS_D		PORTD
-	#define		LEDS_E		PORTE
-
-	#define		SUMMER		RC5
-
-#endif
-	
 /******************** Einbinden der Bibliotheken*******************************/
 	#include <stdio.h>				/**<IO-functions (printf, scanf,...)*/
 	#include <string.h>				/**<String-functions*/
@@ -268,7 +250,7 @@
 	#error Zur Verwendung der LCD-Library muss die Helpers-Library eingebunden sein (PBA_config.h
 	#endif
 	/************** Überprüfung ob der ausgewählte PIC unterstützt wird vom Board-support Package **********/
-	#if !defined(_16F1787) && !defined(_16F874A) && !defined(_16F877A) && !defined(_16F887) && !defined(_16F884)
+	#if !defined(_16F1787)
 		/*Kommentieren sie die Fehlermeldung aus, um das Board-Support Package mit einem nicht unterstützten*/
 		/*Mikrocontroller zu nutzen.*/
 		/*Vorsicht: Einige Bibliotheken funktionieren unter Umständen nicht!!*/

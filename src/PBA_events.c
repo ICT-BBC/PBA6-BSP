@@ -165,12 +165,12 @@ static uint8_t EVENTS_TimeoutHandler(uint16_t timeoutMS)
 			for(i=0; i<MAXTIMEOUTS && timeoutValues.active[i]>0; i++);
 			if(i==MAXTIMEOUTS) return 0xFF;				/*Rückgabe: Fehler keine Timeouts mehr verfügbar*/
 			/*neues Timeout speichern*/
-			GIE=0;										/*Interrupts ausschalten (counter absichern)*/
+			INTCONbits.GIE=0;							/*Interrupts ausschalten (counter absichern)*/
 			timeoutValues.active[i] = 1;
 			timeoutValues.eventOccured[i]=0;
 			timeoutValues.ms[i] = timeoutMS;
 			timeoutValues.end[i] = timeoutCounter+timeoutMS-2*loopDelayMS;
-			GIE=1;										/*Interrupts wieder einschalten*/
+			INTCONbits.GIE=1;							/*Interrupts wieder einschalten*/
 			return 0;									/*Rückgabe: Kein Timeoutereignis eingetreten*/
 		}
 		else											/*Timeout bereits vorhanden*/
@@ -204,12 +204,12 @@ static uint8_t EVENTS_ActiveUntilHandler(uint16_t activeUntilMS)
 		for(i=0; i<MAXTIMEOUTS && timeoutValues.active[i]>0; i++);
 		if(i==MAXTIMEOUTS) return 0xFF;				/*Rückgabe: Fehler keine Timeouts mehr verfügbar*/
 		/*neues Timeout speichern*/
-		GIE=0;										/*Interrupts ausschalten (counter absichern)*/
+		INTCONbits.GIE=0;							/*Interrupts ausschalten (counter absichern)*/
 		timeoutValues.active[i] = 1;
 		timeoutValues.eventOccured[i]=0;
 		timeoutValues.ms[i] = activeUntilMS;
 		timeoutValues.end[i] = timeoutCounter+activeUntilMS-loopDelayMS;
-		GIE=1;										/*Interrupts wieder einschalten*/
+		INTCONbits.GIE=1;							/*Interrupts wieder einschalten*/
 		return 1;									/*Rückgabe: Kein Timeoutereignis eingetreten*/
 	}
 	else											/*Timeout bereits vorhanden*/

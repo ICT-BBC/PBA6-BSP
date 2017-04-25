@@ -97,7 +97,7 @@ void Beep(uint16_t freqHZ,uint16_t durationMS) /*Ton auf dem Summer ausgeben (Pa
 	uint32_t periodCnt;
 	impulsTimeUS= 472500/freqHZ;				/*Implus-/Pausendauer in us mit Korrekturfaktor*/
 	durationUS=durationMS*939;					/*Tonlänge in us mit Korrekturfaktor*/
-	periodCnt=durationMS/(impulsTimeUS*2);		/*Anzahl Perioden ->  Tonlänge/(Impulsdauer*2)*/
+	periodCnt=durationUS/(impulsTimeUS*2);		/*Anzahl Perioden ->  Tonlänge/(Impulsdauer*2)*/
 	for(;periodCnt>0;periodCnt--)
 	{
 		impulsTimeCnt=0;

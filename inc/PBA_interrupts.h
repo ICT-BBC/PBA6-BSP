@@ -39,7 +39,7 @@
 #ifndef _PBA_INTERRUPTS_
 #define	_PBA_INTERRUPTS_
 
-/******* Definieren Sie, welche Interrupts aktiv sein sollen ********************/
+/******* Interrupt Konfiguration **********************************************/
 /**
  * @name Interrupt-Konfiguration
  * Interrupts- ein oder auskommentieren
@@ -56,7 +56,7 @@
  * @}
  */
 
-/******* Interrupt-Callback-Funktionen ******************************************/
+/******* Interrupt-Callback-Funktionen *****************************************/
 /**
  * @name Interrupt-Callback-Funktionen
  * Implementation in eigenem Code

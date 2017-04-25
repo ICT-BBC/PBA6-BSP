@@ -218,7 +218,7 @@ void LCD_Init(displayVoltage_t displayVoltage)
     LCD_RS=0;							/*LCD interpretiert nächstes Zeichen als Befehl */
     LCD_RW=0;							/*Auf LCD schreiben...*/
     LCD_SEND_COMMAND(0b00000011);		/*Function Set 8-Bit*/
-    DelayMS(2);						/*Pause gemäss init-Ablauf (siehe Datenblatt)*/
+    DelayMS(2);							/*Pause gemäss init-Ablauf (siehe Datenblatt)*/
     LCD_SEND_COMMAND(0b00110011);		/*Function Set 8-Bit (2x)*/
     LCD_SEND_COMMAND(0b00100010);		/*Function Set 4-Bit-Modus*/
     LCD_SEND_COMMAND(0b00101001);		/*Function Set*/
@@ -239,7 +239,7 @@ void LCD_Init(displayVoltage_t displayVoltage)
     LCD_SEND_COMMAND(0b00101000);		/*Function Set*/
     LCD_SEND_COMMAND(0b00001100);		/*Display ON/OFF control*/
     LCD_SEND_COMMAND(0b00000001);		/*Display löschen / Cursor home*/
-    DelayMS(2);						/*max. Zeitbedarf des LCD-Clear-Befehls*/
+    DelayMS(2);							/*max. Zeitbedarf des LCD-Clear-Befehls*/
     LCD_SEND_COMMAND(0b00000110);		/*Cursor Auto-increment*/
     LCD_SEND_COMMAND(0b00101000);		/*Function Set*/
     LCD_SEND_COMMAND(0b00001100);		/*Display ON/OFF control*/

@@ -49,7 +49,6 @@
  *@} 
  */			
 
-#if defined (_16F1787)
 /**
  * @brief Setzt die gewünschten Pins als Analogeingänge. 
  * Bsp: \code ADC_SetAnalogANx(AN0|AN3|AN11); \endcode
@@ -63,7 +62,6 @@ ANSELB=pin>>16;
 ANSELD=pin>>8;
 ANSELE=(uint8_t) pin;
 }
-#endif
 
 /**
 * @brief Initialisiert den AD-Wandler mit den angegebenen Einstellungen.
@@ -72,21 +70,9 @@ ANSELE=(uint8_t) pin;
 */
 void ADC_Init(uint32_t settings)
 {
-#if defined (_16F1787)
-ADCON0=settings>>16;
-ADCON1=settings>>8;
-ADCON2=(uint8_t) settings;
-#endif
-#if defined(_16F877A)||defined(_16F874A)||defined(_16F877)||defined(_16F874)
-    ADCON0=settings>>8;
-    ADCON1=(uint8_t)settings;
-#endif	
-#if defined(_16F887)||defined(_16F884)
-    ADCON0=settings>>24;							/*Allgemeine Einstellungen ADC*/
-    ADCON1=settings>>16;							/*VREF- = VSS, VREF+=VDD*/
-    ANSELH= settings>>8;							/*Auswahl Analog/Digital-Ports*/
-    ANSEL =(uint8_t)settings;						/*Auswahl Analog/Digital-Ports*/
-#endif
+	ADCON0=settings>>16;
+	ADCON1=settings>>8;
+	ADCON2=(uint8_t) settings;
 }
 
 /**
@@ -96,18 +82,8 @@ ADCON2=(uint8_t) settings;
 */
 void ADC_SetChannel(uint8_t channel)
 {
-#if defined(_16F1787)
     ADCON0&=0x83;
     ADCON0|=channel<<2;
-#endif
-#if defined(_16F877A)||defined(_16F874A)||defined(_16F877)||defined(_16F874)	
-    ADCON0 &= 0xC7;
-    ADCON0 |= channel<<3;
-#endif
-#if defined(_16F887)||defined(_16F884)	
-    ADCON0 &= 0xC3;									/*Kanalauswahl löschen*/
-    ADCON0 |= channel<<2;							/*Kanalauswahl setzen*/
-#endif
     DelayUS(AQUISITION_TIME_US);					/*Aquisition-Time abwarten*/
 }
 
@@ -118,11 +94,10 @@ void ADC_SetChannel(uint8_t channel)
 uint16_t ADC_Read(void)
 {
     uint16_t result;
+	ADCON0bits.GO_nDONE = 1;						/*Wandlung starten (one shot)*/						
+    while(ADCON0bits.GO_nDONE);						/*Warten bis Wandlung abgeschlossen*/
 
-    GO_nDONE = 1;									/*Wandlung starten (one shot)*/
-    while(GO_nDONE);								/*Warten bis Wandlung abgeschlossen*/
-
-    result=(uint16_t)ADRESH<<8;					/*Resultat auslesen*/
+    result=(uint16_t)ADRESH<<8;						/*Resultat auslesen*/
     result|=ADRESL;
     return result;									/*Rückgabe des AD-Wertes*/
 }

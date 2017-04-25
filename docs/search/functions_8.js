@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pba_5finit',['PBA_Init',['../group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a',1,'PBA_config.c']]],
-  ['putch',['putch',['../group___p_b_a___c_o_n_f_i_g.html#ga929c76236c43415b855552513e902293',1,'PBA_config.c']]]
+  ['summeredit',['SummerEdit',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga770e2fedbf08d17745aa406fff4b2a47',1,'PBA6_hardwaretest.c']]]
 ];

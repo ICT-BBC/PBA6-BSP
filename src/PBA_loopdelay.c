@@ -46,7 +46,6 @@
 	#if defined(LOOPDELAY_USE_TIMER0)
 		#if _XTAL_FREQ <= 8000000
 			#define	TIMER0_RELOAD_VALUE	(0xFF-(_XTAL_FREQ/32000UL))+1
-			#define reset_timer0()	TMR0=(TIMER0_RELOAD_VALUE)
 		#else
 			#error _XTAL_FREQ Wert zu gross für Loop-Delay, wählen Sie ein anderes Timer-Modul oder eine kleinere Frequenz
 		#endif
@@ -54,9 +53,8 @@
 	#if defined(LOOPDELAY_USE_TIMER1)
 		#if _XTAL_FREQ >= 1000000
 			#define	TIMER1_RELOAD_VALUE	(0xFFFF-(_XTAL_FREQ/32000UL))+1
-			#define reset_timer1()	TMR1H=(TIMER1_RELOAD_VALUE)>>8; TMR1L=(TIMER1_RELOAD_VALUE) 
 		#else
-			# error _XTAL_FREQ WErt zu klein für Loop-Delay, wählen Sie ein anderes Timer-Modul oder eine grössere Frequenz
+			# error _XTAL_FREQ Wert zu klein für Loop-Delay, wählen Sie ein anderes Timer-Modul oder eine grössere Frequenz
 		#endif
 	#endif
 	#if defined(LOOPDELAY_USE_TIMER2)
@@ -82,7 +80,7 @@
 	{
 	#if defined(LOOPDELAY_USE_TIMER0)
 			/*Timer neu laden um genau 1kHz Interruptfrequenz zu erreichen*/
-			reset_timer0();
+			TMR0=TIMER0_RELOAD_VALUE;
 			/*Loop-Delay-Zähler inkrementieren (x1ms)*/
 			if(loopDelayCnt<MAX_LOOP_DELAY_MS)
 				loopDelayCnt++;
@@ -90,7 +88,8 @@
 	
 	#if defined(LOOPDELAY_USE_TIMER1)
 			/*Timer neu laden um genau 1kHz Interruptfrequenz zu erreichen*/
-			reset_timer1();
+			TMR1H=(TIMER1_RELOAD_VALUE)>>8;
+			TMR1L=(TIMER1_RELOAD_VALUE);
 			/*Loop-Delay-Zähler inkrementieren (x1ms)*/
 			if(loopDelayCnt<MAX_LOOP_DELAY_MS)
 				loopDelayCnt++;
@@ -130,17 +129,18 @@
 	{
 	loopDelayMS=loopDelayTimeMS;
 	#if defined(LOOPDELAY_USE_TIMER0)
-		OPTION &= 0xC0;								/*TIMER0-Bits im OPTION-Register löschen*/
-		OPTION |= 0b00000010;						/*TIMER0 einstellen (OPTION-Register) (Prescaler = 8)*/
-		reset_timer0();
-		T0IF 	= 0;								/*Timer0-Interrupt-Flag löschen*/
-		T0IE	= 1;								/*Timer0-Interrupt einschalten*/
+		OPTION_REG &= 0xC0;							/*TIMER0-Bits im OPTION-Register löschen*/
+		OPTION_REG |= 0b00000010;					/*TIMER0 einstellen (OPTION-Register) (Prescaler = 8)*/
+		TMR0=TIMER0_RELOAD_VALUE;
+		INTCONbits.T0IF = 0;						/*Timer0-Interrupt-Flag löschen*/
+		INTCONbits.T0IE	= 1;						/*Timer0-Interrupt einschalten*/
 	#endif
 	#if defined(LOOPDELAY_USE_TIMER1)
 		T1CON 	= 0b00110001;						/*Prescaler = 8, Timer on*/
-		reset_timer1();
-		TMR1IF 	= 0;								/*Timer1-Interrupt-Flag löschen*/
-		TMR1IE	= 1;								/*Timer1-Interrupt einschalten*/
+		TMR1H=(TIMER1_RELOAD_VALUE)>>8;
+		TMR1L=(TIMER1_RELOAD_VALUE);
+		PIR1bits.TMR1IF = 0;						/*Timer1-Interrupt-Flag löschen*/
+		PIE1bits.TMR1IE	= 1;						/*Timer1-Interrupt einschalten*/
 	#endif
 	#if defined(LOOPDELAY_USE_TIMER2)
 		#if _XTAL_FREQ>20000000
@@ -150,11 +150,11 @@
 		#endif
 		PR2	  	= TIMER2_PERIODE;					/*Timer2 Periode festlegen*/
 		TMR2	= 0;								/*Timer2-Register löschen*/
-		TMR2IF 	= 0;								/*Timer2-Interrupt-Flag löschen*/
-		TMR2IE	= 1;								/*Timer2-Interrupt einschalten*/
+		PIR1bits.TMR2IF = 0;						/*Timer2-Interrupt-Flag löschen*/
+		PIE1bits.TMR2IE	= 1;						/*Timer2-Interrupt einschalten*/
 	#endif
-		PEIE	= 1;								/*Peripherie-Interrupts einschalten*/
-		GIE		= 1;								/*Globale Interrupts einschalten*/
+		INTCONbits.PEIE	= 1;						/*Peripherie-Interrupts einschalten*/
+		INTCONbits.GIE	= 1;						/*Globale Interrupts einschalten*/
 	}
 #endif
 /**

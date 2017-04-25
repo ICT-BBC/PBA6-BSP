@@ -48,7 +48,6 @@
  */
 void EE_WriteByte(uint8_t eeAddr, uint8_t eeData)
 {
-	#if defined(_16F1787)
 	uint8_t GIEBitValue = 0;
 
 	EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to write*/
@@ -69,9 +68,6 @@ void EE_WriteByte(uint8_t eeAddr, uint8_t eeData)
 
 	EECON1bits.WREN = 0;		/* Disable writes*/
 	INTCONbits.GIE = GIEBitValue;
-	#else
-	#error EEPROM Biblitohekt steht nur für PIC16F1787 zur Verfügung
-	#endif
 }
 
 /**
@@ -81,7 +77,6 @@ void EE_WriteByte(uint8_t eeAddr, uint8_t eeData)
  */
 uint8_t EE_ReadByte(uint8_t eeAddr)
 {
-	#if defined (_16F1787)
 	EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to read*/
 	EECON1bits.CFGS = 0;		/* Deselect Configuration space*/
 	EECON1bits.EEPGD = 0;		/* Point to DATA memory*/
@@ -89,10 +84,6 @@ uint8_t EE_ReadByte(uint8_t eeAddr)
 	NOP();  /* NOPs may be required for latency at high frequencies*/
 	NOP();
 	return (EEDATL);
-	#else
-		return 0;
-	#error EEPROM Biblitohekt steht nur für PIC16F1787 zur Verfügung
-	#endif
 }
 
 #endif

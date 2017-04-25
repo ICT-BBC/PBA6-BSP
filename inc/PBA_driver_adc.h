@@ -41,7 +41,6 @@
 
 /* Konstanten für ADC_SetAnalogANx() bei Verwendung mit PIC16F1787*/
 
-#if defined(_16F1787)
 /**
  * @addtogroup ADC_KONSTANTEN ADC-Konstanten
  * @{
@@ -73,7 +72,6 @@
 /**
  * @}
  */
-#endif
 
 
 /* Konstanten für ADC_Init() bei Verwendung mit PIC16F1787*/
@@ -81,7 +79,6 @@
 Anwendungsbeispiele:
 	ADC_Init(ADC_CLOCK_DIV_32|VREFL_VSS|NEG_IN_REF|POS_IN_AN0);
 ****************************************************************************************************************/
-#if defined(_16F1787)
 /**
  * @addtogroup ADC_SETTINGS Einstellungen ADC PIC16F1787
  * Die folgenden Makros dienen zur Konfiguration des ADC.
@@ -204,88 +201,9 @@ Anwendungsbeispiele:
 /**
  * @}
  */
-#endif
 
-
-/* Konstanten für ADC_Init() bei Verwendung mit PIC16F877 oder 16F874:*/
-/***************************************************************************************************************
-Anwendungsbeispiele:
-	ADC_Init(ADC_CLOCK_INTERNAL | AN0 | AN1 | RESULT_R_JUST);	Interner Takt (2-6us), 2 Analog-Eingänge (AN0, AN1) Resultat rechtsbündig
-	ADC_Init(ADC_CLOCK_DIV_32 | ALL_ANALOG | RESULT_R_JUST);	Takt= fosc/32 und alle Eingänge Analog
-	ADC_Init(ADC_OFF | NO_ANALOGS);								ADC ausgeschaltet und alle Eingänge Digital IO
-****************************************************************************************************************/
-#if defined(_16F887)	|| defined(_16F884)
-
-	/*Taktauswahl (nur eine verwenden)*/
-	#define ADC_OFF					0x00000000	/* ADC off (power up default)*/
-	#define ADC_CLOCK_DIV_2			0x01000000	/* fosc/2 + ADC on*/
-	#define ADC_CLOCK_DIV_8			0x41000000	/* fosc/5 + ADC on*/
-	#define ADC_CLOCK_DIV_32		0x81000000	/* fosc/32 + ADC on*/
-	#define ADC_CLOCK_INTERNAL		0xC1000000	/* Internal 2-6us + ADC on*/
-	/*Restliche Konfiguration (es können eine oder mehrere Konfigurationen verwendet werden)*/
-	#define NO_ANALOGS				0x00000000	/* None*/
-	#define ALL_ANALOG				0x00003FFF	/* All Analog (power up default)*/
-	#define AN0						0x00000001	/* AN0 Analog*/
-	#define AN1						0x00000002	/* AN1 Analog*/
-	#define AN2						0x00000004	/* AN2 Analog*/
-	#define AN3						0x00000008	/* AN3 Analog*/
-	#define AN4						0x00000010	/* AN4 Analog*/
-	#define AN5						0x00000020	/* AN5 Analog*/
-	#define AN6						0x00000040	/* AN6 Analog*/
-	#define AN7						0x00000080	/* AN7 Analog*/
-	#define AN8						0x00000100	/* AN8 Analog*/
-	#define AN9						0x00000200	/* AN9 Analog*/
-	#define AN10					0x00000400	/* AN10 Analog*/
-	#define AN11					0x00000800	/* AN11 Analog*/
-	#define AN12					0x00001000	/* AN12 Analog*/
-	#define AN13					0x00002000	/* AN13 Analog*/
-	#define VREFL_VSS				0x00000000	/* VREF- on GND (power up default)*/
-	#define VREFL_AN3				0x00200000	/* VREF- on vref-pin*/
-	#define VREFH_VDD				0x00000000	/* VREF+ on VCC	(power up default)*/
-	#define VREFH_AN2				0x00100000	/* VREF+ on vref-pin*/
-	#define RESULT_L_JUST			0x00000000	/* Result left justified (power up default)*/
-	#define RESULT_R_JUST			0x00800000	/* Result right justified*/
-#endif
-
-
-/* Konstanten für adc_init() bei Verwendung mit PIC16F877/877A oder 16F874/874A:*/
-/***************************************************************************************************************
-Anwendungsbeispiele:
-	ADC_Init(ADC_CLOCK_INTERNAL | AN0_AN1_AN3);		Interner Takt (2-6us) und 3 Analog-Eingänge (AN0, AN1, AN3)
-	ADC_Init(ADC_CLOCK_DIV_32 | ALL_ANALOG);		Takt= fosc/32 und alle Eingänge Analog
-	ADC_Init(ADC_OFF | NO_ANALOGS);					ADC ausgeschaltet und alle Eingänge Digital IO
-****************************************************************************************************************/
-
-#if defined(_16F877A)	|| defined(_16F874A) || defined(_16F877) || defined(_16F874)
-	#define ADC_OFF									0x0080	/* ADC Off*/
-	#define ADC_CLOCK_DIV_2							0x0180	/* fosc/2*/
-	#define ADC_CLOCK_DIV_4							0x01C0	/* fosc/4*/
-	#define ADC_CLOCK_DIV_8							0x4180	/* fosc/5*/
-	#define ADC_CLOCK_DIV_16						0x41C0	/* fosc/16*/
-	#define ADC_CLOCK_DIV_32						0x8180	/* fosc/32*/
-	#define ADC_CLOCK_DIV_64						0x81C0	/* fosc/64*/
-	#define ADC_CLOCK_INTERNAL						0xC180	/* Internal 2-6us*/
-
-	#define NO_ANALOGS								0x0007	/* None*/
-	#define ALL_ANALOG								0x0000	/* A0 A1 A2 A3 A5 E0 E1 E2 */
-	#define AN0_AN1_AN2_AN4_AN5_AN6_AN7_VSS_VREF	0x0001	/* A0 A1 A2 A5 E0 E1 E2 VRefh=A3 */
-	#define AN0_AN1_AN2_AN3_AN4						0x0002	/* A0 A1 A2 A3 A5 */
-	#define AN0_AN1_AN2_AN4_VSS_VREF				0x0003	/* A0 A1 A2 A5 VRefh=A3 */
-	#define AN0_AN1_AN3								0x0004	/* A0 A1 A3*/
-	#define AN0_AN1_VSS_VREF						0x0005	/* A0 A1 VRefh=A3*/
-	#define AN0_AN1_AN4_AN5_AN6_AN7_VREF_VREF		0x0008	/* A0 A1 A5 E0 E1 E2 VRefh=A3 VRefl=A2  */
-	#define AN0_AN1_AN2_AN3_AN4_AN5					0x0009	/* A0 A1 A2 A3 A5 E0 */
-	#define AN0_AN1_AN2_AN4_AN5_VSS_VREF			0x000A	/* A0 A1 A2 A5 E0 VRefh=A3 */
-	#define AN0_AN1_AN4_AN5_VREF_VREF				0x000B	/* A0 A1 A5 E0 VRefh=A3 VRefl=A2 */
-	#define AN0_AN1_AN4_VREF_VREF					0x000C	/* A0 A1 A5 VRefh=A3 VRefl=A2 */
-	#define AN0_AN1_VREF_VREF						0x000D	/* A0 A1 VRefh=A3 VRefl=A2*/
-	#define AN0										0x000E	/* A0*/
-	#define AN0_VREF_VREF							0x000F	/* A0 VRefh=A3 VRefl=A2*/
-#endif
-
-#if defined (_16F1787)
 void ADC_SetAnalogANx(uint32_t pin);
-#endif
+
 
 void ADC_Init(uint32_t settings);
 
