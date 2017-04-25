@@ -1,7 +1,7 @@
 var group___p_b_a___e_v_e_n_t_s =
 [
-    [ "PBA_events.c", "_p_b_a__events_8c.html", null ],
     [ "PBA_events.h", "_p_b_a__events_8h.html", null ],
+    [ "PBA_events.c", "_p_b_a__events_8c.html", null ],
     [ "tasterByte_t", "structtaster_byte__t.html", [
       [ "switch0", "structtaster_byte__t.html#aed5f14c4d0cccd3913de47d7007ee9b9", null ],
       [ "switch1", "structtaster_byte__t.html#a37d16446f8f05f369d39de566420494c", null ],

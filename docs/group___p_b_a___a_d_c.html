@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>PIC Board Advanced 6 Board Support Package: PBA_ADC</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -14,14 +15,10 @@
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript">
   $(document).ready(initResizable);
-  $(window).load(resizeHeight);
 </script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,35 +39,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.11 -->
+<!-- Erzeugt von Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Hauptseite</span></a></li>
-      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
-      <li class="current"><a href="modules.html"><span>Module</span></a></li>
-      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
-      <li><a href="files.html"><span>Dateien</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -117,11 +98,11 @@ Module</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Dateien</h2></td></tr>
-<tr class="memitem:_p_b_a__driver__adc_8c"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__driver__adc_8c.html">PBA_driver_adc.c</a></td></tr>
-<tr class="memdesc:_p_b_a__driver__adc_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC-Library für PBA4/5/6. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_p_b_a__driver__adc_8h"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__driver__adc_8h.html">PBA_driver_adc.h</a></td></tr>
 <tr class="memdesc:_p_b_a__driver__adc_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC-Library für PBA4/5/6. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:_p_b_a__driver__adc_8c"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__driver__adc_8c.html">PBA_driver_adc.c</a></td></tr>
+<tr class="memdesc:_p_b_a__driver__adc_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC-Library für PBA4/5/6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -147,7 +128,9 @@ Ladezeit Hold-Kondensator</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <h2 class="groupheader">Makro-Dokumentation</h2>
-<a class="anchor" id="gad44068eaeb97a91b8978eee7dd976675"></a>
+<a id="gad44068eaeb97a91b8978eee7dd976675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad44068eaeb97a91b8978eee7dd976675">&#9670;&nbsp;</a></span>AQUISITION_TIME_US</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -159,12 +142,14 @@ Ladezeit Hold-Kondensator</h2></td></tr>
 
 <p>Ladezeit des Hold-Kondensators. </p>
 
-<p>Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00047">47</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00047">47</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Funktionen</h2>
-<a class="anchor" id="gad9f971cf81dfcba6bd0005cd4548bdab"></a>
+<a id="gad9f971cf81dfcba6bd0005cd4548bdab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad9f971cf81dfcba6bd0005cd4548bdab">&#9670;&nbsp;</a></span>ADC_Init()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -179,18 +164,20 @@ Ladezeit Hold-Kondensator</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialisiert den AD-Wandler mit den angegebenen Einstellungen. </p>
-<p>Bsp:</p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;ADC_Init(ADC_CLOCK_DIV_32|VREFL_VSS|NEG_IN_REF|POS_IN_AN0); </div></div><!-- fragment --> <dl class="params"><dt>Parameter</dt><dd>
+<p>Bsp:</p><div class="fragment"><div class="line"><a class="code" href="group___p_b_a___a_d_c.html#gad9f971cf81dfcba6bd0005cd4548bdab">ADC_Init</a>(<a class="code" href="group___a_d_c___s_e_t_t_i_n_g_s.html#ga74399426752295bc39b62222c8632564">ADC_CLOCK_DIV_32</a>|<a class="code" href="group___a_d_c___s_e_t_t_i_n_g_s.html#ga5b25c0abcfa01dc6481b6fd96ebb0fb1">VREFL_VSS</a>|<a class="code" href="group___a_d_c___s_e_t_t_i_n_g_s.html#ga68668f4a478eb70da97adfff52164ccf">NEG_IN_REF</a>|<a class="code" href="group___a_d_c___s_e_t_t_i_n_g_s.html#ga68b58e5be91e6c61d3c0dc3ebe5656a4">POS_IN_AN0</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">settings</td><td><a class="el" href="group___a_d_c___s_e_t_t_i_n_g_s.html">ADC Einstellungen</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00073">73</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00073">73</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ga61a3f6d05f7d6ea3dbef50cc7d01bc2e"></a>
+<a id="ga61a3f6d05f7d6ea3dbef50cc7d01bc2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61a3f6d05f7d6ea3dbef50cc7d01bc2e">&#9670;&nbsp;</a></span>ADC_Read()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -207,11 +194,13 @@ Ladezeit Hold-Kondensator</h2></td></tr>
 <p>Startet eine AD-Wandlung und retourniert das Resultat. </p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Ausgelesener AD-Wert, uint16 </dd></dl>
 
-<p>Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00118">118</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00118">118</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="gac5d28d475aa5e1b8eb60dc90af56328a"></a>
+<a id="gac5d28d475aa5e1b8eb60dc90af56328a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5d28d475aa5e1b8eb60dc90af56328a">&#9670;&nbsp;</a></span>ADC_SetAnalogANx()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -226,18 +215,20 @@ Ladezeit Hold-Kondensator</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Setzt die gewünschten Pins als Analogeingänge. </p>
-<p>Bsp:</p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;ADC_SetAnalogANx(AN0|AN3|AN11); </div></div><!-- fragment --> <dl class="params"><dt>Parameter</dt><dd>
+<p>Bsp:</p><div class="fragment"><div class="line"><a class="code" href="group___p_b_a___a_d_c.html#gac5d28d475aa5e1b8eb60dc90af56328a">ADC_SetAnalogANx</a>(<a class="code" href="group___a_d_c___a_n_a_l_o_g___i_n_p_u_t_s.html#ga099995994c74b5fff8f7de4ff3eac550">AN0</a>|<a class="code" href="group___a_d_c___a_n_a_l_o_g___i_n_p_u_t_s.html#ga9f593faa38f1023698d74f03a457abe3">AN3</a>|<a class="code" href="group___a_d_c___a_n_a_l_o_g___i_n_p_u_t_s.html#gadfeb79b00aaef4734408a910838f7872">AN11</a>); </div></div><!-- fragment --> <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin-Nr: <a class="el" href="group___a_d_c___a_n_a_l_o_g___i_n_p_u_t_s.html">Analog Eingänge</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00059">59</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00059">59</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="gaf43ad9d3e9259845a1c78d557430ef52"></a>
+<a id="gaf43ad9d3e9259845a1c78d557430ef52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf43ad9d3e9259845a1c78d557430ef52">&#9670;&nbsp;</a></span>ADC_SetChannel()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -252,7 +243,7 @@ Ladezeit Hold-Kondensator</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Stellt den angegebenen Channel zum Messen mit ADC ein. </p>
-<p>Beispiel:</p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;ADC_SetChannel(2); </div></div><!-- fragment --><p> -&gt; AN2 eingestellt </p><dl class="params"><dt>Parameter</dt><dd>
+<p>Beispiel:</p><div class="fragment"><div class="line"><a class="code" href="group___p_b_a___a_d_c.html#gaf43ad9d3e9259845a1c78d557430ef52">ADC_SetChannel</a>(2); </div></div><!-- fragment --><p> -&gt; AN2 eingestellt </p><dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">channel</td><td>Messchannel </td></tr>
   </table>
@@ -260,7 +251,7 @@ Ladezeit Hold-Kondensator</h2></td></tr>
 </dl>
 <p>&lt; Ladezeit des Hold-Kondensators </p>
 
-<p>Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00097">97</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__adc_8c_source.html#l00097">97</a> der Datei <a class="el" href="_p_b_a__driver__adc_8c_source.html">PBA_driver_adc.c</a>.</p>
 
 </div>
 </div>
@@ -272,7 +263,7 @@ Ladezeit Hold-Kondensator</h2></td></tr>
   <ul>
     <li class="footer">Erzeugt von
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>
 </div>
 <script>

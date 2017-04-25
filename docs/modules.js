@@ -1,8 +1,8 @@
 var modules =
 [
+    [ "PBA_EEPROM", "group___p_b_a___e_e_p_r_o_m.html", "group___p_b_a___e_e_p_r_o_m" ],
     [ "PBA_CONFIG", "group___p_b_a___c_o_n_f_i_g.html", "group___p_b_a___c_o_n_f_i_g" ],
     [ "PBA_ADC", "group___p_b_a___a_d_c.html", "group___p_b_a___a_d_c" ],
-    [ "PBA_EEPROM", "group___p_b_a___e_e_p_r_o_m.html", "group___p_b_a___e_e_p_r_o_m" ],
     [ "PBA_I2C", "group___p_b_a___i2_c.html", "group___p_b_a___i2_c" ],
     [ "PBA_LCD", "group___p_b_a___l_c_d.html", "group___p_b_a___l_c_d" ],
     [ "PBA_LM75", "group___p_b_a___l_m75.html", "group___p_b_a___l_m75" ],

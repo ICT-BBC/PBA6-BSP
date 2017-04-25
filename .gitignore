@@ -7,7 +7,6 @@
 *.o
 *.sdb
 *.obj.dmp
-doxygen_custom_files
 example/pba6_hardwaretest/nbproject/private/
 example/pba6_hardwaretest/nbproject/Makefile-*
 example/pba6_hardwaretest/nbproject/Package-*.bash
@@ -19,5 +18,4 @@ example/pba6_hardwaretest/nbdist/
 example/pba6_hardwaretest/funclist
 example/pba6_hardwaretest/disassembly/
 *.map
-DoxyWizardSettings
-/bbc_logo.png
+

@@ -9,8 +9,8 @@ var _p_b_a__menu_8c =
       [ "DIR_UP", "group___p_b_a___m_e_n_u.html#gga357931f8837ad25bc40451d9fad13aa9a0b76fb863426c07c6c997a8d9523257b", null ],
       [ "DIR_DOWN", "group___p_b_a___m_e_n_u.html#gga357931f8837ad25bc40451d9fad13aa9ab1bf68da897d09488069dd40e54f442d", null ]
     ] ],
-    [ "MENU_Call", "group___p_b_a___m_e_n_u.html#ga4ceac75cff5f382355225b877898437a", null ],
-    [ "MENU_Init", "group___p_b_a___m_e_n_u.html#gae4cbad8678381e642d48044f1a4af7f7", null ],
+    [ "MENU_Call", "group___p_b_a___m_e_n_u.html#ga93772e7b73952bb46a0d1a2bb0fb1c9c", null ],
+    [ "MENU_Init", "group___p_b_a___m_e_n_u.html#ga9b4219324280bac13295bbe0e57eeb57", null ],
     [ "charsetAddrArrowDown", "group___p_b_a___m_e_n_u.html#ga468df6b2516536eab18ca034021d486e", null ],
     [ "charsetAddrArrowUp", "group___p_b_a___m_e_n_u.html#ga25ef9a42ff4ee20da53d46eeab828239", null ]
 ];

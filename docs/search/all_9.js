@@ -40,5 +40,5 @@ var searchData=
   ['loopdelay_5ftimerisr',['LOOPDELAY_TimerISR',['../group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga780e84a031f194f5109f3c49e60807db',1,'PBA_loopdelay.c']]],
   ['loopdelay_5fuse_5ftimer2',['LOOPDELAY_USE_TIMER2',['../group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga2a8f2280c39d2a4fd2861b38fe8352c9',1,'PBA_loopdelay.h']]],
   ['loopdelay_5fwait',['LOOPDELAY_Wait',['../group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga8d57715817acb8272eac7a57cc0bf8ae',1,'PBA_loopdelay.c']]],
-  ['license',['LICENSE',['../md_LICENSE.html',1,'']]]
+  ['license',['LICENSE',['../md__c_1__users_estudm__desktop__p_b_a6-_b_s_p__l_i_c_e_n_s_e.html',1,'']]]
 ];

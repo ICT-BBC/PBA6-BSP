@@ -1,7 +1,7 @@
 var group___p_b_a___h_e_l_p_e_r_s =
 [
-    [ "PBA_helpers.c", "_p_b_a__helpers_8c.html", null ],
     [ "PBA_helpers.h", "_p_b_a__helpers_8h.html", null ],
+    [ "PBA_helpers.c", "_p_b_a__helpers_8c.html", null ],
     [ "BIT_CLEAR", "group___p_b_a___h_e_l_p_e_r_s.html#ga1d97ba573f9459d9b55c288b54283c17", null ],
     [ "BIT_SET", "group___p_b_a___h_e_l_p_e_r_s.html#ga6c017706d6b04e6c7b37a87ec572e573", null ],
     [ "BIT_TEST", "group___p_b_a___h_e_l_p_e_r_s.html#gaf86b0c9e80b35fe6605e460b46b7e554", null ],

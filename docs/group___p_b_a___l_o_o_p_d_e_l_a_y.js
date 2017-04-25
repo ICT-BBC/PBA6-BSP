@@ -1,7 +1,7 @@
 var group___p_b_a___l_o_o_p_d_e_l_a_y =
 [
-    [ "PBA_loopdelay.c", "_p_b_a__loopdelay_8c.html", null ],
     [ "PBA_loopdelay.h", "_p_b_a__loopdelay_8h.html", null ],
+    [ "PBA_loopdelay.c", "_p_b_a__loopdelay_8c.html", null ],
     [ "LOOPDELAY_USE_TIMER2", "group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga2a8f2280c39d2a4fd2861b38fe8352c9", null ],
     [ "MAX_LOOP_DELAY_MS", "group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga9274184aaff5495f94ac75e640eecaa2", null ],
     [ "TIMER2_PERIODE", "group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga6b25a6281cc3e0ced2b644ca4db06747", null ],
