@@ -6,16 +6,16 @@
  * @brief           ADC-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 
@@ -46,14 +46,14 @@
  */
 #define AQUISITION_TIME_US      10 /**< Ladezeit des Hold-Kondensators */
 /**
- *@} 
- */         
+ *@}
+ */
 
 /**
- * @brief Setzt die gewünschten Pins als Analogeingänge. 
+ * @brief Setzt die gewünschten Pins als Analogeingänge.
  * Bsp: \code ADC_SetAnalogANx(AN0|AN3|AN11); \endcode
  * @param pin Pin-Nr: @ref ADC_ANALOG_INPUTS "Analog Eingänge"
- * 
+ *
  */
 void ADC_SetAnalogANx(uint32_t pin)
 {
@@ -78,7 +78,7 @@ void ADC_Init(uint32_t settings)
 /**
 * @brief Stellt den angegebenen Channel zum Messen mit ADC ein.
 * Beispiel: \code ADC_SetChannel(2); \endcode -> AN2 eingestellt
-* @param channel Messchannel 
+* @param channel Messchannel
 */
 void ADC_SetChannel(uint8_t channel)
 {
@@ -94,7 +94,7 @@ void ADC_SetChannel(uint8_t channel)
 uint16_t ADC_Read(void)
 {
     uint16_t result;
-    ADCON0bits.GO_nDONE = 1;                        /*Wandlung starten (one shot)*/                     
+    ADCON0bits.GO_nDONE = 1;                        /*Wandlung starten (one shot)*/
     while(ADCON0bits.GO_nDONE);                     /*Warten bis Wandlung abgeschlossen*/
 
     result=(uint16_t)ADRESH<<8;                     /*Resultat auslesen*/
@@ -102,7 +102,7 @@ uint16_t ADC_Read(void)
     return result;                                  /*Rückgabe des AD-Wertes*/
 }
 #endif
-    
+
 /**
  * @}
  */

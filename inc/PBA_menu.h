@@ -6,12 +6,12 @@
  * @brief           Menu-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * MIT License
  *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #ifndef _MENU_
@@ -44,20 +44,20 @@
 /**
 * @brief Typ einer Funktion welche vom Menu aus aufgerufen wird.
 */
-typedef uint8_t (menuFunc_t)(uint8_t);  
+typedef uint8_t (menuFunc_t)(uint8_t);
 
 /**
 * @brief Menueintrag.
 */
-typedef struct s_menuEntry                  /**< Menueintrag */
+typedef struct s_menuEntry          /**< Menueintrag */
 {
-    const unsigned  char *name;             /**< Menuname */
-    uint8_t  id;                            /**< ID des Menupunkts */
-    struct s_menuEntry  *next,              /**< Nächste Menupunkt, Taste ab */
-                        *prev,              /**< Vorheriger Menupunkt, Taste auf */
-                        *submenu,           /**< Untermenu */
-                        *ret;               /**< Rückkehrpunkt */
-    menuFunc_t          *function;          /**< Aufzurufende Funktion */
+    const unsigned  char *name;     /**< Menuname */
+    uint8_t  id;                    /**< ID des Menupunkts */
+    struct s_menuEntry  *next,      /**< Nächste Menupunkt, Taste ab */
+                        *prev,      /**< Vorheriger Menupunkt, Taste auf */
+                        *submenu,   /**< Untermenu */
+                        *ret;       /**< Rückkehrpunkt */
+    menuFunc_t          *function;  /**< Aufzurufende Funktion */
 }menuEntry_t;
 
 

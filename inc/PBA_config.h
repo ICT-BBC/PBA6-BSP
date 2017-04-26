@@ -12,41 +12,41 @@
  * @date        17.02.2016: stdint.h hinzugefügt-->Wechsel auf std-integer Typen
  * @date        04.03.2016: Renamed RS232 to UART
  * @date        06.04.2016: Menu-Bibliothek hinzugefügt, Events erweitert
- * @date        08.04.2016: EEPROM-Bibliothek hinzugefügt   
- * @date        15.04.2016: PBA Init-Funktion umbenennt zu pba_init()-->    
+ * @date        08.04.2016: EEPROM-Bibliothek hinzugefügt
+ * @date        15.04.2016: PBA Init-Funktion umbenennt zu pba_init()-->
  *                          alle Funktionen beginnen mit Name der Peripherie
  * @date        25.05.2016: Umstrukturierung statemachine library. loop-delay-
  *                          library wird immer benötigt, Events in eigener
- *                          Bibliothek ohne loop-delay  
+ *                          Bibliothek ohne loop-delay
  * @date        07.02.2017  Renaming, Fehlermeldungen optimiert
- * @date        25.04.2017  Alle SFR-Zugriffe geändert (Bitfelder), 
- *                          Support für alle PICs ausser PIC16F1787 entfernt, 
+ * @date        25.04.2017  Alle SFR-Zugriffe geändert (Bitfelder),
+ *                          Support für alle PICs ausser PIC16F1787 entfernt,
  *                          fix Beep-Funktion
- * 
- * @attention   PBA_Init zur Initialiserung und Konfigurations des PBAs.                
- *              Um die Libraries zu verwenden, kopieren Sie die beiden Ordner 
- *              "Source" und "Include" in Ihren MPLABX-Projektordner. Erstellen 
- *              Sie ein Main-Sourcefile, speichern Sie dies im "Source"-Ordner 
- *              und fügen Sie die Dateien in den beiden Ordnern ihrem 
- *              MPLAB-Projekt hinzu.            
- *              Fügen Sie folgende Codezeile ihrem Source-File hinzu:                   
- *              @code #include "../inc/PBA_config.h" @endcode                                       
- *                                                                      
- * @attention   Wenn Sie bestimmte Bibliotheken nicht benötigen, kommentieren 
- *              Sie die zugehörigen Defines in der Datei @link PBA_config.h @endlink aus.                       
- *              Entfernen Sie die nicht benötigten Source-Files aus ihrem Projekt.  
- *                              
+ *
+ * @attention   PBA_Init zur Initialiserung und Konfigurations des PBAs.
+ *              Um die Libraries zu verwenden, kopieren Sie die beiden Ordner
+ *              "Source" und "Include" in Ihren MPLABX-Projektordner. Erstellen
+ *              Sie ein Main-Sourcefile, speichern Sie dies im "Source"-Ordner
+ *              und fügen Sie die Dateien in den beiden Ordnern ihrem
+ *              MPLAB-Projekt hinzu.
+ *              Fügen Sie folgende Codezeile ihrem Source-File hinzu:
+ *              @code #include "../inc/PBA_config.h" @endcode
+ *
+ * @attention   Wenn Sie bestimmte Bibliotheken nicht benötigen, kommentieren
+ *              Sie die zugehörigen Defines in der Datei @link PBA_config.h @endlink aus.
+ *              Entfernen Sie die nicht benötigten Source-Files aus ihrem Projekt.
+ *
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -64,7 +64,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #ifndef _PBA_CONFIG_
@@ -72,7 +72,7 @@
 
 /******************** BSP-Konfiguration ***************************************/
 
-    
+
     /**
      * @addtogroup BSP-KONFIGURATION BSP-Konfiguration
      * Nicht benötigte Bibliotheken und Konfigurationen auskommentieren
@@ -93,39 +93,39 @@
     #define USE_EEPROM_LIBRARY      /**< Verwendung internes EEPROM*/
 
     #define USE_HELPERS_LIBRARY     /**< Nützliche Makros und Funktionen*/
-    
+
     #define USE_INTERRUPT_LIBRARY   /**< Globaler Interrupt-Handler*/
 
     #define USE_LOOPDELAY_LIBRARY   /**< Timerbasiertes Delay*/
 
     #define USE_EVENTS_LIBRARY      /**< Zeit- und Taster-Events*/
-    
+
     #define USE_MENU_LIBRARY        /**< Funktionen Erstellung und Darstellung eines Menus auf LCD*/
 
     /*Auswahl Standard-Output für printf-Funktion*/
     #define STDOUT_LCD              /**< Ausgabe printf auf LCD*/
     //#define STDOUT_UART           /**< Ausgabe printf auf UART-Schnittstelle*/
-    
+
     /**
      * @}
      */
 
     /******************** Compiler-Includes, Clock Definiton **********************************/
     #include <xc.h>
-    
+
     /**
      * @addtogroup DEF_DELAY Taktkonfiguration für Delay
      * Zur Verwendung der Delays muss die Taktfrequenz bekannt sein
      * @{
      */
-        #define _XTAL_FREQ 32000000         /**< PIC16F1787--> 8MHz & 4xPLL*/
+        #define _XTAL_FREQ 32000000     /**< PIC16F1787--> 8MHz & 4xPLL*/
     /**
      * @}
     */
 
-    #pragma jis                             /* JIS character handling aktivieren (ä,ö,ü) für XC-Compiler*/
-    
-    
+    #pragma jis                         /* JIS character handling aktivieren (ä,ö,ü) für XC-Compiler*/
+
+
     /******************** Schalter/Taster-, LEDs- und Peripherie-Ports **************************/
     /**
     * @addtogroup DEF_TASTER Taster-Bits
@@ -206,24 +206,24 @@
         #include "PBA_events.h"
     #endif
     #ifdef USE_INTERRUPT_LIBRARY
-    #include "PBA_interrupts.h";
+        #include "PBA_interrupts.h";
     #endif
     #ifdef USE_MENU_LIBRARY
-    #include "PBA_menu.h"
+        #include "PBA_menu.h"
     #endif
     #ifdef USE_EEPROM_LIBRARY
-    #include "PBA_driver_eeprom.h"
+        #include "PBA_driver_eeprom.h"
     #endif
     /**
      * @}
      */
     /******************** Prototypen für Board-support Library Funktionen ***********************/
-    
+
     void PBA_Init(void);
-    
-    
+
+
     void putch(uint8_t c);
-    
+
     /************** Überprüfen der Bibliothek-Abhängigkeiten ************************************/
     #if defined(USE_LM75_LIBRARY) && !defined(USE_I2C_LIBRARY)
         #error Um die LM75-Library zu nutzen, muss die I2C-Library eingebunden sein (PBA_config.h)
@@ -238,16 +238,16 @@
         #error Zur Verwedung der Events-Bibliothek muss die loopdelay_Bibliothek eingebunden sein (PBA_config.h)
     #endif
     #if defined(USE_MENU_LIBRARY)&&!defined(USE_LCD_LIBRARY)
-    #error Zur Verwendung der Menubibliothek muss die LCD-Bibliothek eingebunden sein (PBA_config.h)
+        #error Zur Verwendung der Menubibliothek muss die LCD-Bibliothek eingebunden sein (PBA_config.h)
     #endif
     #if defined(USE_MENU_LIBRARY)&&!defined(USE_EVENTS_LIBRARY)
-    #error Zur Verwendung der Menubibliothek muss die Events-Library eingebunden sein (PBA_config.h)
+        #error Zur Verwendung der Menubibliothek muss die Events-Library eingebunden sein (PBA_config.h)
     #endif
     #if defined (USE_LOOPDELAY_LIBRARY) && !defined (USE_INTERRUPT_LIBRARY)
-    #error Um die loopdelay-Library zu verwenden muss die Interrupt-Library eingebunden sein (PBA_config.h)
+        #error Um die loopdelay-Library zu verwenden muss die Interrupt-Library eingebunden sein (PBA_config.h)
     #endif
     #if defined (USE_LCD_LIBRARY) && !defined (USE_HELPERS_LIBRARY)
-    #error Zur Verwendung der LCD-Library muss die Helpers-Library eingebunden sein (PBA_config.h
+        #error Zur Verwendung der LCD-Library muss die Helpers-Library eingebunden sein (PBA_config.h
     #endif
     /************** Überprüfung ob der ausgewählte PIC unterstützt wird vom Board-support Package **********/
     #if !defined(_16F1787)
@@ -256,7 +256,7 @@
         /*Vorsicht: Einige Bibliotheken funktionieren unter Umständen nicht!!*/
         #error Der ausgewählte PIC wird nicht unterstützt vom PBA Board-support Package!
     #endif
-    
+
     /************** Deaktivieren der stack overflow Warnungen, Problem von Compiler gelöst **************/
     #pragma warning disable 1393,1090
 

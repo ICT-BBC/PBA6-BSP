@@ -6,16 +6,16 @@
  * @brief           Helper-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #include "../inc/PBA_config.h"
@@ -44,12 +44,12 @@
  * @param timeMS Gewünschtes Delay in ms
  */
 
-void DelayMS(uint16_t timeMS)                                   /*Workaround für grössere Delays bei 20MHz Systemtakt*/
+void DelayMS(uint16_t timeMS)   /*Workaround für grössere Delays bei 20MHz Systemtakt*/
 {
     for(;timeMS>=35;timeMS-=35)
         __delay_ms(35);
     for(;timeMS>=1;timeMS--)
-        __delay_ms(1);  
+        __delay_ms(1);
 }
 
 /**
@@ -57,12 +57,12 @@ void DelayMS(uint16_t timeMS)                                   /*Workaround für
  * Blockierend!
  * @param timeUS Gewünschtes Delay in us
  */
-void DelayUS(uint16_t timeUS)                                   /*Workaround für grössere Delays bei 20MHz Systemtakt*/
+void DelayUS(uint16_t timeUS)   /*Workaround für grössere Delays bei 20MHz Systemtakt*/
 {
     for(;timeUS>=100;timeUS-=100)
         __delay_us(100);
     for(;timeUS>=10;timeUS-=10)
-        __delay_us(10); 
+        __delay_us(10);
 }
 
 
@@ -71,13 +71,13 @@ void DelayUS(uint16_t timeUS)                                   /*Workaround für
  * @param value Zahl die gewandelt werden soll
  * @return BCD-Wert (4-Bit H|4-Bit Z|4-Bit E)LSB
  */
-uint16_t BinToBcd(uint8_t value)                                /*Umwandlung Binär zu BCD*/
+uint16_t BinToBcd(uint8_t value)        /*Umwandlung Binär zu BCD*/
 {
-    uint8_t E,Z;                                                /*dekl. Lokale Variabeln*/
-    uint16_t H;                                                 /*dekl. Lokale Variabeln*/
-    H=value/100;                                                /*Hunderter definieren*/
-    Z=(value-=H*100)/10;                                        /*Zehner definieren*/
-    E=value-Z*10;                                               /*Einer definieren*/
+    uint8_t E,Z;                        /*dekl. Lokale Variabeln*/
+    uint16_t H;                         /*dekl. Lokale Variabeln*/
+    H=value/100;                        /*Hunderter definieren*/
+    Z=(value-=H*100)/10;                /*Zehner definieren*/
+    E=value-Z*10;                       /*Einer definieren*/
     H<<=8;
     Z<<=4;
     return H|Z|E;
@@ -91,7 +91,7 @@ uint16_t BinToBcd(uint8_t value)                                /*Umwandlung Bin
  */
 void Beep(uint16_t freqHZ,uint16_t durationMS) /*Ton auf dem Summer ausgeben (Parameter f und Länge in ms)*/
 {
-    uint16_t impulsTimeCnt;                 
+    uint16_t impulsTimeCnt;
     uint16_t impulsTimeUS;
     uint32_t durationUS;
     uint32_t periodCnt;

@@ -6,16 +6,16 @@
  * @brief           UART-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #include "../inc/PBA_config.h"
@@ -57,17 +57,17 @@
  *@brief Berechnung Taktgenerator
  */
 /*Berechnung Teilerwert für den Baudrate-Generator*/
-#define SPBRG_VAL ((uint16_t)(_XTAL_FREQ/(4UL * UART_BAUD) -1)) 
+#define SPBRG_VAL ((uint16_t)(_XTAL_FREQ/(4UL * UART_BAUD) -1))
 
 /**
-* @brief Initialisierung der Schnittstelle. 
+* @brief Initialisierung der Schnittstelle.
  * Baudrate definieren mit Define @link UART_BAUD BAUD @endlink in @link PBA_driver_uart.c@endlink.
 */
 void UART_Init(void)
 {
     TXSTA=0x20;
     RCSTA=0x90;
-    SPBRG=(uint8_t)SPBRG_VAL;               /*Baudrate (untere 8Bit)*/
+    SPBRG=(uint8_t)SPBRG_VAL;           /*Baudrate (untere 8Bit)*/
     SPBRGH=SPBRG_VAL>>8;                /*Baudrate (obere 8Bit)*/
     TX1STAbits.BRGH = 1;
     BAUD1CONbits.BRG16 = 1;
@@ -141,9 +141,9 @@ void UART_WriteLineRom(const uint8_t *p_string)
  */
 void UART_PutsRom(const uint8_t *p_string)
 {
-    while(*p_string!=0)                     /*Bis String-Ende */
+    while(*p_string!=0)                 /*Bis String-Ende */
     {
-        UART_Putc(*p_string++);             /*Aktuelles String-Zeichen senden*/
+        UART_Putc(*p_string++);         /*Aktuelles String-Zeichen senden*/
     }
 }
 
@@ -157,7 +157,7 @@ void UART_Gets(uint8_t *p_string, uint16_t maxLen)
     uint16_t len=0;                     /*Anzahl empfangener Zeichen*/
     uint8_t c;                          /*Empfangenes Zeichen*/
     maxLen--;                           /*Nullterminierung abziehen von maximal möglicher Länge*/
-    do 
+    do
     {
         c=UART_Getc();                  /*Einzelnes Zeichen empfangen*/
         if(c==8)                        /*Wenn ein Backspace empfangen wurde*/
@@ -186,9 +186,9 @@ void UART_Gets(uint8_t *p_string, uint16_t maxLen)
  * @brief Ein Hex-Digit (ASCII) empfangen und zurückgeben.
  * @return Hex-Digit als Zahlenwert
  */
-uint8_t UART_GetHexDigit(void) 
+uint8_t UART_GetHexDigit(void)
 {
-    uint8_t digit;              
+    uint8_t digit;
     digit = UART_Getc();
     UART_Putc(digit);
     if(digit<='9')
@@ -223,13 +223,13 @@ int8_t UART_GetByte(void)
     UART_Gets(recBuffer, 5);
     byteVal=(int8_t)atoi(recBuffer);
     return byteVal;
-}   
+}
 
 /**
  * @brief Einen Integer emfpangen und zurückgeben.
  * @return Empfangener Integer-Zahlenwert
  */
-int16_t UART_GetInt(void) 
+int16_t UART_GetInt(void)
 {
     uint8_t recBuffer[7];
     int16_t intVal;
@@ -242,7 +242,7 @@ int16_t UART_GetInt(void)
  * @brief Einen Long-Integer empfangen und zurückgeben.
  * @return Empfangener Zahlenwert
  */
-int32_t UART_GetLong(void) 
+int32_t UART_GetLong(void)
 {
     uint8_t recBuffer[9];
     int32_t longVal;
@@ -255,7 +255,7 @@ int32_t UART_GetLong(void)
  * @brief Eine Floatingpoint-Zahl empfangen und zurückgeben
  * @return Empfangener Zahlenwert
  */
-float UART_GetFloat(void) 
+float UART_GetFloat(void)
 {
     uint8_t recBuffer[20];
     float floatVal;

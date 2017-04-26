@@ -6,16 +6,16 @@
  * @brief           Events-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #ifndef _PBA_EVENTS_
@@ -62,7 +62,7 @@ typedef struct
 {
     union
     {
-        uint16_t valueEdge; 
+        uint16_t valueEdge;
         struct
         {
             tasterByte_t posEdge;       /**< Flags Taster positive Flanken*/
@@ -78,8 +78,8 @@ typedef struct
             tasterByte_t pressed1000ms; /**< Flags Taster min. 1s gedrückt*/
         };
     };
-    uint8_t (* TimeoutMS)(uint16_t);        /**< Starten/Abrufen Timeout-Events*/
-    uint8_t (* ActiveUntilMS)(uint16_t);    /**< Starten/Abrufen Active-Until-Events*/
+    uint8_t (* TimeoutMS)(uint16_t);    /**< Starten/Abrufen Timeout-Events*/
+    uint8_t (* ActiveUntilMS)(uint16_t);/**< Starten/Abrufen Active-Until-Events*/
 } events_t;
 
 

@@ -6,16 +6,16 @@
  * @brief           EEPROM-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG, Microchip
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 
@@ -50,24 +50,20 @@ void EE_WriteByte(uint8_t eeAddr, uint8_t eeData)
 {
     uint8_t GIEBitValue = 0;
 
-    EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to write*/
-    EEDATL = eeData;             /* Data Memory Value to write*/
-    EECON1bits.EEPGD = 0;       /* Point to DATA memory*/
-    EECON1bits.CFGS = 0;        /* Deselect Configuration space*/
-    EECON1bits.WREN = 1;        /* Enable writes*/
+    EEADRL = (eeAddr & 0x0ff);      /* Zu schreibende Adresse festlegen*/
+    EEDATL = eeData;                /* Zu schreibende Daten festlegen*/
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;            /* EEPROM-Speicher auswählen*/
+    EECON1bits.WREN = 1;            /* Schreiben aktivieren*/
 
     GIEBitValue = INTCONbits.GIE;
-    INTCONbits.GIE = 0;         /* Disable INTs*/
-    EECON2 = 0x55;
+    INTCONbits.GIE = 0;             /* Alle Interrupts deaktivieren*/
+    EECON2 = 0x55;                  /* Freischaltsequenz*/
     EECON2 = 0xAA;
-    EECON1bits.WR = 1;          /* Set WR bit to begin write*/
-    /* Wait for write to complete*/
-    while (EECON1bits.WR)
-    {
-    }
-
-    EECON1bits.WREN = 0;        /* Disable writes*/
-    INTCONbits.GIE = GIEBitValue;
+    EECON1bits.WR = 1;              /* Schreibvorgang starten*/
+    while (EECON1bits.WR);          /* Warten auf Abschluss Schreibvorgang*/
+    EECON1bits.WREN = 0;            /* Schreiben deaktivieren*/
+    INTCONbits.GIE = GIEBitValue;   /* Interrupt-Enable zurücksetzen*/
 }
 
 /**
@@ -77,11 +73,11 @@ void EE_WriteByte(uint8_t eeAddr, uint8_t eeData)
  */
 uint8_t EE_ReadByte(uint8_t eeAddr)
 {
-    EEADRL = (eeAddr & 0x0ff);    /* Data Memory Address to read*/
-    EECON1bits.CFGS = 0;        /* Deselect Configuration space*/
-    EECON1bits.EEPGD = 0;       /* Point to DATA memory*/
-    EECON1bits.RD = 1;          /* EE Read*/
-    NOP();  /* NOPs may be required for latency at high frequencies*/
+    EEADRL = (eeAddr & 0x0ff);  /* Zu lesende Adresse festlegen*/
+    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = 0;       /* EEPROM-Speicher auswählen*/
+    EECON1bits.RD = 1;          /* Lesen*/
+    NOP();  
     NOP();
     return (EEDATL);
 }

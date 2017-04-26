@@ -6,16 +6,16 @@
  * @brief           Menu-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #include "../inc/PBA_config.h"
@@ -66,7 +66,7 @@ uint8_t charsetAddrArrowDown    =   0x01;
 /**
  * @brief Ruft die Funktion zum Löschen des LCDs auf
  */
-static inline void MENU_LcdClear()      
+static inline void MENU_LcdClear()
 {
     LCD_Clear();
 }
@@ -78,7 +78,7 @@ static inline void MENU_LcdClear()
  * @param row       Displayzeile auf welche geschrieben wird
  * @param p_text    Auszugebender Text
  */
-static inline void MENU_LcdDisplayStringLine(uint8_t row,const uint8_t *p_text) 
+static inline void MENU_LcdDisplayStringLine(uint8_t row,const uint8_t *p_text)
 {
     LCD_GotoXY(1,row);      /*erste Zeile=0*/
     LCD_PutsRom(p_text);
@@ -130,7 +130,7 @@ static void LCD_CreateArrows(void)
                                 0b0000100,
                                 0b0000100,
                                 0b0000000};
-    
+
     const uint8_t arrow_down[]={0b0000100,
                                 0b0000100,
                                 0b0000100,
@@ -139,7 +139,7 @@ static void LCD_CreateArrows(void)
                                 0b0001110,
                                 0b0000100,
                                 0b0000000};
-    
+
     const uint8_t ok[]=        {0b0000001,
                                 0b0000001,
                                 0b0000010,
@@ -200,25 +200,25 @@ static void MENU_draw(menuEntry_t *p_firstRowMenuEntry, menuEntry_t *p_cursorRow
     /* nach unten scrollen in menu, aktuelle gewählte ID grösser als maximal anzeigbare Zeilen in Display*/
     if(((direction==DIR_DOWN)&&((p_cursorRowMenuEntry->id)>(MAXLINES-1)))||((p_cursorRowMenuEntry->next==p_firstRowMenuEntry)&&(direction==DIR_UP)))
     {
-        p_currentRowMenuEntry=p_cursorRowMenuEntry; 
+        p_currentRowMenuEntry=p_cursorRowMenuEntry;
         drawRowNmbr=(MAXLINES);
         do
         {
             MENU_LcdDisplayStringLine(drawRowNmbr-1,p_currentRowMenuEntry->name);   /*Name des Menueintrags aufs Display zeichen*/
-            if(p_currentRowMenuEntry==p_cursorRowMenuEntry)                                 /*Wenn aktuelle Zeile=angewählte Zeile*/
-            MENU_LcdDisplayCharLine(drawRowNmbr-1,0,'*' );                  /*Markierung aufs Display schreiben*/
-            p_currentRowMenuEntry=p_currentRowMenuEntry->prev;                              /*Danach vorherige Zeile anwählen*/
-            drawRowNmbr-=1;                                                 /*Zeilennummer verkleinern*/
+            if(p_currentRowMenuEntry==p_cursorRowMenuEntry)                         /*Wenn aktuelle Zeile=angewählte Zeile*/
+            MENU_LcdDisplayCharLine(drawRowNmbr-1,0,'*' );                          /*Markierung aufs Display schreiben*/
+            p_currentRowMenuEntry=p_currentRowMenuEntry->prev;                      /*Danach vorherige Zeile anwählen*/
+            drawRowNmbr-=1;                                                         /*Zeilennummer verkleinern*/
         }
-        while((p_currentRowMenuEntry!=p_firstRowMenuEntry)&&(drawRowNmbr>0));                   /*Dies wird wiederholt solange sich die Einträge nicht wiederholen*/
-        
-        if(p_cursorRowMenuEntry->next!=p_firstRowMenuEntry)                                 /*Weitere Menueinträge unterhalb*/
+        while((p_currentRowMenuEntry!=p_firstRowMenuEntry)&&(drawRowNmbr>0));       /*Dies wird wiederholt solange sich die Einträge nicht wiederholen*/
+
+        if(p_cursorRowMenuEntry->next!=p_firstRowMenuEntry)                         /*Weitere Menueinträge unterhalb*/
         {
-            MENU_LcdDisplayCharLine((MAXLINES-1),(MAXCHARS-1),charsetAddrArrowDown );   /*Pfeil nach unten anzeigen*/
+            MENU_LcdDisplayCharLine((MAXLINES-1),(MAXCHARS-1),charsetAddrArrowDown );/*Pfeil nach unten anzeigen*/
         }
-        if(p_cursorRowMenuEntry->id-(MAXLINES-1)>0)                             /*Weitere Einträge oberhalb*/
+        if(p_cursorRowMenuEntry->id-(MAXLINES-1)>0)                                 /*Weitere Einträge oberhalb*/
         {
-            MENU_LcdDisplayCharLine((0),15,charsetAddrArrowUp );                        /*Pfeil nach oben anzeigen*/
+            MENU_LcdDisplayCharLine((0),15,charsetAddrArrowUp );                    /*Pfeil nach oben anzeigen*/
         }
     }
 
@@ -227,37 +227,37 @@ static void MENU_draw(menuEntry_t *p_firstRowMenuEntry, menuEntry_t *p_cursorRow
         /*nach oben scrollen, aktuell gewählte ID grösser als maximal anzeigbare Zeilen in Display*/
         if((direction==DIR_UP)&&((p_cursorRowMenuEntry->id)>(MAXLINES-1)))
         {
-            p_currentRowMenuEntry=p_cursorRowMenuEntry;  
+            p_currentRowMenuEntry=p_cursorRowMenuEntry;
             do
             {
                 MENU_LcdDisplayStringLine(drawRowNmbr,p_currentRowMenuEntry->name); /*Name des Menueintrags aufs Display zeichen*/
-                if(p_currentRowMenuEntry==p_cursorRowMenuEntry)                             /*Wenn aktuelle Zeile=angewählte Zeile*/
-                MENU_LcdDisplayCharLine(drawRowNmbr,0,'*' );                    /*Markierung aufs Display schreiben*/
-                p_currentRowMenuEntry=p_currentRowMenuEntry->next;                          /*Danach nächste Zeile anwählen*/
-                drawRowNmbr+=1;                                         /*Zeilennummer erhöhen*/
+                if(p_currentRowMenuEntry==p_cursorRowMenuEntry)                     /*Wenn aktuelle Zeile=angewählte Zeile*/
+                MENU_LcdDisplayCharLine(drawRowNmbr,0,'*' );                        /*Markierung aufs Display schreiben*/
+                p_currentRowMenuEntry=p_currentRowMenuEntry->next;                  /*Danach nächste Zeile anwählen*/
+                drawRowNmbr+=1;                                                     /*Zeilennummer erhöhen*/
             }
-            while((p_currentRowMenuEntry!=p_firstRowMenuEntry)&&(drawRowNmbr<MAXLINES));        /*Dies wird wiederholt solange sich die Einträge nicht wiederholen*/
-            
-            if(p_currentRowMenuEntry!=p_firstRowMenuEntry)                                  /*Weitere Einträge unerhalb*/
+            while((p_currentRowMenuEntry!=p_firstRowMenuEntry)&&(drawRowNmbr<MAXLINES));/*Dies wird wiederholt solange sich die Einträge nicht wiederholen*/
+
+            if(p_currentRowMenuEntry!=p_firstRowMenuEntry)                          /*Weitere Einträge unerhalb*/
             {
-                MENU_LcdDisplayCharLine((MAXLINES-1),15,charsetAddrArrowDown );         /*Pfeil nach unten anzeigen*/
+                MENU_LcdDisplayCharLine((MAXLINES-1),15,charsetAddrArrowDown );     /*Pfeil nach unten anzeigen*/
             }
             if(p_cursorRowMenuEntry->id-(MAXLINES-1)>0)                             /*Weitere Einträge oberhalb*/
             {
-                MENU_LcdDisplayCharLine((0),15,charsetAddrArrowUp );                        /*Pfeil nach oben anzeigen*/
+                MENU_LcdDisplayCharLine((0),15,charsetAddrArrowUp );                /*Pfeil nach oben anzeigen*/
             }
         }
         /*Aktuelle ID des Menueintrags kleiner als maximal anzeigbare Zeilen auf Display*/
         else
         {
-            p_currentRowMenuEntry=p_firstRowMenuEntry;  
+            p_currentRowMenuEntry=p_firstRowMenuEntry;
             do
             {
                 MENU_LcdDisplayStringLine(drawRowNmbr,p_currentRowMenuEntry->name); /*Name des Menueintrags aufs Display zeichen*/
-                if(p_currentRowMenuEntry==p_cursorRowMenuEntry)                             /*Wenn aktuelle Zeile=angewählte Zeile*/
-                MENU_LcdDisplayCharLine(drawRowNmbr,0,'*' );                    /*Markierung aufs Display schreiben*/
-                p_currentRowMenuEntry=p_currentRowMenuEntry->next;                          /*Danach nächste Zeile anwählen*/
-                drawRowNmbr+=1;                                         /*Zeilennummer erhöhen*/
+                if(p_currentRowMenuEntry==p_cursorRowMenuEntry)                     /*Wenn aktuelle Zeile=angewählte Zeile*/
+                MENU_LcdDisplayCharLine(drawRowNmbr,0,'*' );                        /*Markierung aufs Display schreiben*/
+                p_currentRowMenuEntry=p_currentRowMenuEntry->next;                  /*Danach nächste Zeile anwählen*/
+                drawRowNmbr+=1;                                                     /*Zeilennummer erhöhen*/
             }
             while((p_currentRowMenuEntry!=p_firstRowMenuEntry)&&(drawRowNmbr<(MAXLINES)));  /*Dies wird wiederholt solange sich die Einträge nicht wiederholen oder Display voll*/
             if(p_currentRowMenuEntry!=p_firstRowMenuEntry)                                  /*Weitere Einträge unterhalb*/
@@ -291,8 +291,8 @@ static void MENU_SetCursor(menuEntry_t *p_firstRowMenuEntry, menuEntry_t *p_curs
             MENU_LcdDisplayCharLine(drawRowNmbr,0,' ' );    /*Markierung löschen*/
         }
        p_currentRowMenuEntry=p_currentRowMenuEntry->next;   /*Nächste Zeile anwählen*/
-       drawRowNmbr+=1;                                  /*Zeilennummer erhöhen*/
-       
+       drawRowNmbr+=1;                                      /*Zeilennummer erhöhen*/
+
    }
    while(p_currentRowMenuEntry!=p_firstRowMenuEntry);
 }
@@ -323,53 +323,53 @@ uint8_t MENU_Call (void)
 
         if( POSEDGE_UP )            /* Taste "Rauf" gedrückt ?*/
         {
-            p_cursorRowMenuEntry=p_cursorRowMenuEntry->prev;                        /*Position speichern*/
+            p_cursorRowMenuEntry=p_cursorRowMenuEntry->prev;            /*Position speichern*/
             MENU_draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP);
-             
+
              return 0;
 
         }
         if( POSEDGE_DOWN )          /* Taste "Runter" gedrückt?*/
         {
-            p_cursorRowMenuEntry=p_cursorRowMenuEntry->next;                        /*Position speichern*/
+            p_cursorRowMenuEntry=p_cursorRowMenuEntry->next;            /*Position speichern*/
             MENU_draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_DOWN);
-            
+
             return 0;
         }
         else
         {
-            if( POSEDGE_ENTER )                                 /*Taste "Enter" gedrückt?*/
+            if( POSEDGE_ENTER )     /*Taste "Enter" gedrückt?*/
             {
                 if(p_cursorRowMenuEntry->submenu)                       /*Wenn ein Untermenü vorhanden*/
                 {
                     p_firstRowMenuEntry=p_cursorRowMenuEntry=p_cursorRowMenuEntry->submenu; /*Cursor neu setzen*/
                     MENU_LcdClear();
-                    MENU_draw(p_firstRowMenuEntry, p_cursorRowMenuEntry,DIR_UP);        /*Untermenu zeichnen*/
+                    MENU_draw(p_firstRowMenuEntry, p_cursorRowMenuEntry,DIR_UP);    /*Untermenu zeichnen*/
                     return 0;
                 }
                 else
                 {
-                    if(p_cursorRowMenuEntry->function)              /*Wenn eine Funktion vorhanden*/
+                    if(p_cursorRowMenuEntry->function)      /*Wenn eine Funktion vorhanden*/
                     {
                         MENU_LcdClear();
-                        p_cursorRowMenuEntry->function(1);          /*Funktion ausführen, Übergabeparameter=1->1. Aufruf*/
+                        p_cursorRowMenuEntry->function(1);  /*Funktion ausführen, Übergabeparameter=1->1. Aufruf*/
                         doRepeatFunction=1;                 /*Merkvariable setzen, beim nächsten Aufruf von menu() wird wieder die Funktion ausgeführt*/
                         return 0;
                     }
                     else
                     {
-                        if(p_cursorRowMenuEntry->ret)               /*Wenn ein Rückkehrmenu vorhanden*/
+                        if(p_cursorRowMenuEntry->ret)       /*Wenn ein Rückkehrmenu vorhanden*/
                         {
                             MENU_LcdClear();
                             p_cursorRowMenuEntry=p_firstRowMenuEntry=p_cursorRowMenuEntry->ret; /*Cursor auf Rückkehrmenu setzen*/
                             MENU_draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP); /*Menu zeichnen*/
                             return 0;
                         }
-                        else                            /*Falls weder Untermenu, noch Funktion, noch Rückkehrmenu vorhanden*/
-                        {                               /*Kann nur bei Exit im Hauptmenu vorkommen*/
+                        else                                /*Falls weder Untermenu, noch Funktion, noch Rückkehrmenu vorhanden*/
+                        {                                   /*Kann nur bei Exit im Hauptmenu vorkommen*/
                             MENU_LcdClear();                /*Display löschen*/
-                            isFirstCall=1;              /*Startvariable wieder setzen*/
-                            return 1;                   /*Menu beendet*/
+                            isFirstCall=1;                  /*Startvariable wieder setzen*/
+                            return 1;                       /*Menu beendet*/
                         }
                     }
                 }

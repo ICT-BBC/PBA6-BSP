@@ -6,16 +6,16 @@
  * @brief           Events-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,20 +33,20 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
- 
+
 #include "../inc/PBA_config.h"
 
 #ifdef USE_EVENTS_LIBRARY
     #define MAXTIMEOUTS 10
-    
+
 /**
  *@brief Speichern von Events
  */
 static struct
-{   
+{
 uint8_t active[MAXTIMEOUTS];
     uint8_t eventOccured[MAXTIMEOUTS];
     uint16_t ms[MAXTIMEOUTS];
@@ -97,7 +97,7 @@ void EVENTS_Update(void)
             if(switchCount[i]<255)
             {
                 switchCount[i]++;
-                if(switchCount[i]>=oneSec)  /*1 Sekunde Taster gedrückt*/
+                if(switchCount[i]>=oneSec)      /*1 Sekunde Taster gedrückt*/
                 {
                     p_toEvents->valuePressed|=((uint16_t)1<<(8+i));//Bit setzen
                 }
@@ -116,8 +116,8 @@ void EVENTS_Update(void)
             switchCount[i]=0;   /*Entsprechenden Zähler zurücksetzen*/
             p_toEvents->valuePressed&=~(((uint16_t)1<<i)|((uint16_t)1<<(8+i))); /*Beide Bits löschen*/
         }
-            
-        
+
+
     }
 }
 
@@ -128,7 +128,7 @@ inline void EVENTS_TimerISR(void)
 {
     static uint8_t stateOld=0;
     uint8_t i;
-    if(stateOld!=*p_toState)                            /*Bei Zustandswechsel alle Timeouts zurücksetzen*/
+    if(stateOld!=*p_toState)                    /*Bei Zustandswechsel alle Timeouts zurücksetzen*/
         for(i=0;i<MAXTIMEOUTS;i++)
         {
             timeoutValues.eventOccured[i]=0;
@@ -136,7 +136,7 @@ inline void EVENTS_TimerISR(void)
             timeoutValues.ms[i]=0;
         }
     else
-        for(i=0;i<MAXTIMEOUTS;i++)                  /*Timoutereignisse prüfen*/
+        for(i=0;i<MAXTIMEOUTS;i++)              /*Timoutereignisse prüfen*/
             if((timeoutValues.active[i]==1) && (timeoutCounter==timeoutValues.end[i]))
                 timeoutValues.eventOccured[i]=1;
     stateOld=*p_toState;
@@ -150,9 +150,9 @@ inline void EVENTS_TimerISR(void)
  */
 static uint8_t EVENTS_TimeoutHandler(uint16_t timeoutMS)
 {
-    if(timeoutMS<=loopDelayMS)                            /*Wenn gewünschtes timeout kleiner oder gleich eingestelltem Loopdelay*/
+    if(timeoutMS<=loopDelayMS)                  /*Wenn gewünschtes timeout kleiner oder gleich eingestelltem Loopdelay*/
     {
-        return 1;                                   /*Rückgabe: Timeoutereignis eingetreten->timeout=loop_delay*/
+        return 1;                               /*Rückgabe: Timeoutereignis eingetreten->timeout=loop_delay*/
     }
     else
     {
@@ -215,8 +215,8 @@ static uint8_t EVENTS_ActiveUntilHandler(uint16_t activeUntilMS)
     else                                            /*Timeout bereits vorhanden*/
     {
         if(timeoutValues.active[i]==2)              /*Ontime-Timemout bereits 1x abgelaufen*/
-            return 0;       
-        if(timeoutValues.active[i] && timeoutValues.eventOccured[i])            /*Timeoutereignis eingetreten*/
+            return 0;
+        if(timeoutValues.active[i] && timeoutValues.eventOccured[i])    /*Timeoutereignis eingetreten*/
         {
             /*Timeout zurücksetzen*/
             timeoutValues.eventOccured[i]=0;

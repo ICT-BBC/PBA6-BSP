@@ -6,16 +6,16 @@
  * @brief           I2C-Library für PBA4/5/6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #include "../inc/PBA_config.h"
@@ -60,7 +60,7 @@
 void I2C_WaitIF(void)
 {
     while(!PIR1bits.SSP1IF);                /*Warten bis I2C-IF gesetzt (MSSP action done)*/
-    PIR1bits.SSP1IF=0;                      /*Interrupt-Flag rücksetzen*/                           
+    PIR1bits.SSP1IF=0;                      /*Interrupt-Flag rücksetzen*/
 }
 
 /**
@@ -72,7 +72,7 @@ void I2C_Init(void)
     TRISC|=0b00011000;                      /*RC3(SCL), RC4(SDA) als Inputs definieren*/
     SSPADD=BRGVAL;                          /*Takt 100kHz: BRGVAL = (FOSC / (4 * SCL)) -1*/
     SSPCON=0x08;                            /*master mode, clock=Fosc/(4*(SSPADD+1))*/
-    SSP1CON1bits.SSPEN = 1;                 /*MSSP-Modul eingeschalten (SSP-Enable)*/                           
+    SSP1CON1bits.SSPEN = 1;                 /*MSSP-Modul eingeschalten (SSP-Enable)*/
 }
 
 /**
@@ -100,7 +100,7 @@ void I2C_Stop(void)
 {
     SSP1CON2bits.PEN = 1;                   /*Bus freigeben*/
     I2C_WaitIF();                           /*Warten bis Bus freigegeben*/
-}   
+}
 
 /**
  * @brief Byte an Slave übertragen.
@@ -110,7 +110,7 @@ void I2C_WriteByte(uint8_t data)
 {
     SSPBUF=data;                            /*Ein Byte zum I2C-Slave übertragen */
     I2C_WaitIF();                           /*Warten bis Daten geschrieben*/
-}   
+}
 
 /**
  * @brief Daten-Byte lesen.
