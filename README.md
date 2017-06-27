@@ -2,52 +2,52 @@
 ## Download des PBA6 BSP
 Der Sourcecode des PBA6-BSP wird auf Github verwaltet: <a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank"> https://github.com/ICT-BBC/PBA6-BSP </a>
 
-1. Öffne die <a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank"> Github-Seite des PBA6-BSP</a>
-2. Klicke auf den Button "Clone or Download" auf der rechten Seite, über der Ordnerübersicht
+1. Ã–ffne die <a href="https://github.com/ICT-BBC/PBA6-BSP" target="_blank"> Github-Seite des PBA6-BSP</a>
+2. Klicke auf den Button "Clone or Download" auf der rechten Seite, Ã¼ber der OrdnerÃ¼bersicht
 3. Lade das Projekt als Zip-Datei herunter
 4. Entpacke die Zip-Datei
 
 
 ## Inhalt BSP
-Der entpackte Ordner enthält nun folgende Unterordner und Dateien:
+Der entpackte Ordner enthÃ¤lt nun folgende Unterordner und Dateien:
 
 Ordner / Datei  | Inhalt
 --------------- | ---------------------------------------------------------------------------------------------------------------------
 docs            | Ordner mit der HTML-Dokumentation des Sourcecodes
-doxygen         | Ordner mit allen benötigten Dateien für Doxygen --> kann gelöscht werden
+doxygen         | Ordner mit allen benÃ¶tigten Dateien fÃ¼r Doxygen --> kann gelÃ¶scht werden
 example         | MPLABX-Projekt Hardwaretestsoftware
 inc             | Include-Files des BSP
 src             | Source-Files des BSP
-.gitignore      | Ignorierte Files der Versionsverwaltung --> kann gelöscht werden
+.gitignore      | Ignorierte Files der Versionsverwaltung --> kann gelÃ¶scht werden
 LICENSE.md      | Lizenz --> Bitte durchlesen
-README.md       | Rohdaten der Anleitung --> kann gelöscht werden
+README.md       | Rohdaten der Anleitung --> kann gelÃ¶scht werden
 
 
-##BSP-Module
+## BSP-Module
 Modul           | Zweck
 --------------- | ---------------------------------------------------------------------------------------------------------------------
 ADC             | Funktionen zur Verwendung des PIC-internen Analog-Digital-Konverters.
-LCD             | Ansteuerung des DOGM162-LCDs. Mit kleinen Anpassungen auch für andere Controller und Displays verwendbar.
-UART            | Funktionen fürs Lesen und Schreiben über die UART-Schnittstelle,
-I2C             | Lese- und Schreibfunktionen für die interne I2C-Schnittstelle.
+LCD             | Ansteuerung des DOGM162-LCDs. Mit kleinen Anpassungen auch fÃ¼r andere Controller und Displays verwendbar.
+UART            | Funktionen fÃ¼rs Lesen und Schreiben Ã¼ber die UART-Schnittstelle,
+I2C             | Lese- und Schreibfunktionen fÃ¼r die interne I2C-Schnittstelle.
 LM75            | Ansteuerung des Temperatursensors TCN75, welcher protokollkompatibel zum Modell LM75 ist.
 EEPROM          | Verwendung des PIC-internen EEPROMS.
-HELPERS         | Hilfs-Makros und Funktionen wie Bit setzen / löschen, Bit toggle.
-INTERRUPT       | Globale Interruptroutine. Möglichkeit zum Hinzufügen von Callbackfunktionen für Timer-, UART- und externe Interrupts.
+HELPERS         | Hilfs-Makros und Funktionen wie Bit setzen / lÃ¶schen, Bit toggle.
+INTERRUPT       | Globale Interruptroutine. MÃ¶glichkeit zum HinzufÃ¼gen von Callbackfunktionen fÃ¼r Timer-, UART- und externe Interrupts.
 LOOPDELAY       | Timer-basiertes Delay. Verwendung in Zustandsmaschinen.
 EVENTS          | Funktionen zur Verwendung von zeitlichen- und Tasterevents. Anwendung in Zustandsmaschinen.
-MENU            | Funktionen zur Darstellung eines Menüs auf zeichenbasierten LCDs. Verwendbar in Zustandsmaschinen.
+MENU            | Funktionen zur Darstellung eines MenÃ¼s auf zeichenbasierten LCDs. Verwendbar in Zustandsmaschinen.
 
 
 ## Einbinden des BSP in ein MPLABX Projekt
 1. Neues MPLABX Projekt erstellen
 2. Die beiden Ordner "src" und "inc" in den Projektordner kopieren
 3. Im Projekt Rechtsklick auf Source Files, danach "Add existing Item"
-4. Im Browse-Dialog in den Source Ordner navigieren, alle C-Files anwählen und diese dem Projekt hinzuzufügen
+4. Im Browse-Dialog in den Source Ordner navigieren, alle C-Files anwÃ¤hlen und diese dem Projekt hinzuzufÃ¼gen
    **WICHTIG!! Die Auswahl "Store path as:" muss auf "Relative" eingestellt sein**
-5. Schritte 3&4 wiederholen für die Include Files
+5. Schritte 3&4 wiederholen fÃ¼r die Include Files
 6. Neues C-File erstellen und im Ordner "src" abspeichern
-7. Zur Verwendung der Library muss folgende Code-Zeile im neu erstellten C-File hinzugefügt werden:
+7. Zur Verwendung der Library muss folgende Code-Zeile im neu erstellten C-File hinzugefÃ¼gt werden:
 
   ```C
   #include "../inc/PBA_config.h"
@@ -56,12 +56,12 @@ MENU            | Funktionen zur Darstellung eines Menüs auf zeichenbasierten LC
   
 ## BSP-Konfiguration
 Zur Konfiguration muss die Header-Datei ```PBA_config.h ``` editiert werden.
-Durch ein- oder auskommentieren der defines im Abschnitt "BSP-Konfiguration" lässt sich
-das BSP auf die Bedürfnisse anpassen.
+Durch ein- oder auskommentieren der defines im Abschnitt "BSP-Konfiguration" lÃ¤sst sich
+das BSP auf die BedÃ¼rfnisse anpassen.
   ```C
 /******************** BSP-Konfiguration ***********************************************/
 
-#define PBA6/**<LCD wird für 3.3V initialisiert. Auskommentieren, falls nicht PBA6 verwendet wird*/
+#define PBA6/**<LCD wird fÃ¼r 3.3V initialisiert. Auskommentieren, falls nicht PBA6 verwendet wird*/
 
 #define USE_ADC_LIBRARY         /**< ADC-Support Funktionen*/
 
@@ -75,7 +75,7 @@ das BSP auf die Bedürfnisse anpassen.
 
 #define USE_EEPROM_LIBRARY      /**< Verwendung internes EEPROM*/
 
-#define USE_HELPERS_LIBRARY     /**< Nützliche Makros und Funktionen*/
+#define USE_HELPERS_LIBRARY     /**< NÃ¼tzliche Makros und Funktionen*/
 
 #define USE_INTERRUPT_LIBRARY   /**< Globaler Interrupt-Handler*/
 
@@ -86,21 +86,22 @@ das BSP auf die Bedürfnisse anpassen.
 #define USE_MENU_LIBRARY        /**< Funktionen Erstellung und Darstellung eines Menus auf LCD*/
  ```
  
-###Modul-Abhängigkeiten
+### Modul-AbhÃ¤ngigkeiten
 Einige Module verwenden Funktionen anderer Module und setzen deshalb voraus, dass diese ebenfalls aktiviert sind.
-Ist dies nicht der Fall, werden passende Fehlermeldungen ausgegeben. Die nachfolgende Tabelle gibt einen Überblick über die Abhängigkeiten.
-     Module     | LCD | I2C | HELPERS | INTERRUPT | LOOPDELAY | EVENTS |
---------------- |:---:|:---:|:-------:|:---------:|:---------:|:------:| 
-LCD             |     |     |    x    |           |           |        |
-LM75            |     |  x  |         |           |           |        |  
-LOOPDELAY       |     |     |         |     x     |           |        |
-EVENTS          |     |     |    x    |     x     |     x     |        |  
-MENU            |  x  |     |    x    |     x     |     x     |   x    |
+Ist dies nicht der Fall, werden passende Fehlermeldungen ausgegeben. Die nachfolgende Tabelle gibt einen Ãœberblick Ã¼ber die AbhÃ¤ngigkeiten.
+ 
+|     Module     |  LCD  |  I2C  | HELPERS | INTERRUPT | LOOPDELAY | EVENTS |
+| -------------- | :---: | :---: | :-----: | :-------: | :-------: | :----: | 
+| LCD            |       |       |    x    |           |           |        |
+| LM75           |       |   x   |         |           |           |        |  
+| LOOPDELAY      |       |       |         |     x     |           |        |
+| EVENTS         |       |       |    x    |     x     |     x     |        |  
+| MENU           |   x   |       |    x    |     x     |     x     |   x    |
 
-###STDOUT
-Printf-Ausgaben können entweder ans LCD oder über UART gesendet werden. Mittels Compiler-Schalter
+### STDOUT
+Printf-Ausgaben kÃ¶nnen entweder ans LCD oder Ã¼ber UART gesendet werden. Mittels Compiler-Schalter
 kann zwischen den beiden Varianten umgestellt werden. Zu beachten ist, dass das jeweilige BSP-Modul
-aktiviert sein muss. Sind weder UART- noch LCD-Modul aktiviert, müssen beide Compiler-Schalter deaktiviert werden.
+aktiviert sein muss. Sind weder UART- noch LCD-Modul aktiviert, mÃ¼ssen beide Compiler-Schalter deaktiviert werden.
   ```C
 /********** Auswahl STDOUT ****************************************************/
 #define STDOUT_LCD      true    /**< Ausgabe printf auf LCD*/
@@ -109,9 +110,9 @@ aktiviert sein muss. Sind weder UART- noch LCD-Modul aktiviert, müssen beide Com
  
  
 ## Interrupts
-Der Mikrocontroller verfügt nur über einen Interrupt-Vektor. Die globale Interrupt-Routine
-ist in der Datei ```PBA_Interrupts.c ``` umgesetzt. Für die wichtigsten Peripherie-
-Interrupts können Callback-Funktionen hinzugefügt werden. Folgende Funktionen stehen dazu zur Verfügung:
+Der Mikrocontroller verfÃ¼gt nur Ã¼ber einen Interrupt-Vektor. Die globale Interrupt-Routine
+ist in der Datei ```PBA_Interrupts.c ``` umgesetzt. FÃ¼r die wichtigsten Peripherie-
+Interrupts kÃ¶nnen Callback-Funktionen hinzugefÃ¼gt werden. Folgende Funktionen stehen dazu zur VerfÃ¼gung:
   ```C
 uint8_t INT_AddTmr0CallbackFnc   (callbackFunction_t p_callBackFunction);
 uint8_t INT_AddTmr1CallbackFnc   (callbackFunction_t p_callBackFunction);
@@ -119,9 +120,10 @@ uint8_t INT_AddTmr2CallbackFnc   (callbackFunction_t p_callBackFunction);
 uint8_t INT_AddUartCallbackFnc   (callbackFunction_t p_callBackFunction);
 uint8_t INT_AddExtIntCallbackFnc (callbackFunction_t p_callBackFunction);
 ```
-Pro Timer können jeweils drei Funktionen hinterlegt werden. Die restlichen Interrupts akzeptieren nur eine
-Callbackfunktion. Über den Rückgabeparameter kann überprüft werden, ob die Funktion erfolgreich hinterlegt wurde.
-Rückgabewert    | Bedeutung
+Pro Timer kÃ¶nnen jeweils drei Funktionen hinterlegt werden. Die restlichen Interrupts akzeptieren nur eine
+Callbackfunktion. Ãœber den RÃ¼ckgabeparameter kann Ã¼berprÃ¼ft werden, ob die Funktion erfolgreich hinterlegt wurde.
+
+RÃ¼ckgabewert    | Bedeutung
 --------------- | -----------------------------------------------------------
 0               | Erfolg
 1               | Fehler, die maximale Anzahl Funktionen ist bereits erreicht
@@ -145,10 +147,10 @@ void main(void)
   
 ## Verwendung der Loopdelay-Library
 Nach der Initialisierung der Hardware muss das Loopdelay initialisiert werden.
-Dafür wird die Funktion ```void LOOPDELAY_Init(uint16_t loopDelayTimeMS);``` aufgerufen,
-wobei der Übergabeparameter dem gewünschten Loopdelay in Millisekunden (ms) entspricht.
-Ausgeführt wird das Delay durch die Funktion ```void LOOPDELAY_Wait(void);```.
-Der Benutzer ist selber verantwortlich, dass der gesamte Programmdurchlauf nicht länger als
+DafÃ¼r wird die Funktion ```void LOOPDELAY_Init(uint16_t loopDelayTimeMS);``` aufgerufen,
+wobei der Ãœbergabeparameter dem gewÃ¼nschten Loopdelay in Millisekunden (ms) entspricht.
+AusgefÃ¼hrt wird das Delay durch die Funktion ```void LOOPDELAY_Wait(void);```.
+Der Benutzer ist selber verantwortlich, dass der gesamte Programmdurchlauf nicht lÃ¤nger als
 die angegebene Zykluszeit dauert.
 
 ```C
@@ -167,21 +169,21 @@ void main(void)
  
  
 ## Verwendung der Event-Library
-Die Event-Library bietet die Möglichkeit mit verschiedenen Events zu arbeiten.
+Die Event-Library bietet die MÃ¶glichkeit mit verschiedenen Events zu arbeiten.
 Folgende Events sind definiert:
 
 Eventname               | Funktion
 ----------------------  | -------------------------------------------------------------
 posEdge                 | Abfragen einer positiven Tasterflanke
 negEdge                 | Abfragen einer negativen Tasterflanke
-ActiveUntilMS(time)     | Nach dem ersten Aufruf nur während der angegebenen Zeit aktiv
+ActiveUntilMS(time)     | Nach dem ersten Aufruf nur wÃ¤hrend der angegebenen Zeit aktiv
 TimeoutMS(time)         | Nach dem ersten Aufruf immer nach der angegebenen Zeit aktiv
 
-Zur Initialisierung der Bibliothek wird die Funktion ```void EVENTS_Init(void *p_state,events_t *p_events);``` aufgerufen. Der Übergabeparameter ```void *p_state``` ist der Pointer auf die in einer Aufzählung (enum) definierten states.
-Der zweite Parameter ist der Pointer auf eine Struktur vom Type events_t. Über diese Struktur können Events erstellt und abgefragt werden.
-Das Loopdelay wird über die bekannte Funktion ```void LOOPDELAY_Wait(void);```aufgerufen.
-Zum Detektieren der Tasterflanken muss die Funktion ```EVENTS_Update(void);``` zyklisch ausgeführt werden.  <br>
-**Für zeitliche Events dürfen nur Werte die das Ein- oder Mehrfache der Zykluszeit betragen verwendet werden!**
+Zur Initialisierung der Bibliothek wird die Funktion ```void EVENTS_Init(void *p_state,events_t *p_events);``` aufgerufen. Der Ãœbergabeparameter ```void *p_state``` ist der Pointer auf die in einer AufzÃ¤hlung (enum) definierten states.
+Der zweite Parameter ist der Pointer auf eine Struktur vom Type events_t. Ãœber diese Struktur kÃ¶nnen Events erstellt und abgefragt werden.
+Das Loopdelay wird Ã¼ber die bekannte Funktion ```void LOOPDELAY_Wait(void);```aufgerufen.
+Zum Detektieren der Tasterflanken muss die Funktion ```EVENTS_Update(void);``` zyklisch ausgefÃ¼hrt werden.  <br>
+**FÃ¼r zeitliche Events dÃ¼rfen nur Werte die das Ein- oder Mehrfache der Zykluszeit betragen verwendet werden!**
 
 ```C
 #include "../inc/PBA_config.h"
@@ -191,7 +193,7 @@ Zum Detektieren der Tasterflanken muss die Funktion ```EVENTS_Update(void);``` z
 
 #define LEDANZEIGE      LATD
 
-enum {ST_TIMEOUT,ACTIVE_UNTIL, ST_POSEDGE_NEGEDGE}state=ST_TIMEOUT; /*Aufzählung aller Zustände*/
+enum {ST_TIMEOUT,ACTIVE_UNTIL, ST_POSEDGE_NEGEDGE}state=ST_TIMEOUT; /*AufzÃ¤hlung aller ZustÃ¤nde*/
 
 events_t events;                    /*Event-Struktur*/
 
@@ -210,7 +212,7 @@ void main(void)
         switch(state)
         {
             case ST_TIMEOUT:
-                if(events.TimeoutMS(3000))  /*LED0 leuchtet während 3 Sekunden*/
+                if(events.TimeoutMS(3000))  /*LED0 leuchtet wÃ¤hrend 3 Sekunden*/
                 {
                     LED0=0;
                     state=ST_ACTIVE_UNTIL;
@@ -221,7 +223,7 @@ void main(void)
                 {
                     if(events.TimeoutMS(100))
                     {
-                        LED0^=1;            /*LED0 blinkt mit 5Hz für 2s*/
+                        LED0^=1;            /*LED0 blinkt mit 5Hz fÃ¼r 2s*/
                     }
                 }
                 else
@@ -231,15 +233,15 @@ void main(void)
                 }
                 break;
             case ST_POSEDGE_NEGEDGE:
-                if(events.posEdge.switch0)  /*Bei jeder Tasterbetätigung wird die */
+                if(events.posEdge.switch0)  /*Bei jeder TasterbetÃ¤tigung wird die */
                 {                           /*Ledanzeige um 1 inkrementiert*/
                     LEDANZEIGE++;
                 }
 
                 if(events.negEdge.switch7)  /*Beim loslassen des Tasters */
                 {
-                    LEDANZEIGE=1;           /*zurücksetzen der Anzeige*/
-                    state=ST_TIMEOUT;       /*Rückkehr zum 1. Zustand*/
+                    LEDANZEIGE=1;           /*zurÃ¼cksetzen der Anzeige*/
+                    state=ST_TIMEOUT;       /*RÃ¼ckkehr zum 1. Zustand*/
                 }
                 break;
         }
