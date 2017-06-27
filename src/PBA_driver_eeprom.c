@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_driver_eeprom.c
- * @brief           EEPROM-Library für PBA4/5/6
+ * @brief           EEPROM-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG, Microchip
  *******************************************************************************
  *
@@ -77,7 +77,7 @@ uint8_t EE_ReadByte(uint8_t eeAddr)
     EECON1bits.CFGS = 0;
     EECON1bits.EEPGD = 0;       /* EEPROM-Speicher auswählen*/
     EECON1bits.RD = 1;          /* Lesen*/
-    NOP();  
+    NOP();
     NOP();
     return (EEDATL);
 }

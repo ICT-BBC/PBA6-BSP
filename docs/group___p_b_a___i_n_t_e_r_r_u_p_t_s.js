@@ -2,12 +2,12 @@ var group___p_b_a___i_n_t_e_r_r_u_p_t_s =
 [
     [ "PBA_interrupts.h", "_p_b_a__interrupts_8h.html", null ],
     [ "PBA_interrupts.c", "_p_b_a__interrupts_8c.html", null ],
-    [ "TMR2_INT", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gaf6baae9385e65b47397c25f253cd8893", null ],
-    [ "USART_RC_INT", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga4a111e045a6ea8ad3c56997c8c043a4a", null ],
-    [ "ISR_Ext", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga85fe7142c433cc8f0790cbc320ff0093", null ],
-    [ "ISR_Global", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gace7b839ca5a68eb76d53f165f6f7b1cf", null ],
-    [ "ISR_Timer0", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gabffbc49ee0e9c8db2f13937bb5623aad", null ],
-    [ "ISR_Timer1", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gae43525f2f26e64bbdc2dccebc2c3bdda", null ],
-    [ "ISR_Timer2", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga9394e0c464db12517203e6b445dbe325", null ],
-    [ "ISR_UartRx", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gaf2e8c59bd803a61f0ea8b5144579b43a", null ]
+    [ "MAX_TMR_CALLBACK_FUNCTIONS", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga5e7899746bceaf8104621a44906d09ea", null ],
+    [ "callbackFunction_t", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gac1f50b73033218e5d4f51c494e0604d3", null ],
+    [ "INT_AddExtIntCallbackFnc", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gacf5041be6dd1795cfb59b76d70a5e895", null ],
+    [ "INT_AddTmr0CallbackFnc", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gad4c052863a994c5860f16dc20c7e9489", null ],
+    [ "INT_AddTmr1CallbackFnc", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga61f82223ff621b1ab02faa21f408b240", null ],
+    [ "INT_AddTmr2CallbackFnc", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga5a622dc14a4aeff3234aa2cec52e5c1b", null ],
+    [ "INT_AddUartCallbackFnc", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga07b872b0fac91ed782cc57e63ff367c2", null ],
+    [ "INT_Manager", "group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga73e351037916682685dc2cde6dcadf4e", null ]
 ];

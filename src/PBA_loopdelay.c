@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_loopdelay.c
- * @brief           Loopdelay-Library für PBA4/5/6
+ * @brief           Loopdelay-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *
@@ -69,8 +69,19 @@
     #endif
 #endif
 
+/**
+ *@brief Maximale konfigurierbare Zykluszeit
+ */
 #define MAX_LOOP_DELAY_MS   10000
+
+/**
+ *@brief Zählervariable für Interrupt
+ */
 static volatile uint16_t loopDelayCnt = 0;
+
+/**
+ *@ Konfigurierte Zykluszeit in Millisekunden
+ */
 static uint16_t loopDelayMS = 0;
 
 /**
@@ -133,6 +144,11 @@ void LOOPDELAY_Init(uint16_t loopDelayTimeMS)
     TMR0 = TIMER0_RELOAD_VALUE;
     INTCONbits.T0IF = 0;                /*Timer0-Interrupt-Flag löschen*/
     INTCONbits.T0IE = 1;                /*Timer0-Interrupt einschalten*/
+
+    if(0 != INT_AddTmr0CallbackFnc(LOOPDELAY_TimerISR))
+    {
+        /* Fehler */
+    }
 #endif
 #if defined(LOOPDELAY_USE_TIMER1)
     T1CON   = 0b00110001;               /*Prescaler = 8, Timer on*/
@@ -140,6 +156,12 @@ void LOOPDELAY_Init(uint16_t loopDelayTimeMS)
     TMR1L = (TIMER1_RELOAD_VALUE);
     PIR1bits.TMR1IF = 0;                /*Timer1-Interrupt-Flag löschen*/
     PIE1bits.TMR1IE = 1;                /*Timer1-Interrupt einschalten*/
+
+    if(0 != INT_AddTmr1CallbackFnc(LOOPDELAY_TimerISR))
+    {
+        /* Fehler */
+    }
+
 #endif
 #if defined(LOOPDELAY_USE_TIMER2)
 #if _XTAL_FREQ>20000000
@@ -151,6 +173,12 @@ void LOOPDELAY_Init(uint16_t loopDelayTimeMS)
     TMR2    = 0;                        /*Timer2-Register löschen*/
     PIR1bits.TMR2IF = 0;                /*Timer2-Interrupt-Flag löschen*/
     PIE1bits.TMR2IE = 1;                /*Timer2-Interrupt einschalten*/
+
+    if(0 != INT_AddTmr2CallbackFnc(LOOPDELAY_TimerISR))
+    {
+        /* Fehler */
+    }
+
 #endif
     INTCONbits.PEIE = 1;                /*Peripherie-Interrupts einschalten*/
     INTCONbits.GIE  = 1;                /*Globale Interrupts einschalten*/

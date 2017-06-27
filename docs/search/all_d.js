@@ -15,7 +15,7 @@ var searchData=
   ['submenu',['submenu',['../structs__menu_entry.html#a8f8ff1e2a13739b2c87270df47d2b220',1,'s_menuEntry']]],
   ['summer',['SUMMER',['../group___d_e_f___l_e_d___s_u_m_m_e_r.html#ga5fc31ed09ee00b6969fec07b96f43e18',1,'PBA_config.h']]],
   ['summercnt_5fg',['summerCnt_g',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga13533f1e7f273118c386de1a189a482b',1,'PBA6_hardwaretest.c']]],
-  ['summeredit',['SummerEdit',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga770e2fedbf08d17745aa406fff4b2a47',1,'PBA6_hardwaretest.c']]],
+  ['summeredit',['SummerEdit',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga17aa99dbaf9aa931a11fd1b49a4279b0',1,'PBA6_hardwaretest.c']]],
   ['summerfreqhz_5fg',['summerFreqHZ_g',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga4ab7dd64d4150bd1e5def30053e2edce',1,'PBA6_hardwaretest.c']]],
   ['switch0',['switch0',['../structtaster_byte__t.html#aed5f14c4d0cccd3913de47d7007ee9b9',1,'tasterByte_t']]],
   ['switch1',['switch1',['../structtaster_byte__t.html#a37d16446f8f05f369d39de566420494c',1,'tasterByte_t']]],

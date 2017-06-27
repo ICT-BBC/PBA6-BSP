@@ -3,12 +3,13 @@
  * @{
  *******************************************************************************
  * @file        PBA6_hardwaretest.c
- * @brief       Hardwaretestsoftware für PIC Board Advanced 6
+ * @brief       Hardwaretestsoftware für das PIC Board Advanced 6
  * @author      ICT Berufsbildungscenter AG
- * @version     2.0.1
+ * @version     2.1.0
  * @date        23.01.2017: Komplette Überarbeitung, Umsetzung als FSM
  *                          Implementierung aller Library-Features
  * @date        25.04.2047: SRF Zugriffe geändert (Bitfelder), fix Intro
+ * @date        26.06.2017: Anpassungen auf neue Interruptumsetzung BSP V1.3.0
  *******************************************************************************
  *
  * @copyright
@@ -52,9 +53,9 @@ const uint8_t EEADDR_SUMMER     = 0x02;         /**< EEPROM-Adresse, Summer Freq
 
 const uint8_t EE_VALID          = 0x00;         /**< EEPROM-Daten bestehend*/
 const uint8_t EE_DEFAULT_INTRO  = 0x01;         /**< EEPROM-Standard-Wert Intro an/aus. Standard: Intro an*/
-const uint16_t EE_DEFAULT_SUMMER = 1000;        /**< EEPROM-Standard-Wert Summerfrequenz. Standard: 1kHz*/
+const uint16_t EE_DEFAULT_SUMMER = 500;         /**< EEPROM-Standard-Wert Summerfrequenz. Standard: 500Hz*/
 
-const uint16_t FREQ_MAX         = 1000;         /**< Maximale Summerfrequenz*/
+const uint16_t FREQ_MAX         = 500;          /**< Maximale Summerfrequenz*/
 const uint8_t FREQ_STEP         = 100;          /**< Summer: 100Hz Schritt*/
 const uint8_t FREQ_MIN          = 100;          /**< Minimale Summerfrequenz*/
 
@@ -77,10 +78,10 @@ typedef enum
 
 /********************* Funktionsprototypen **************************************/
 
-uint8_t IntroEdit(uint8_t firstcall);           /*Menufunktion, Intro an/aus*/
-uint8_t SummerEdit(uint8_t firstcall);          /*Menufunktion, Summerfrequenz*/
-uint8_t BspMenuFunction(uint8_t firstcall);     /*Menufunktion, Beispiel*/
-
+uint8_t IntroEdit(uint8_t firstCall);           /*Menufunktion, Intro an/aus*/
+uint8_t SummerEdit(uint8_t firstCall);          /*Menufunktion, Summerfrequenz*/
+uint8_t BspMenuFunction(uint8_t firstCall);     /*Menufunktion, Beispiel*/
+inline void ISR_Summer(void);
 /********************* Globale Daten ********************************************/
 volatile uint8_t uartHasReceived_g = 0;             /**< Flag UART-String empfangen*/
 volatile uint8_t uartBuffer_g[UART_BUFFERSIZE];     /**< UART-String*/
@@ -108,8 +109,6 @@ menuEntry_t myMenu[] =
     {"Summer",          1,  &myMenu[6], &myMenu[4], NULL,       &myMenu[4], SummerEdit},        /*Funktion kann ausgeführt werden*/
     {"Return",          2,  &myMenu[4], &myMenu[5], NULL,       &myMenu[0], NULL}               /*Return-->Hauptmenu wird aufgerufen*/
 };
-
-
 
 
 /********************************************************************************/
@@ -152,18 +151,22 @@ void main(void)
 
     if (playIntro_g)                                    /*Falls Intro aktiviert*/
     {
-        Beep(4000, 80);                                 /*Start-Tonausgabe*/
+        Beep(4000, 40);                                 /*Start-Tonausgabe*/
         DelayMS(50);
-        Beep(4000, 160);
+        Beep(4000, 80);
         printf("\fPIC Board Adv. 6\n  Hardwaretest  "); /*Start-LCD-Ausgabe während 1s*/
         DelayMS(1000);
+    }
+    if(0 != INT_AddTmr2CallbackFnc(ISR_Summer))         /*Summerinterruptroutine mit Timer2 abarbeiten*/
+    {
+        /* Fehler */
     }
     LOOPDELAY_Init(10);                                 /*Zyklus-Delay init*/
     EVENTS_Init(&state, &events_g);                     /*Events initialisieren*/
     MENU_Init(&myMenu[0], &events_g);                   /*Menu initialisieren*/
     LCD_Clear();
     printf("  Test wählen   \n(Schalter 0..5) ");       /*Eingabeaufforderung*/
-    for (; ; )                                          /*Endlosschleife*/
+    for (; ;)                                           /*Endlosschleife*/
     {
         LOOPDELAY_Wait();                               /*Zykluszeit 10ms abwarten*/
         EVENTS_Update();                                /*Events aktualisieren*/
@@ -173,24 +176,24 @@ void main(void)
         {
             /********************* Auswahl Test *********************************************/
         case ST_AUSWAHL:
-            if (events_g.posEdge.switch0)                            /*Schaltertest*/
+            if (events_g.posEdge.switch0)                           /*Schaltertest*/
             {
                 printf("\f Test der LEDs\n und Schalter...");
                 state = ST_LED;
             }
-            if (events_g.posEdge.switch1)                            /*Summertest*/
+            if (events_g.posEdge.switch1)                           /*Summertest*/
             {
                 printf("\f Test Summer...");
-                summerCnt_g = 1000 / summerFreqHZ_g;                 /*Startfrequenz=1kHz*/
+                summerCnt_g = 1000 / summerFreqHZ_g / 2;            /*Startfrequenz=500Hz*/
                 state = ST_SUMMER;
 
             }
-            if (events_g.posEdge.switch2)                            /*7-Segment-Anzeige Test*/
+            if (events_g.posEdge.switch2)                           /*7-Segment-Anzeige Test*/
             {
                 printf("\f Test 7-Segment-\n  Anzeigen...");
                 state = ST_SEG;
             }
-            if (events_g.posEdge.switch3)                            /*ADC&Poti Test*/
+            if (events_g.posEdge.switch3)                           /*ADC&Poti Test*/
             {
                 printf("\fTest ADC-Poti...");
                 state = ST_ADC;
@@ -239,11 +242,11 @@ void main(void)
         case ST_SUMMER:
             if (events_g.TimeoutMS(200))
             {
-                summerCnt_g = 1000 / (summerFreqHZ_g / 2);
+                summerCnt_g = 1000 / summerFreqHZ_g;
             }
             if (events_g.TimeoutMS(400))
             {
-                summerCnt_g = 1000 / summerFreqHZ_g;
+                summerCnt_g = 1000 / summerFreqHZ_g / 2;
             }
             if (events_g.negEdge.switch1)
             {
@@ -413,10 +416,11 @@ inline void  ISR_UartRx(void)
 }
 
 /**
- * @brief Timer2 Interruptroutine
- * Schaltet den Summer-IO mit der gewünschten Frequenz
+ * @brief Interruptroutine für Summer.
+ * Schaltet den Summer-IO mit der gewünschten Frequenz.
+ * Alle 1ms aufrufen.
  */
-inline void ISR_Timer2(void)          /*Timer-2 Interrupt, alle 1ms*/
+inline void ISR_Summer(void)          /*Interrupt, alle 1ms*/
 {
     static uint8_t cnt = 0;           /*Zählervariable*/
     if (0 == summerCnt_g)             /*Summer aus*/
@@ -432,12 +436,12 @@ inline void ISR_Timer2(void)          /*Timer-2 Interrupt, alle 1ms*/
 
 /**
  * @brief Funktion zum ein-/ausschalten des Intros
- * @param firstcall gibt an, ob die Funktion zum ersten Mal ausgeführt wird
+ * @param firstCall gibt an, ob die Funktion zum ersten Mal ausgeführt wird
  * @return 1:Funktion beenden, 0:Funktion erneut ausführen
  */
-uint8_t IntroEdit(uint8_t firstcall)
+uint8_t IntroEdit(uint8_t firstCall)
 {
-    if (firstcall)                      /*Falls die Funktion zum ersten Mal aufgerufen wird*/
+    if (firstCall)                      /*Falls die Funktion zum ersten Mal aufgerufen wird*/
     {
         LCD_Clear();                    /*Anzeige löschen*/
         printf("Intro ausführen:\n");   /*Ausgabe Text*/
@@ -491,15 +495,15 @@ uint8_t IntroEdit(uint8_t firstcall)
 
 /**
  * Funktion zum Einstellen der Summerfrequenz für den Hardwaretest
- * @param firstcall gibt an, ob die Funktion zum ersten Mal ausgeführt wird
+ * @param firstCall gibt an, ob die Funktion zum ersten Mal ausgeführt wird
  * @return 1:Funktion beenden, 0:erneut ausführen
  */
-uint8_t SummerEdit(uint8_t firstcall)
+uint8_t SummerEdit(uint8_t firstCall)
 {
     static uint8_t count_d = 0, count_u = 0;            /*Zählervariablen*/
     uint8_t i;
 
-    if (firstcall)                                      /*Falls die Funktion zum ersten Mal aufgerufen wird*/
+    if (firstCall)                                      /*Falls die Funktion zum ersten Mal aufgerufen wird*/
     {
         LCD_Clear();                                    /*Ausgabe löschen*/
         printf("Summer_Freq:\n%u", summerFreqHZ_g);     /*Eingestellte Frequenz ausgeben*/
@@ -557,12 +561,12 @@ uint8_t SummerEdit(uint8_t firstcall)
 
 /**
  * @brief Beispiel einer Funktion, welche durch das Menu aufgerufen werden kann
- * @param firstcall gibt an, ob die Funktion zum ersten Mal ausgeführt wird
+ * @param firstCall gibt an, ob die Funktion zum ersten Mal ausgeführt wird
  * @return 1:Funktion beenden, 0:erneut ausführen
  */
-uint8_t BspMenuFunction(uint8_t firstcall)  /*Menufunktion muss 1x 8-Bit Rückgabewert und 1x 8-Bit Übergabewert haben*/
+uint8_t BspMenuFunction(uint8_t firstCall)      /*Menufunktion muss 1x 8-Bit Rückgabewert und 1x 8-Bit Übergabewert haben*/
 {
-    if (firstcall)                              /*Der Übergabeparameter wird beim 1. Aufruf der Funktion gesetzt*/
+    if (firstCall)                              /*Der Übergabeparameter wird beim 1. Aufruf der Funktion gesetzt*/
     {                                           /*Ermöglicht Initialisierung*/
         LCD_Clear();
         printf("Beispiel-\nFunktion");

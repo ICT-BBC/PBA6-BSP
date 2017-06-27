@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="bbc_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PIC Board Advanced 6 Board Support Package
-   &#160;<span id="projectnumber">V 1.2.1</span>
+   &#160;<span id="projectnumber">V 1.3.0</span>
    </div>
    <div id="projectbrief">HAL- und Peripheriefunktionen für das PBA6</div>
   </td>
@@ -94,10 +94,10 @@ $(document).ready(function(){initNavTree('group___p_b_a___l_m75.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Dateien</h2></td></tr>
 <tr class="memitem:_p_b_a__driver__lm75_8h"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__driver__lm75_8h.html">PBA_driver_lm75.h</a></td></tr>
-<tr class="memdesc:_p_b_a__driver__lm75_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LM75-Library für PBA4/5/6. <br /></td></tr>
+<tr class="memdesc:_p_b_a__driver__lm75_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LM75-Library für das PBA6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_p_b_a__driver__lm75_8c"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__driver__lm75_8c.html">PBA_driver_lm75.c</a></td></tr>
-<tr class="memdesc:_p_b_a__driver__lm75_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">LM75-Library für PBA4/5/6. <br /></td></tr>
+<tr class="memdesc:_p_b_a__driver__lm75_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">LM75-Library für das PBA6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -106,6 +106,7 @@ Makrodefinitionen</h2></td></tr>
 <tr class="memdesc:gae2e828cb29ce928c6b3fdfe3edd7e775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adresse des Temperatursensors TCN75.  <a href="#gae2e828cb29ce928c6b3fdfe3edd7e775">Mehr ...</a><br /></td></tr>
 <tr class="separator:gae2e828cb29ce928c6b3fdfe3edd7e775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab5c0fbe837494c5f9130a5914854250d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___l_m75.html#gab5c0fbe837494c5f9130a5914854250d">I2C_READ</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:gab5c0fbe837494c5f9130a5914854250d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adress-LSB muss 1 sein fürs Lesen.  <a href="#gab5c0fbe837494c5f9130a5914854250d">Mehr ...</a><br /></td></tr>
 <tr class="separator:gab5c0fbe837494c5f9130a5914854250d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -130,6 +131,8 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adress-LSB muss 1 sein fürs Lesen. </p>
 
 <p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lm75_8c_source.html#l00043">43</a> der Datei <a class="el" href="_p_b_a__driver__lm75_8c_source.html">PBA_driver_lm75.c</a>.</p>
 
@@ -196,7 +199,8 @@ Funktionen</h2></td></tr>
 <p>Auslesen der Temperatur. </p>
 <p>Bedingung: Temperatursensor muss initialisert sein. </p><dl class="section return"><dt>Rückgabe</dt><dd>Temperaturwert*10, 12Bit </dd></dl>
 <p>&lt; Adresse des Temperatursensors TCN75</p>
-<p>&lt; Adresse des Temperatursensors TCN75 </p>
+<p>&lt; Adresse des Temperatursensors TCN75</p>
+<p>&lt; Adress-LSB muss 1 sein fürs Lesen </p>
 
 <p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lm75_8c_source.html#l00061">61</a> der Datei <a class="el" href="_p_b_a__driver__lm75_8c_source.html">PBA_driver_lm75.c</a>.</p>
 

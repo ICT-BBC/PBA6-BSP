@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="bbc_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PIC Board Advanced 6 Board Support Package
-   &#160;<span id="projectnumber">V 1.2.1</span>
+   &#160;<span id="projectnumber">V 1.3.0</span>
    </div>
    <div id="projectbrief">HAL- und Peripheriefunktionen für das PBA6</div>
   </td>
@@ -95,20 +95,20 @@ $(document).ready(function(){initNavTree('group___p_b_a___l_c_d.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Dateien</h2></td></tr>
 <tr class="memitem:_p_b_a__driver__lcd_8h"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__driver__lcd_8h.html">PBA_driver_lcd.h</a></td></tr>
-<tr class="memdesc:_p_b_a__driver__lcd_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD-Library für PBA4/5/6. <br /></td></tr>
+<tr class="memdesc:_p_b_a__driver__lcd_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD-Library für das PBA6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_p_b_a__driver__lcd_8c"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__driver__lcd_8c.html">PBA_driver_lcd.c</a></td></tr>
-<tr class="memdesc:_p_b_a__driver__lcd_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD-Library für PBA4/5/6. <br /></td></tr>
+<tr class="memdesc:_p_b_a__driver__lcd_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD-Library für das PBA6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Makrodefinitionen</h2></td></tr>
 <tr class="memitem:gabccd5b584057dc78fb9586343bb84aee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___l_c_d.html#gabccd5b584057dc78fb9586343bb84aee">LCD_SEND_COMMAND</a>(Command)&#160;&#160;&#160;<a class="el" href="group___p_b_a___l_c_d.html#ga9090701d0b25ff804f53e43b4168e12e">LCD_Send</a>(Command)</td></tr>
+<tr class="memdesc:gabccd5b584057dc78fb9586343bb84aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Senden eines Befehls ans LCD.  <a href="#gabccd5b584057dc78fb9586343bb84aee">Mehr ...</a><br /></td></tr>
 <tr class="separator:gabccd5b584057dc78fb9586343bb84aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga69ccb0a605f771fc7c75178ff2be0b9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___l_c_d.html#ga69ccb0a605f771fc7c75178ff2be0b9e">LCD_SEND_DATA</a>(value)&#160;&#160;&#160;<a class="el" href="group___p_b_a___l_c_d.html#ga4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>=1;<a class="el" href="group___p_b_a___l_c_d.html#ga9090701d0b25ff804f53e43b4168e12e">LCD_Send</a>(value);<a class="el" href="group___p_b_a___l_c_d.html#ga4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>=0</td></tr>
+<tr class="memdesc:ga69ccb0a605f771fc7c75178ff2be0b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Senden eines Datenbytes (Zeichen) ans LCD.  <a href="#ga69ccb0a605f771fc7c75178ff2be0b9e">Mehr ...</a><br /></td></tr>
 <tr class="separator:ga69ccb0a605f771fc7c75178ff2be0b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0968da1d6b313a86b3c837f8b3887eb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___l_c_d.html#ga0968da1d6b313a86b3c837f8b3887eb1">MAX_ADDR</a>&#160;&#160;&#160;80</td></tr>
-<tr class="separator:ga0968da1d6b313a86b3c837f8b3887eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Aufzählungen</h2></td></tr>
@@ -381,7 +381,9 @@ Cursor Modi</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8h_source.html#l00085">85</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8h_source.html">PBA_driver_lcd.h</a>.</p>
+<p>Senden eines Befehls ans LCD. </p>
+
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8h_source.html#l00087">87</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8h_source.html">PBA_driver_lcd.h</a>.</p>
 
 </div>
 </div>
@@ -401,23 +403,9 @@ Cursor Modi</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8h_source.html#l00087">87</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8h_source.html">PBA_driver_lcd.h</a>.</p>
+<p>Senden eines Datenbytes (Zeichen) ans LCD. </p>
 
-</div>
-</div>
-<a id="ga0968da1d6b313a86b3c837f8b3887eb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0968da1d6b313a86b3c837f8b3887eb1">&#9670;&nbsp;</a></span>MAX_ADDR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_ADDR&#160;&#160;&#160;80</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00042">42</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8h_source.html#l00092">92</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8h_source.html">PBA_driver_lcd.h</a>.</p>
 
 </div>
 </div>
@@ -466,7 +454,7 @@ Cursor Modi</h2></td></tr>
 <p>Display löschen. </p>
 <p>Das gesamte LCD-Daten-RAM wird mit 0x20 (Leerschlag) überschrieben Da der Vorgang bis zu 2ms dauern kann muss der Programmablauf nach dem Senden des Befehls entsprechend lang blockiert werden (delay). </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00077">77</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00075">75</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -505,7 +493,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00122">122</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00120">120</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -528,7 +516,7 @@ Cursor Modi</h2></td></tr>
 <p>Rurücksetzen Anzeigeberich und Cursor. </p>
 <p>Display-RAM zurückschieben (Ausgangsposition). Die Funktion setzt den Anzeigebereich des LCDs und den Cursor zurück auf die Anfangsposition (Adresse 0). </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00088">88</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00086">86</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -558,7 +546,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00215">215</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00213">213</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -587,7 +575,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00159">159</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00157">157</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -615,7 +603,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00176">176</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00174">174</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -643,7 +631,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00187">187</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00185">185</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -672,7 +660,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00051">51</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00049">49</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -700,7 +688,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00198">198</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00196">196</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -728,7 +716,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00099">99</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00097">97</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>
@@ -756,7 +744,7 @@ Cursor Modi</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00110">110</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__driver__lcd_8c_source.html#l00108">108</a> der Datei <a class="el" href="_p_b_a__driver__lcd_8c_source.html">PBA_driver_lcd.c</a>.</p>
 
 </div>
 </div>

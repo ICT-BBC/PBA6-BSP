@@ -1,8 +1,8 @@
 var searchData=
 [
   ['main',['main',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga6288eba0f8e8ad3ab1544ad731eb7667',1,'PBA6_hardwaretest.c']]],
-  ['max_5faddr',['MAX_ADDR',['../group___p_b_a___l_c_d.html#ga0968da1d6b313a86b3c837f8b3887eb1',1,'PBA_driver_lcd.c']]],
   ['max_5floop_5fdelay_5fms',['MAX_LOOP_DELAY_MS',['../group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga9274184aaff5495f94ac75e640eecaa2',1,'PBA_loopdelay.c']]],
+  ['max_5ftmr_5fcallback_5ffunctions',['MAX_TMR_CALLBACK_FUNCTIONS',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga5e7899746bceaf8104621a44906d09ea',1,'PBA_interrupts.c']]],
   ['maxchars',['MAXCHARS',['../group___p_b_a___m_e_n_u.html#gafd26c58b32fd5ab4b76982138487df5d',1,'PBA_menu.c']]],
   ['maxlines',['MAXLINES',['../group___p_b_a___m_e_n_u.html#ga8759764610aff6d0cf94742c22856182',1,'PBA_menu.c']]],
   ['maxtimeouts',['MAXTIMEOUTS',['../group___p_b_a___e_v_e_n_t_s.html#ga4b87ecb9c34011c7f7073cf4e9f1e722',1,'PBA_events.c']]],

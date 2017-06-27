@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_helpers.c
- * @brief           Helper-Library für PBA4/5/6
+ * @brief           Helper-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *
@@ -96,24 +96,16 @@ void Beep(uint16_t freqHZ,uint16_t durationMS) /*Ton auf dem Summer ausgeben (Pa
     uint32_t durationUS;
     uint32_t periodCnt;
     impulsTimeUS= 472500/freqHZ;                /*Implus-/Pausendauer in us mit Korrekturfaktor*/
-    durationUS=durationMS*939;                  /*Tonlänge in us mit Korrekturfaktor*/
+    durationUS=(uint32_t) durationMS*939;                  /*Tonlänge in us mit Korrekturfaktor*/
     periodCnt=durationUS/(impulsTimeUS*2);      /*Anzahl Perioden ->  Tonlänge/(Impulsdauer*2)*/
     for(;periodCnt>0;periodCnt--)
     {
         impulsTimeCnt=0;
         SUMMER=1;
-        #if _XTAL_FREQ==32000000
-        while((impulsTimeCnt+=13)<=impulsTimeUS) __delay_us(12);    /*12us Delay, Zeit jeweils um 13 hochzählen (Korrekturfaktor)*/
-        #else
-        while((impulsTimeCnt+=14)<=impulsTimeUS) __delay_us(12);    /*Bei 20Mhz grössere Korrektur*/
-        #endif
+        while((impulsTimeCnt+=14)<=impulsTimeUS) __delay_us(12);    /*12us Delay, Zeit jeweils um 13 hochzählen (Korrekturfaktor)*/
         impulsTimeCnt=0;
         SUMMER=0;
-        #if _XTAL_FREQ==32000000
-        while((impulsTimeCnt+=13)<=impulsTimeUS) __delay_us(12);
-        #else
         while((impulsTimeCnt+=14)<=impulsTimeUS) __delay_us(12);
-        #endif
     }
 }
 

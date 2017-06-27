@@ -18,7 +18,6 @@ var searchData=
   ['uart_5fwritelinerom',['UART_WriteLineRom',['../group___p_b_a___u_a_r_t.html#ga9888746eea8e1f775502b511808cddd6',1,'PBA_driver_uart.c']]],
   ['uartbuffer_5fg',['uartBuffer_g',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga363f59bf3deac29e917f4c3924f0e5b3',1,'PBA6_hardwaretest.c']]],
   ['uarthasreceived_5fg',['uartHasReceived_g',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga0345cb08b1f5ab6641a4e91aa5974955',1,'PBA6_hardwaretest.c']]],
-  ['usart_5frc_5fint',['USART_RC_INT',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga4a111e045a6ea8ad3c56997c8c043a4a',1,'PBA_interrupts.h']]],
   ['use_5fadc_5flibrary',['USE_ADC_LIBRARY',['../group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gaf81bd024a9dde06f99f7095aea0817b5',1,'PBA_config.h']]],
   ['use_5feeprom_5flibrary',['USE_EEPROM_LIBRARY',['../group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga8878985ffe17c225d34c445ece32b5e3',1,'PBA_config.h']]],
   ['use_5fevents_5flibrary',['USE_EVENTS_LIBRARY',['../group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga916849f8f091f77403e2f9b42efb163b',1,'PBA_config.h']]],

@@ -3,19 +3,19 @@
  * @{
  *******************************************************************************
  * @file            PBA_driver_lcd.h
- * @brief           LCD-Library für PBA4/5/6
+ * @brief           LCD-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #ifndef _PBA_DRIVER_LCD_
@@ -75,15 +75,20 @@
 /**
  * @brief   Betriebsspannung LCD
  */
-typedef enum  
+typedef enum
 {
     V_3V3,  /**< 3.3V--> PBA6*/
     V_5V    /**< 5V --> ältere Boards*/
 }displayVoltage_t;
 
-/*Makros für das Senden eines Befehl*/
+/**
+ * @brief Senden eines Befehls ans LCD
+ */
 #define LCD_SEND_COMMAND(Command)   LCD_Send(Command)
-/*Makros für das Senden eines Datenbytes (Zeichen)*/
+
+/**
+ * @brief Senden eines Datenbytes (Zeichen) ans LCD
+ */
 #define LCD_SEND_DATA(value)        LCD_RS=1;LCD_Send(value);LCD_RS=0
 
 void LCD_Send(uint8_t value);

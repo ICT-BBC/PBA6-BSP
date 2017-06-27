@@ -9,11 +9,13 @@ var searchData=
   ['i2c_5fwaitif',['I2C_WaitIF',['../group___p_b_a___i2_c.html#gafc74c406bd84bcf7cfb75f852e819359',1,'PBA_driver_i2c.c']]],
   ['i2c_5fwritebyte',['I2C_WriteByte',['../group___p_b_a___i2_c.html#ga94840d3b687e83261771db8b187a841b',1,'PBA_driver_i2c.c']]],
   ['id',['id',['../structs__menu_entry.html#a1e6927fa1486224044e568f9c370519b',1,'s_menuEntry']]],
-  ['introedit',['IntroEdit',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gaac878d03f6f7f2e375e29eea0346ccdc',1,'PBA6_hardwaretest.c']]],
-  ['isr_5fext',['ISR_Ext',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga85fe7142c433cc8f0790cbc320ff0093',1,'PBA_interrupts.h']]],
-  ['isr_5fglobal',['ISR_Global',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gace7b839ca5a68eb76d53f165f6f7b1cf',1,'PBA_interrupts.c']]],
-  ['isr_5ftimer0',['ISR_Timer0',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gabffbc49ee0e9c8db2f13937bb5623aad',1,'PBA_interrupts.h']]],
-  ['isr_5ftimer1',['ISR_Timer1',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gae43525f2f26e64bbdc2dccebc2c3bdda',1,'PBA_interrupts.h']]],
-  ['isr_5ftimer2',['ISR_Timer2',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga9394e0c464db12517203e6b445dbe325',1,'ISR_Timer2(void):&#160;PBA6_hardwaretest.c'],['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga9394e0c464db12517203e6b445dbe325',1,'ISR_Timer2(void):&#160;PBA6_hardwaretest.c']]],
-  ['isr_5fuartrx',['ISR_UartRx',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gaf2e8c59bd803a61f0ea8b5144579b43a',1,'ISR_UartRx(void):&#160;PBA6_hardwaretest.c'],['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gaf2e8c59bd803a61f0ea8b5144579b43a',1,'ISR_UartRx(void):&#160;PBA6_hardwaretest.c']]]
+  ['int_5faddextintcallbackfnc',['INT_AddExtIntCallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gacf5041be6dd1795cfb59b76d70a5e895',1,'PBA_interrupts.c']]],
+  ['int_5faddtmr0callbackfnc',['INT_AddTmr0CallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gad4c052863a994c5860f16dc20c7e9489',1,'PBA_interrupts.c']]],
+  ['int_5faddtmr1callbackfnc',['INT_AddTmr1CallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga61f82223ff621b1ab02faa21f408b240',1,'PBA_interrupts.c']]],
+  ['int_5faddtmr2callbackfnc',['INT_AddTmr2CallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga5a622dc14a4aeff3234aa2cec52e5c1b',1,'PBA_interrupts.c']]],
+  ['int_5fadduartcallbackfnc',['INT_AddUartCallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga07b872b0fac91ed782cc57e63ff367c2',1,'PBA_interrupts.c']]],
+  ['int_5fmanager',['INT_Manager',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga73e351037916682685dc2cde6dcadf4e',1,'PBA_interrupts.c']]],
+  ['introedit',['IntroEdit',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga62e61cad59591485fb7549baa435c97b',1,'PBA6_hardwaretest.c']]],
+  ['isr_5fsummer',['ISR_Summer',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga89352e8f44a3aff6506edfe502e1c1fd',1,'PBA6_hardwaretest.c']]],
+  ['isr_5fuartrx',['ISR_UartRx',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gaf2e8c59bd803a61f0ea8b5144579b43a',1,'PBA6_hardwaretest.c']]]
 ];

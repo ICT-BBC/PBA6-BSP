@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_menu.c
- * @brief           Menu-Library für PBA4/5/6
+ * @brief           Menu-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *
@@ -51,12 +51,17 @@
 #define POSEDGE_DOWN    p_events->posEdge.switch1   /**< Tasterflanke Taste Down */
 #define POSEDGE_ENTER   p_events->posEdge.switch0   /**< Tasterflanke Taste Enter */
 
-/*Zeichen welches angezeigt wird falls Einträge oberhalb des aktuellen Eintrags vorhanden sind*/
-/*welche nicht angezeigt werden*/
+
+/**
+ * @brief Zeichen welches angezeigt wird falls Einträge oberhalb des aktuellen Eintrags vorhanden sind
+ * welche nicht angezeigt werden
+ */
 uint8_t charsetAddrArrowUp      =   0x00;
 
-/*Zeichen welches angezeigt wird falls Einträge unterhalb des aktuellen Eintrags vorhanden sind*/
-/*welche nicht angezeigt werden*/
+/**
+ * @brief Zeichen welches angezeigt wird falls Einträge unterhalb des aktuellen Eintrags vorhanden sind
+ * welche nicht angezeigt werden
+ */
 uint8_t charsetAddrArrowDown    =   0x01;
 
 
@@ -116,7 +121,7 @@ static void LCD_SetChar(unsigned char cgramAddr, unsigned const char *p_char)
         LCD_Send(*(p_char+i));                  /*Sende 1 Byte Daten aus übergabe-Array*/
     LCD_RS=0;                                   /*LCD umschalten auf Befehlsempfang*/
 }
-/*Speichert Pfeilsymbole im ROM des PBA-LCDs*/
+
 /**
  * @brief Speichert Pfeil und Ok Zeichen im CGRAM des DOGM162-Displays
  */
@@ -157,7 +162,7 @@ static menuEntry_t *p_menu; /**< Pointer auf ersten Menueintrag*/
 
 /*----- Pointer auf Events-Struktur --------------------------------------------------------*/
 
-static events_t *p_events; /**< Pointer auf Events-Struktur*/
+static events_t *p_events; /**< Pointer auf Event-Struktur*/
 
 /*----- Datentyp welcher die Scrollrichtung speichert --------------------------------------*/
 
@@ -193,7 +198,7 @@ void MENU_Init(menuEntry_t *p_menuStart ,events_t *p_event)
  * @param p_cursorRowMenuEntry  Menueintrag der aktuell angewählt ist
  * @param direction             Scrollrichtung
  */
-static void MENU_draw(menuEntry_t *p_firstRowMenuEntry, menuEntry_t *p_cursorRowMenuEntry,menuScrollDirection_t direction)
+static void MENU_Draw(menuEntry_t *p_firstRowMenuEntry, menuEntry_t *p_cursorRowMenuEntry,menuScrollDirection_t direction)
 {   uint8_t drawRowNmbr=0;      /*1. Zeile auf die geschrieben wird*/
     menuEntry_t *p_currentRowMenuEntry;
     MENU_LcdClear();
@@ -315,7 +320,7 @@ uint8_t MENU_Call (void)
     {
         p_cursorRowMenuEntry=p_firstRowMenuEntry=p_menu;    /*Startpunkt Hauptmenü*/
         MENU_LcdClear();
-        MENU_draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP);
+        MENU_Draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP);
         isFirstCall=0;
     }
     if(doRepeatFunction==0)         /*Wenn im vorherigen Aufruf keine Funktion ausgwählt wurde die wiederholt werden muss*/
@@ -324,7 +329,7 @@ uint8_t MENU_Call (void)
         if( POSEDGE_UP )            /* Taste "Rauf" gedrückt ?*/
         {
             p_cursorRowMenuEntry=p_cursorRowMenuEntry->prev;            /*Position speichern*/
-            MENU_draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP);
+            MENU_Draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP);
 
              return 0;
 
@@ -332,7 +337,7 @@ uint8_t MENU_Call (void)
         if( POSEDGE_DOWN )          /* Taste "Runter" gedrückt?*/
         {
             p_cursorRowMenuEntry=p_cursorRowMenuEntry->next;            /*Position speichern*/
-            MENU_draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_DOWN);
+            MENU_Draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_DOWN);
 
             return 0;
         }
@@ -344,7 +349,7 @@ uint8_t MENU_Call (void)
                 {
                     p_firstRowMenuEntry=p_cursorRowMenuEntry=p_cursorRowMenuEntry->submenu; /*Cursor neu setzen*/
                     MENU_LcdClear();
-                    MENU_draw(p_firstRowMenuEntry, p_cursorRowMenuEntry,DIR_UP);    /*Untermenu zeichnen*/
+                    MENU_Draw(p_firstRowMenuEntry, p_cursorRowMenuEntry,DIR_UP);    /*Untermenu zeichnen*/
                     return 0;
                 }
                 else
@@ -362,7 +367,7 @@ uint8_t MENU_Call (void)
                         {
                             MENU_LcdClear();
                             p_cursorRowMenuEntry=p_firstRowMenuEntry=p_cursorRowMenuEntry->ret; /*Cursor auf Rückkehrmenu setzen*/
-                            MENU_draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP); /*Menu zeichnen*/
+                            MENU_Draw(p_firstRowMenuEntry,p_cursorRowMenuEntry,DIR_UP); /*Menu zeichnen*/
                             return 0;
                         }
                         else                                /*Falls weder Untermenu, noch Funktion, noch Rückkehrmenu vorhanden*/
@@ -383,7 +388,7 @@ uint8_t MENU_Call (void)
         {                                       /*Funktion muss nicht wieder ausgeführt werden*/
             MENU_LcdClear();
             p_firstRowMenuEntry=p_cursorRowMenuEntry=p_cursorRowMenuEntry->ret; /*Cursor auf Rückkehrmenu setzen*/
-            MENU_draw(p_firstRowMenuEntry, p_cursorRowMenuEntry,DIR_UP);    /*Menu zeigen*/
+            MENU_Draw(p_firstRowMenuEntry, p_cursorRowMenuEntry,DIR_UP);    /*Menu zeigen*/
             doRepeatFunction=0;                     /*Speichervariabel löschen*/
         }
     return 0;

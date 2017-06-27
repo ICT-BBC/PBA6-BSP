@@ -13,6 +13,5 @@ var searchData=
   ['tasterbyte_5ft',['tasterByte_t',['../structtaster_byte__t.html',1,'']]],
   ['tcn75_5faddress',['TCN75_ADDRESS',['../group___p_b_a___l_m75.html#gae2e828cb29ce928c6b3fdfe3edd7e775',1,'PBA_driver_lm75.c']]],
   ['timeoutms',['TimeoutMS',['../structevents__t.html#aa50bc5bd88fb2b3e981e1a04512b3337',1,'events_t']]],
-  ['timer2_5fperiode',['TIMER2_PERIODE',['../group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga6b25a6281cc3e0ced2b644ca4db06747',1,'PBA_loopdelay.c']]],
-  ['tmr2_5fint',['TMR2_INT',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#gaf6baae9385e65b47397c25f253cd8893',1,'PBA_interrupts.h']]]
+  ['timer2_5fperiode',['TIMER2_PERIODE',['../group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga6b25a6281cc3e0ced2b644ca4db06747',1,'PBA_loopdelay.c']]]
 ];

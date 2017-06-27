@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_driver_adc.c
- * @brief           ADC-Library für PBA4/5/6
+ * @brief           ADC-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *

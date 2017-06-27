@@ -15,7 +15,6 @@ var group___p_b_a___l_c_d =
     [ "LCD_RW", "group___p_b_a___l_c_d.html#ga26089a10ddd59a0dc7283c19ccc02533", null ],
     [ "LCD_SEND_COMMAND", "group___p_b_a___l_c_d.html#gabccd5b584057dc78fb9586343bb84aee", null ],
     [ "LCD_SEND_DATA", "group___p_b_a___l_c_d.html#ga69ccb0a605f771fc7c75178ff2be0b9e", null ],
-    [ "MAX_ADDR", "group___p_b_a___l_c_d.html#ga0968da1d6b313a86b3c837f8b3887eb1", null ],
     [ "displayVoltage_t", "group___p_b_a___l_c_d.html#ga62ad39fd0f5458f1bc8f1299a3a98624", [
       [ "V_3V3", "group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624abe885ad53f3300b790b465a3eed6a05a", null ],
       [ "V_5V", "group___p_b_a___l_c_d.html#gga62ad39fd0f5458f1bc8f1299a3a98624a989a728faa761532d429c55fb577c266", null ]

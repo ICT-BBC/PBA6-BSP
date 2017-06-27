@@ -7,11 +7,12 @@ Der Sourcecode des PBA6-BSP wird auf Github verwaltet: <a href="https://github.c
 3. Lade das Projekt als Zip-Datei herunter
 4. Entpacke die Zip-Datei
 
+
 ## Inhalt BSP
 Der entpackte Ordner enthält nun folgende Unterordner und Dateien:
 
 Ordner / Datei  | Inhalt
---------------- | ---------------------------------------
+--------------- | ---------------------------------------------------------------------------------------------------------------------
 docs            | Ordner mit der HTML-Dokumentation des Sourcecodes
 doxygen         | Ordner mit allen benötigten Dateien für Doxygen --> kann gelöscht werden
 example         | MPLABX-Projekt Hardwaretestsoftware
@@ -20,6 +21,22 @@ src             | Source-Files des BSP
 .gitignore      | Ignorierte Files der Versionsverwaltung --> kann gelöscht werden
 LICENSE.md      | Lizenz --> Bitte durchlesen
 README.md       | Rohdaten der Anleitung --> kann gelöscht werden
+
+
+##BSP-Module
+Modul           | Zweck
+--------------- | ---------------------------------------------------------------------------------------------------------------------
+ADC             | Funktionen zur Verwendung des PIC-internen Analog-Digital-Konverters.
+LCD             | Ansteuerung des DOGM162-LCDs. Mit kleinen Anpassungen auch für andere Controller und Displays verwendbar.
+UART            | Funktionen fürs Lesen und Schreiben über die UART-Schnittstelle,
+I2C             | Lese- und Schreibfunktionen für die interne I2C-Schnittstelle.
+LM75            | Ansteuerung des Temperatursensors TCN75, welcher protokollkompatibel zum Modell LM75 ist.
+EEPROM          | Verwendung des PIC-internen EEPROMS.
+HELPERS         | Hilfs-Makros und Funktionen wie Bit setzen / löschen, Bit toggle.
+INTERRUPT       | Globale Interruptroutine. Möglichkeit zum Hinzufügen von Callbackfunktionen für Timer-, UART- und externe Interrupts.
+LOOPDELAY       | Timer-basiertes Delay. Verwendung in Zustandsmaschinen.
+EVENTS          | Funktionen zur Verwendung von zeitlichen- und Tasterevents. Anwendung in Zustandsmaschinen.
+MENU            | Funktionen zur Darstellung eines Menüs auf zeichenbasierten LCDs. Verwendbar in Zustandsmaschinen.
 
 
 ## Einbinden des BSP in ein MPLABX Projekt
@@ -36,6 +53,7 @@ README.md       | Rohdaten der Anleitung --> kann gelöscht werden
   #include "../inc/PBA_config.h"
   ```
   
+  
 ## BSP-Konfiguration
 Zur Konfiguration muss die Header-Datei ```PBA_config.h ``` editiert werden.
 Durch ein- oder auskommentieren der defines im Abschnitt "BSP-Konfiguration" lässt sich
@@ -43,7 +61,7 @@ das BSP auf die Bedürfnisse anpassen.
   ```C
 /******************** BSP-Konfiguration ***********************************************/
 
-#define PBA6/**<Auskommentieren, falls nicht PBA6 verwendet wird*/
+#define PBA6/**<LCD wird für 3.3V initialisiert. Auskommentieren, falls nicht PBA6 verwendet wird*/
 
 #define USE_ADC_LIBRARY         /**< ADC-Support Funktionen*/
 
@@ -66,35 +84,49 @@ das BSP auf die Bedürfnisse anpassen.
 #define USE_EVENTS_LIBRARY      /**< Zeit- und Taster-Events*/
 
 #define USE_MENU_LIBRARY        /**< Funktionen Erstellung und Darstellung eines Menus auf LCD*/
+ ```
+ 
+###Modul-Abhängigkeiten
+Einige Module verwenden Funktionen anderer Module und setzen deshalb voraus, dass diese ebenfalls aktiviert sind.
+Ist dies nicht der Fall, werden passende Fehlermeldungen ausgegeben. Die nachfolgende Tabelle gibt einen Überblick über die Abhängigkeiten.
+     Module     | LCD | I2C | HELPERS | INTERRUPT | LOOPDELAY | EVENTS |
+--------------- |:---:|:---:|:-------:|:---------:|:---------:|:------:| 
+LCD             |     |     |    x    |           |           |        |
+LM75            |     |  x  |         |           |           |        |  
+LOOPDELAY       |     |     |         |     x     |           |        |
+EVENTS          |     |     |    x    |     x     |     x     |        |  
+MENU            |  x  |     |    x    |     x     |     x     |   x    |
 
-/*Auswahl Standard-Output für printf-Funktion*/
+###STDOUT
+Printf-Ausgaben können entweder ans LCD oder über UART gesendet werden. Mittels Compiler-Schalter
+kann zwischen den beiden Varianten umgestellt werden. Zu beachten ist, dass das jeweilige BSP-Modul
+aktiviert sein muss. Sind weder UART- noch LCD-Modul aktiviert, müssen beide Compiler-Schalter deaktiviert werden.
+  ```C
+/********** Auswahl STDOUT ****************************************************/
 #define STDOUT_LCD      true    /**< Ausgabe printf auf LCD*/
 //#define STDOUT_UART   true    /**< Ausgabe printf auf UART-Schnittstelle*/
  ```
-## Interrupt-Konfiguration
-Zur Konfiguration muss die Header-Datei ```PBA_Interrupts.h ``` editiert werden.
+ 
+ 
+## Interrupts
 Der Mikrocontroller verfügt nur über einen Interrupt-Vektor. Die globale Interrupt-Routine
 ist in der Datei ```PBA_Interrupts.c ``` umgesetzt. Für die wichtigsten Peripherie-
-Interrupts sind Callback-Funktionen deklariert. Durch ein- oder auskommentieren der
-defines im Abschnitt "Interrupt-Konfiguration" lassen sich die einzelnen Funktionen
-aktivieren oder deaktivieren. Ist ein Interrupt aktiviert, muss die
-Funktion gemäss Deklaration implementiert werden. 
+Interrupts können Callback-Funktionen hinzugefügt werden. Folgende Funktionen stehen dazu zur Verfügung:
   ```C
-/******* Interrupt Konfiguration **********************************************/
+uint8_t INT_AddTmr0CallbackFnc   (callbackFunction_t p_callBackFunction);
+uint8_t INT_AddTmr1CallbackFnc   (callbackFunction_t p_callBackFunction);
+uint8_t INT_AddTmr2CallbackFnc   (callbackFunction_t p_callBackFunction);
+uint8_t INT_AddUartCallbackFnc   (callbackFunction_t p_callBackFunction);
+uint8_t INT_AddExtIntCallbackFnc (callbackFunction_t p_callBackFunction);
+```
+Pro Timer können jeweils drei Funktionen hinterlegt werden. Die restlichen Interrupts akzeptieren nur eine
+Callbackfunktion. Über den Rückgabeparameter kann überprüft werden, ob die Funktion erfolgreich hinterlegt wurde.
+Rückgabewert    | Bedeutung
+--------------- | -----------------------------------------------------------
+0               | Erfolg
+1               | Fehler, die maximale Anzahl Funktionen ist bereits erreicht
 
-#define TMR0_INT
-#define TMR1_INT
-#define TMR2_INT
-#define USART_RC_INT
-#define EXT_INT
 
-/******* Interrupt-Callback-Funktionen ****************************************/
-extern inline void ISR_Timer0(void);
-extern inline void ISR_Timer1(void);
-extern inline void ISR_Timer2(void);
-extern inline void ISR_UartRx(void);
-extern inline void ISR_Ext(void);
- ```
 ## Hardware initialisieren
 Zum Initialisieren der Hardware muss die Funktion ```PBA_Init();``` aufgerufen werden.
 
@@ -109,12 +141,13 @@ void main(void)
     }
 }
   ```
-## Verwendung der loopdelay-Library
-**Wichtig: Um die loopdelay-Library zu verwenden, muss die Interrupt-Library aktiviert sein!**
-Nach der Initialisierung der Hardware muss das loopdelay initialisiert werden.
+  
+  
+## Verwendung der Loopdelay-Library
+Nach der Initialisierung der Hardware muss das Loopdelay initialisiert werden.
 Dafür wird die Funktion ```void LOOPDELAY_Init(uint16_t loopDelayTimeMS);``` aufgerufen,
-wobei der Übergabeparameter dem gewünschten loopdelay in Millisekunden (ms) entspricht.
-Ausgeführt wird das delay durch die Funktion ```void LOOPDELAY_Wait(void);```.
+wobei der Übergabeparameter dem gewünschten Loopdelay in Millisekunden (ms) entspricht.
+Ausgeführt wird das Delay durch die Funktion ```void LOOPDELAY_Wait(void);```.
 Der Benutzer ist selber verantwortlich, dass der gesamte Programmdurchlauf nicht länger als
 die angegebene Zykluszeit dauert.
 
@@ -123,7 +156,7 @@ die angegebene Zykluszeit dauert.
 void main(void)
 {
     PBA_Init();             /*Initialisieren der Hardware*/
-    LOOPDELAY_Init(10);     /*Loop-delay Init, loop-time=10ms*/
+    LOOPDELAY_Init(10);     /*Loopdelay Init, loop-time=10ms*/
     while(1)
     {
         LOOPDELAY_Wait();   /*Zykluszeit 10ms*/
@@ -131,14 +164,14 @@ void main(void)
     }
 }
   ```
-  
+ 
+ 
 ## Verwendung der Event-Library
-**Wichtig: Wird die Event-Library verwendet, muss die loopdelay-Library gleichzeitig aktiviert sein!**
 Die Event-Library bietet die Möglichkeit mit verschiedenen Events zu arbeiten.
 Folgende Events sind definiert:
 
 Eventname               | Funktion
-----------------------  | ---------------------------------------
+----------------------  | -------------------------------------------------------------
 posEdge                 | Abfragen einer positiven Tasterflanke
 negEdge                 | Abfragen einer negativen Tasterflanke
 ActiveUntilMS(time)     | Nach dem ersten Aufruf nur während der angegebenen Zeit aktiv
@@ -146,12 +179,12 @@ TimeoutMS(time)         | Nach dem ersten Aufruf immer nach der angegebenen Zeit
 
 Zur Initialisierung der Bibliothek wird die Funktion ```void EVENTS_Init(void *p_state,events_t *p_events);``` aufgerufen. Der Übergabeparameter ```void *p_state``` ist der Pointer auf die in einer Aufzählung (enum) definierten states.
 Der zweite Parameter ist der Pointer auf eine Struktur vom Type events_t. Über diese Struktur können Events erstellt und abgefragt werden.
-Das loop-delay wird über die bekannte Funktion ```void LOOPDELAY_Wait(void);```aufgerufen.
-Zum detektieren der Tasterflanken muss die Funktion ```EVENTS_Update(void);``` zyklisch ausgeführt werden.
+Das Loopdelay wird über die bekannte Funktion ```void LOOPDELAY_Wait(void);```aufgerufen.
+Zum Detektieren der Tasterflanken muss die Funktion ```EVENTS_Update(void);``` zyklisch ausgeführt werden.  <br>
+**Für zeitliche Events dürfen nur Werte die das Ein- oder Mehrfache der Zykluszeit betragen verwendet werden!**
 
 ```C
 #include "../inc/PBA_config.h"
-
 
 #define AUS         0
 #define EIN         1
@@ -166,7 +199,7 @@ void main(void)
 {
 
     PBA_Init();                     /*Initialisierung Hardware*/
-    LOOPDELAY_Init(10);             /*Initialsierung loop-delay*/
+    LOOPDELAY_Init(10);             /*Initialisierung Loopdelay*/
     EVENTS_Init(&state,&events);    /*Initialisierung Events*/
 
     LED0=EIN;
@@ -213,7 +246,3 @@ void main(void)
     }
 }
 ```
-
-**Um genaue Werte bei Timeouts zu erreichen, dürfen nur Werte die das Ein- oder Mehrfache der Zykluszeit betragen verwendet werden!**
-
-

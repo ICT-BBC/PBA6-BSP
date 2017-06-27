@@ -1,6 +1,5 @@
 var _p_b_a__driver__lcd_8c =
 [
-    [ "MAX_ADDR", "group___p_b_a___l_c_d.html#ga0968da1d6b313a86b3c837f8b3887eb1", null ],
     [ "LCD_Clear", "group___p_b_a___l_c_d.html#gae60d0b62d7eb3fa31266c095d7b3c245", null ],
     [ "LCD_GotoXY", "group___p_b_a___l_c_d.html#gad018795dbdfe9e2d122dbaeae67af101", null ],
     [ "LCD_Home", "group___p_b_a___l_c_d.html#gaff81ad208241ea7c4cbf62d6f681dc82", null ],

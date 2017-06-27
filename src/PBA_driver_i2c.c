@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_driver_i2c.c
- * @brief           I2C-Library für PBA4/5/6
+ * @brief           I2C-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *

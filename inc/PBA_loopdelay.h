@@ -3,19 +3,19 @@
  * @{
  *******************************************************************************
  * @file            PBA_loopdelay.h
- * @brief           Loopdelay-Library für PBA4/5/6
+ * @brief           Loopdelay-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
- * 
+ *
  * @copyright
  * @{
- * 
+ *
  * Diese Software kann unter den Bedingungen der MIT-Lizenz verwendet werden.
- * 
+ *
  * Copyright &copy; 2016 ICT Berufsbildungscenter AG
- * 
+ *
  * #####MIT License
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -33,7 +33,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @}
  */
 #ifndef _PBA_LOOPDELAY_

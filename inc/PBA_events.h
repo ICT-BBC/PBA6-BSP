@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_events.h
- * @brief           Events-Library für PBA4/5/6
+ * @brief           Events-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *

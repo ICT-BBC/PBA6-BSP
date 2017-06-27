@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_menu.h
- * @brief           Menu-Library für PBA4/5/6
+ * @brief           Menu-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *
@@ -64,7 +64,7 @@ typedef struct s_menuEntry          /**< Menueintrag */
 unsigned char MENU_Call(void);
 
 
-void MENU_Init(menuEntry_t *p_menuStart, events_t *ptr_events);
+void MENU_Init(menuEntry_t *p_menuStart, events_t *p_event);
 
 #endif /* MENU_H_ */
 

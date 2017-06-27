@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="bbc_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PIC Board Advanced 6 Board Support Package
-   &#160;<span id="projectnumber">V 1.2.1</span>
+   &#160;<span id="projectnumber">V 1.3.0</span>
    </div>
    <div id="projectbrief">HAL- und Peripheriefunktionen für das PBA6</div>
   </td>
@@ -94,10 +94,10 @@ $(document).ready(function(){initNavTree('group___p_b_a___l_o_o_p_d_e_l_a_y.html
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Dateien</h2></td></tr>
 <tr class="memitem:_p_b_a__loopdelay_8h"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__loopdelay_8h.html">PBA_loopdelay.h</a></td></tr>
-<tr class="memdesc:_p_b_a__loopdelay_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loopdelay-Library für PBA4/5/6. <br /></td></tr>
+<tr class="memdesc:_p_b_a__loopdelay_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loopdelay-Library für das PBA6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:_p_b_a__loopdelay_8c"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a__loopdelay_8c.html">PBA_loopdelay.c</a></td></tr>
-<tr class="memdesc:_p_b_a__loopdelay_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loopdelay-Library für PBA4/5/6. <br /></td></tr>
+<tr class="memdesc:_p_b_a__loopdelay_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loopdelay-Library für das PBA6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -105,6 +105,7 @@ Makrodefinitionen</h2></td></tr>
 <tr class="memitem:ga6b25a6281cc3e0ced2b644ca4db06747"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga6b25a6281cc3e0ced2b644ca4db06747">TIMER2_PERIODE</a>&#160;&#160;&#160;((<a class="el" href="group___d_e_f___d_e_l_a_y.html#ga024148e99a7143db044a48216664d03d">_XTAL_FREQ</a>/160000UL))-1</td></tr>
 <tr class="separator:ga6b25a6281cc3e0ced2b644ca4db06747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9274184aaff5495f94ac75e640eecaa2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___l_o_o_p_d_e_l_a_y.html#ga9274184aaff5495f94ac75e640eecaa2">MAX_LOOP_DELAY_MS</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="memdesc:ga9274184aaff5495f94ac75e640eecaa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximale konfigurierbare Zykluszeit.  <a href="#ga9274184aaff5495f94ac75e640eecaa2">Mehr ...</a><br /></td></tr>
 <tr class="separator:ga9274184aaff5495f94ac75e640eecaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -158,7 +159,9 @@ Funktionen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00072">72</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
+<p>Maximale konfigurierbare Zykluszeit. </p>
+
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00075">75</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
 
 </div>
 </div>
@@ -198,7 +201,7 @@ Funktionen</h2></td></tr>
 <p>Abfrage der eingestellten Zykluszeit. </p>
 <dl class="section return"><dt>Rückgabe</dt><dd>Eingestellte Zykluszeit in ms </dd></dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00118">118</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00129">129</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
 
 </div>
 </div>
@@ -227,7 +230,7 @@ Funktionen</h2></td></tr>
 </dl>
 <p>&lt; PIC16F1787&ndash;&gt; 8MHz &amp; 4xPLL </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00127">127</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00138">138</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
 
 </div>
 </div>
@@ -257,7 +260,7 @@ Funktionen</h2></td></tr>
 
 <p>Interrupt-Routine Loop-Delay-Timer. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00079">79</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00090">90</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
 
 </div>
 </div>
@@ -279,7 +282,7 @@ Funktionen</h2></td></tr>
 
 <p>Zykluszeit abwareten. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00108">108</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__loopdelay_8c_source.html#l00119">119</a> der Datei <a class="el" href="_p_b_a__loopdelay_8c_source.html">PBA_loopdelay.c</a>.</p>
 
 </div>
 </div>

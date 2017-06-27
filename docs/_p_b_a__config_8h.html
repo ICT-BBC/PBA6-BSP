@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="bbc_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PIC Board Advanced 6 Board Support Package
-   &#160;<span id="projectnumber">V 1.2.1</span>
+   &#160;<span id="projectnumber">V 1.3.0</span>
    </div>
    <div id="projectbrief">HAL- und Peripheriefunktionen für das PBA6</div>
   </td>
@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('_p_b_a__config_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Konfiguration des Board-Support-Packages für PBA4/5/6.  
+<p>Konfiguration des Board-Support-Packages für das PBA6.  
 <a href="#details">Mehr ...</a></p>
 <div class="textblock"><code>#include &lt;xc.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('_p_b_a__config_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Makrodefinitionen</h2></td></tr>
 <tr class="memitem:ga68525f59432ef9b1d9021c9cb22c7190"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga68525f59432ef9b1d9021c9cb22c7190">PBA6</a></td></tr>
-<tr class="memdesc:ga68525f59432ef9b1d9021c9cb22c7190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auskommentieren, falls nicht PBA6 verwendet wird.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga68525f59432ef9b1d9021c9cb22c7190">Mehr ...</a><br /></td></tr>
+<tr class="memdesc:ga68525f59432ef9b1d9021c9cb22c7190"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD wird für 3.3V initialisiert.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga68525f59432ef9b1d9021c9cb22c7190">Mehr ...</a><br /></td></tr>
 <tr class="separator:ga68525f59432ef9b1d9021c9cb22c7190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf81bd024a9dde06f99f7095aea0817b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gaf81bd024a9dde06f99f7095aea0817b5">USE_ADC_LIBRARY</a></td></tr>
 <tr class="memdesc:gaf81bd024a9dde06f99f7095aea0817b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC-Support Funktionen.  <a href="group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gaf81bd024a9dde06f99f7095aea0817b5">Mehr ...</a><br /></td></tr>
@@ -206,9 +206,9 @@ Funktionen</h2></td></tr>
 <tr class="separator:ga929c76236c43415b855552513e902293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Konfiguration des Board-Support-Packages für PBA4/5/6. </p>
+<div class="textblock"><p>Konfiguration des Board-Support-Packages für das PBA6. </p>
 <dl class="section author"><dt>Autor</dt><dd>ICT Berufsbildungscenter AG </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.2.1 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.3.0 </dd></dl>
 <dl class="section date"><dt>Datum</dt><dd>06.12.2013: Aufbau PBA6-BSP mit Basis PBA5-BSP, Unterstützung von PIC16F1787, Anpassungen für XC8-Compiler, Interrupt-Library </dd>
 <dd>
 17.02.2016: stdint.h hinzugefügt&ndash;&gt;Wechsel auf std-integer Typen </dd>
@@ -225,7 +225,9 @@ Funktionen</h2></td></tr>
 <dd>
 07.02.2017 Renaming, Fehlermeldungen optimiert </dd>
 <dd>
-25.04.2017 Alle SFR-Zugriffe geändert (Bitfelder), Support für alle PICs ausser PIC16F1787 entfernt, fix Beep-Funktion</dd></dl>
+25.04.2017 Alle SFR-Zugriffe geändert (Bitfelder), Support für alle PICs ausser PIC16F1787 entfernt, fix Beep-Funktion </dd>
+<dd>
+26.06.2017 Umstrukturierung Intterupts.</dd></dl>
 <dl class="section attention"><dt>Achtung</dt><dd>PBA_Init zur Initialiserung und Konfigurations des PBAs. Um die Libraries zu verwenden, kopieren Sie die beiden Ordner "Source" und "Include" in Ihren MPLABX-Projektordner. Erstellen Sie ein Main-Sourcefile, speichern Sie dies im "Source"-Ordner und fügen Sie die Dateien in den beiden Ordnern ihrem MPLAB-Projekt hinzu. Fügen Sie folgende Codezeile ihrem Source-File hinzu: <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../inc/PBA_config.h&quot;</span> </div></div><!-- fragment --></dd>
 <dd>
 Wenn Sie bestimmte Bibliotheken nicht benötigen, kommentieren Sie die zugehörigen Defines in der Datei <a class="el" href="_p_b_a__config_8h.html">PBA_config.h</a> aus. Entfernen Sie die nicht benötigten Source-Files aus ihrem Projekt.</dd></dl>

@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file			PBA_driver_lcd.c
- * @brief			LCD-Library für PBA4/5/6
+ * @brief			LCD-Library für das PBA6
  * @author			ICT Berufsbildungscenter AG
  *******************************************************************************
  *
@@ -38,8 +38,6 @@
  */
 #include "../inc/PBA_config.h"
 #ifdef USE_LCD_LIBRARY
-
-#define MAX_ADDR			80
 
 static uint8_t LCD_GetSpecChar(uint8_t ch);
 

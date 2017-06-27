@@ -3,9 +3,9 @@
  * @{
  *******************************************************************************
  * @file        PBA_config.h
- * @brief       Konfiguration des Board-Support-Packages für PBA4/5/6
+ * @brief       Konfiguration des Board-Support-Packages für das PBA6
  * @author      ICT Berufsbildungscenter AG
- * @version     1.2.1
+ * @version     1.3.0
  * @date        06.12.2013: Aufbau PBA6-BSP mit Basis PBA5-BSP,
  *                          Unterstützung von PIC16F1787, Anpassungen
  *                          für XC8-Compiler, Interrupt-Library
@@ -22,6 +22,7 @@
  * @date        25.04.2017  Alle SFR-Zugriffe geändert (Bitfelder),
  *                          Support für alle PICs ausser PIC16F1787 entfernt,
  *                          fix Beep-Funktion
+ * @date        26.06.2017  Umstrukturierung Intterupts.
  *
  * @attention   PBA_Init zur Initialiserung und Konfigurations des PBAs.
  *              Um die Libraries zu verwenden, kopieren Sie die beiden Ordner
@@ -70,7 +71,7 @@
 #ifndef _PBA_CONFIG_
 #define _PBA_CONFIG_
 
-/******************** BSP-Konfiguration ***************************************/
+/********** BSP-Konfiguration *************************************************/
 
 
     /**
@@ -78,7 +79,7 @@
      * Nicht benötigte Bibliotheken und Konfigurationen auskommentieren
      * @{
      */
-    #define PBA6/**<Auskommentieren, falls nicht PBA6 verwendet wird*/
+    #define PBA6/**<LCD wird für 3.3V initialisiert. Auskommentieren, falls nicht PBA6 verwendet wird*/
 
     #define USE_ADC_LIBRARY         /**< ADC-Support Funktionen*/
 
@@ -102,7 +103,7 @@
 
     #define USE_MENU_LIBRARY        /**< Funktionen Erstellung und Darstellung eines Menus auf LCD*/
 
-    /*Auswahl Standard-Output für printf-Funktion*/
+/********** Auswahl STDOUT ****************************************************/
     #define STDOUT_LCD              /**< Ausgabe printf auf LCD*/
     //#define STDOUT_UART           /**< Ausgabe printf auf UART-Schnittstelle*/
 
@@ -229,32 +230,39 @@
         #error Um die LM75-Library zu nutzen, muss die I2C-Library eingebunden sein (PBA_config.h)
     #endif
     #if defined(STDOUT_LCD) && !defined(USE_LCD_LIBRARY)
-        #error Um das LCD als Standard-Output (printf) zu nutzen muss die LCD-Library eingebunden sein (PBA_config.h)
+        #error Um das LCD als Standard-Output (printf) zu nutzen muss die LCD-Bibliothek eingebunden sein (PBA_config.h)
     #endif
     #if defined(STDOUT_UART) && !defined(USE_UART_LIBRARY)
-        #error Um UART als Standard-Output (printf) zu nutzen muss die UART-Library eingebunden sein (PBA_config.h)
+        #error Um UART als Standard-Output (printf) zu nutzen muss die UART-Bibliothek eingebunden sein (PBA_config.h)
     #endif
-    #if defined(USE_EVENTS_LIBRARY) && !defined(USE_LOOPDELAY_LIBRARY)
-        #error Zur Verwedung der Events-Bibliothek muss die loopdelay_Bibliothek eingebunden sein (PBA_config.h)
+    #if defined(USE_EVENTS_LIBRARY)
+        #if !defined(USE_LOOPDELAY_LIBRARY)
+        #error Zur Verwendung der Events-Bibliothek muss die Loopdelay-Bibliothek eingebunden sein (PBA_config.h)
+        #endif
+        #if !defined(USE_HELPERS_LIBRARY)
+        #error Zur Verwendung der Events-Bibliothek muss die Helpers-Bibliothek eingebunden sein (PBA_config.h)
+        #endif
     #endif
-    #if defined(USE_MENU_LIBRARY)&&!defined(USE_LCD_LIBRARY)
-        #error Zur Verwendung der Menubibliothek muss die LCD-Bibliothek eingebunden sein (PBA_config.h)
-    #endif
-    #if defined(USE_MENU_LIBRARY)&&!defined(USE_EVENTS_LIBRARY)
-        #error Zur Verwendung der Menubibliothek muss die Events-Library eingebunden sein (PBA_config.h)
+    #if defined(USE_MENU_LIBRARY)
+        #if !defined(USE_LCD_LIBRARY)
+        #error Zur Verwendung der Menu-Bibliothek muss die LCD-Bibliothek eingebunden sein (PBA_config.h)
+        #endif
+        #if !defined(USE_EVENTS_LIBRARY)
+        #error Zur Verwendung der Menu-Bibliothek muss die Events-Bibliothek eingebunden sein (PBA_config.h)
+        #endif
     #endif
     #if defined (USE_LOOPDELAY_LIBRARY) && !defined (USE_INTERRUPT_LIBRARY)
-        #error Um die loopdelay-Library zu verwenden muss die Interrupt-Library eingebunden sein (PBA_config.h)
+        #error Um die Loopdelay-Bibliothek zu verwenden muss die Interrupt-Bibliothek eingebunden sein (PBA_config.h)
     #endif
     #if defined (USE_LCD_LIBRARY) && !defined (USE_HELPERS_LIBRARY)
-        #error Zur Verwendung der LCD-Library muss die Helpers-Library eingebunden sein (PBA_config.h
+        #error Zur Verwendung der LCD-Bibliothek muss die Helpers-Bibliothek eingebunden sein (PBA_config.h
     #endif
     /************** Überprüfung ob der ausgewählte PIC unterstützt wird vom Board-support Package **********/
     #if !defined(_16F1787)
         /*Kommentieren sie die Fehlermeldung aus, um das Board-Support Package mit einem nicht unterstützten*/
         /*Mikrocontroller zu nutzen.*/
         /*Vorsicht: Einige Bibliotheken funktionieren unter Umständen nicht!!*/
-        #error Der ausgewählte PIC wird nicht unterstützt vom PBA Board-support Package!
+        #error Der ausgewählte PIC wird vom PBA Board-support Package nicht unterstützt!
     #endif
 
     /************** Deaktivieren der stack overflow Warnungen, Problem von Compiler gelöst **************/

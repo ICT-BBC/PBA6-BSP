@@ -3,7 +3,7 @@
  * @{
  *******************************************************************************
  * @file            PBA_events.c
- * @brief           Events-Library für PBA4/5/6
+ * @brief           Events-Library für das PBA6
  * @author          ICT Berufsbildungscenter AG
  *******************************************************************************
  *
@@ -40,7 +40,11 @@
 #include "../inc/PBA_config.h"
 
 #ifdef USE_EVENTS_LIBRARY
-    #define MAXTIMEOUTS 10
+
+/**
+ *@brief Maximale Anzahl Timeouts welche gleichzeitig aktiv sein können
+ */
+#define MAXTIMEOUTS 10
 
 /**
  *@brief Speichern von Events
@@ -69,6 +73,27 @@ static  uint16_t loopDelayMS=0; /**< Eingestelltes Loopdelay */
  */
 void EVENTS_Init(void *p_state,events_t *p_events)
 {
+    #if defined(LOOPDELAY_USE_TIMER0)
+    if(0 != INT_AddTmr0CallbackFnc(EVENTS_TimerISR))
+    {
+        /* Fehler */
+    }
+    #endif
+
+    #if defined(LOOPDELAY_USE_TIMER1)
+    if(0 != INT_AddTmr1CallbackFnc(EVENTS_TimerISR))
+    {
+        /* Fehler */
+    }
+    #endif
+
+    #if defined(LOOPDELAY_USE_TIMER2)
+    if(0 != INT_AddTmr2CallbackFnc(EVENTS_TimerISR))
+    {
+        /* Fehler */
+    }
+    #endif
+
     loopDelayMS=LOOPDELAY_GetTime();
     p_toState=(uint8_t *)p_state;
     p_toEvents=p_events;
