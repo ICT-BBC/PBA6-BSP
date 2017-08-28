@@ -82,6 +82,7 @@ uint8_t IntroEdit(uint8_t firstCall);           /*Menufunktion, Intro an/aus*/
 uint8_t SummerEdit(uint8_t firstCall);          /*Menufunktion, Summerfrequenz*/
 uint8_t BspMenuFunction(uint8_t firstCall);     /*Menufunktion, Beispiel*/
 inline void ISR_Summer(void);
+inline void ISR_UartRx(void);
 /********************* Globale Daten ********************************************/
 volatile uint8_t uartHasReceived_g = 0;             /**< Flag UART-String empfangen*/
 volatile uint8_t uartBuffer_g[UART_BUFFERSIZE];     /**< UART-String*/
@@ -158,6 +159,10 @@ void main(void)
         DelayMS(1000);
     }
     if(0 != INT_AddTmr2CallbackFnc(ISR_Summer))         /*Summerinterruptroutine mit Timer2 abarbeiten*/
+    {
+        /* Fehler */
+    }
+    if(0 != INT_AddUartCallbackFnc(ISR_UartRx))         /*UART-Interruptroutine festelegen*/
     {
         /* Fehler */
     }
