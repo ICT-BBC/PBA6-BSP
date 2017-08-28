@@ -205,7 +205,7 @@ void main(void)
                 UART_WriteLineRom("********************************************");
                 UART_WriteLineRom("*       PIC Board Advanced 6               *");
                 UART_WriteLineRom("*       ICT Berufsbildungscenter AG        *");
-                UART_WriteLineRom("*       Hardware-Testsoftware V7.1.0       *");
+                UART_WriteLineRom("*       Hardware-Testsoftware V2.1.0       *");
                 UART_WriteLineRom("********************************************");
                 UART_PutsRom("\nBitte Text eingeben und mit Enter bestaetigen: ");
                 PIE1bits.RCIE = 1;                                   /*Receive Interrupt einschalten*/
