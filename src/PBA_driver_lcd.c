@@ -212,13 +212,14 @@ void LCD_SetCursorMode(uint8_t cursorMode)
  */
 void LCD_Init(displayVoltage_t displayVoltage)
 {
-	DelayMS(40);						/*Betriebsspannung am LCD für mind. 40ms vorhanden*/
+	DelayMS(40);                        /*Betriebsspannung am LCD für mind. 40ms vorhanden*/
 	LCD_RS=0;							/*LCD interpretiert nächstes Zeichen als Befehl */
 	LCD_RW=0;							/*Auf LCD schreiben...*/
 	LCD_SEND_COMMAND(0b00000011);		/*Function Set 8-Bit*/
 	DelayMS(2);							/*Pause gemäss init-Ablauf (siehe Datenblatt)*/
-	LCD_SEND_COMMAND(0b00110011);		/*Function Set 8-Bit (2x)*/
-	LCD_SEND_COMMAND(0b00100010);		/*Function Set 4-Bit-Modus*/
+	LCD_SEND_COMMAND(0b00000011);		/*Function Set 8-Bit*/
+    LCD_SEND_COMMAND(0b00000011);		/*Function Set 8-Bit*/
+	LCD_SEND_COMMAND(0b00000010);		/*Function Set 4-Bit-Modus*/
 	LCD_SEND_COMMAND(0b00101001);		/*Function Set*/
 	if(V_3V3==displayVoltage)
 	{

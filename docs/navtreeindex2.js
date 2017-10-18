@@ -164,7 +164,7 @@ var NAVTREEINDEX2 =
 "group___p_b_a___u_a_r_t.html#gaf774e133a57aa2870eec83542bf73abb":[2,6,8],
 "index.html":[],
 "index.html":[0],
-"md__c_1__users_estudm__desktop__p_b_a6-_b_s_p__l_i_c_e_n_s_e.html":[1],
+"md__c_1__users_studm__desktop__p_b_a6-_b_s_p__l_i_c_e_n_s_e.html":[1],
 "modules.html":[2],
 "pages.html":[],
 "structevents__t.html":[2,7,3],

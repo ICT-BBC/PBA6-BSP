@@ -5,7 +5,7 @@
  * @file        PBA_config.h
  * @brief       Konfiguration des Board-Support-Packages für das PBA6
  * @author      ICT Berufsbildungscenter AG
- * @version     1.3.0
+ * @version     1.3.1
  * @date        06.12.2013: Aufbau PBA6-BSP mit Basis PBA5-BSP,
  *                          Unterstützung von PIC16F1787, Anpassungen
  *                          für XC8-Compiler, Interrupt-Library
@@ -22,7 +22,8 @@
  * @date        25.04.2017  Alle SFR-Zugriffe geändert (Bitfelder),
  *                          Support für alle PICs ausser PIC16F1787 entfernt,
  *                          fix Beep-Funktion
- * @date        26.06.2017  Umstrukturierung Intterupts.
+ * @date        26.06.2017  Umstrukturierung Interrupts.
+ * @date        26.06.2017  Fix LCD Init für f_xtal<20MHz
  *
  * @attention   PBA_Init zur Initialiserung und Konfigurations des PBAs.
  *              Um die Libraries zu verwenden, kopieren Sie die beiden Ordner
