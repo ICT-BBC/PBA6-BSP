@@ -115,10 +115,10 @@ static inline void MENU_LcdDisplayCharLine(uint8_t row, uint8_t posX,uint8_t ch)
 static void LCD_SetChar(unsigned char cgramAddr, unsigned const char *p_char)
 {
     unsigned char i;
-    LCD_Send(0x40|(cgramAddr<<3));              /*CGRAM-Addresse setzen (Befehl)*/
+    LCD_SendByte(0x40|(cgramAddr<<3));          /*CGRAM-Addresse setzen (Befehl)*/
     LCD_RS=1;                                   /*LCD umschalten auf Datenempfang*/
     for(i=0;i<=7;i++)                           /*8 Bytes CG-Daten senden*/
-        LCD_Send(*(p_char+i));                  /*Sende 1 Byte Daten aus übergabe-Array*/
+        LCD_SendByte(*(p_char+i));              /*Sende 1 Byte Daten aus übergabe-Array*/
     LCD_RS=0;                                   /*LCD umschalten auf Befehlsempfang*/
 }
 

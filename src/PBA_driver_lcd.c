@@ -42,11 +42,27 @@
 static uint8_t LCD_GetSpecChar(uint8_t ch);
 
 /**
+ * @brief Sendet ein Nibble ans LCD. Verwendung solange LCD noch nicht initialisiert.
+ * 
+ * @param value Zu übertragendes Datennibble. Lower Nibble wird verwendet
+ */
+void LCD_SendNibble(uint8_t value)
+{
+    LCD_EN=1;						/*Pos. Flanke am Enable-Pin*/
+	LCD_D7 = BIT_TEST(value,3);		/*Daten-Nibble anlegen*/
+	LCD_D6 = BIT_TEST(value,2);
+	LCD_D5 = BIT_TEST(value,1);
+	LCD_D4 = BIT_TEST(value,0);
+	LCD_EN=0;						/*Oberes Nibble senden*/
+    DelayUS(30);					/*Maximaler Zeitbedarf einer Übertragung (blocking)*/
+}
+
+/**
  * @brief Sendet ein Datenbyte (z.B. ein Zeichen) oder einen Befehl ans LCD.
  *
  * @param value		Das zu übetragende Datenbyte / der zu übetragende Befehl (8Bit)
  */
-void LCD_Send(uint8_t value)
+void LCD_SendByte(uint8_t value)
 {
 	LCD_EN=1;						/*Pos. Flanke am Enable-Pin*/
 	LCD_D7 = BIT_TEST(value,7);		/*Oberes Daten-Nibble anlegen*/
@@ -63,7 +79,7 @@ void LCD_Send(uint8_t value)
 	LCD_D5 = BIT_TEST(value,1);
 	LCD_D4 = BIT_TEST(value,0);
 	LCD_EN=0;						/*Unteres Nibble senden*/
-	__delay_us(30);					/*Maximaler Zeitbedarf einer Übertragung (blocking)*/
+	DelayUS(30);					/*Maximaler Zeitbedarf einer Übertragung (blocking)*/
  }
 
 /**
@@ -215,11 +231,11 @@ void LCD_Init(displayVoltage_t displayVoltage)
 	DelayMS(40);                        /*Betriebsspannung am LCD für mind. 40ms vorhanden*/
 	LCD_RS=0;							/*LCD interpretiert nächstes Zeichen als Befehl */
 	LCD_RW=0;							/*Auf LCD schreiben...*/
-	LCD_SEND_COMMAND(0b00000011);		/*Function Set 8-Bit*/
+	LCD_SendNibble(0b0011);             /*Function Set 8-Bit*/
 	DelayMS(2);							/*Pause gemäss init-Ablauf (siehe Datenblatt)*/
-	LCD_SEND_COMMAND(0b00000011);		/*Function Set 8-Bit*/
-    LCD_SEND_COMMAND(0b00000011);		/*Function Set 8-Bit*/
-	LCD_SEND_COMMAND(0b00000010);		/*Function Set 4-Bit-Modus*/
+	LCD_SendNibble(0b0011);             /*Function Set 8-Bit*/
+    LCD_SendNibble(0b0011);             /*Function Set 8-Bit*/
+	LCD_SendNibble(0b0010);             /*Function Set 4-Bit-Modus*/
 	LCD_SEND_COMMAND(0b00101001);		/*Function Set*/
 	if(V_3V3==displayVoltage)
 	{

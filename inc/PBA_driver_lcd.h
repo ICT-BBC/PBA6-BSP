@@ -84,14 +84,16 @@ typedef enum
 /**
  * @brief Senden eines Befehls ans LCD
  */
-#define LCD_SEND_COMMAND(Command)   LCD_Send(Command)
+#define LCD_SEND_COMMAND(Command)   LCD_SendByte(Command)
 
 /**
  * @brief Senden eines Datenbytes (Zeichen) ans LCD
  */
-#define LCD_SEND_DATA(value)        LCD_RS=1;LCD_Send(value);LCD_RS=0
+#define LCD_SEND_DATA(value)        LCD_RS=1;LCD_SendByte(value);LCD_RS=0
 
-void LCD_Send(uint8_t value);
+void LCD_SendNibble(uint8_t value);
+
+void LCD_SendByte(uint8_t value);
 
 void LCD_Clear(void);
 
