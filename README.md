@@ -248,3 +248,7 @@ void main(void)
     }
 }
 ```
+## COM-Port Treiber
+Je nach Betriebssystem und Konfiguration wird der Treiber für den USB-Seriell-Wandler FT232R nicht automatisch installiert.
+Die Virtual Com Port (VCP) Treiber können im <a href="http://www.ftdichip.com/Drivers/VCP.htm" target="_blank">Downloadbereich</a> von FTDI Chip heruntergeladen werden. <br>
+Für ungeübte Benutzer stellt der Hersteller <a href="http://www.ftdichip.com/Support/Documents/InstallGuides.htm" target="_blank">Installationsanleitungen</a> für alle gängigen Betriebssysteme zur Verfügung.
