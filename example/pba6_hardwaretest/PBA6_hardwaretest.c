@@ -287,7 +287,7 @@ void main(void)
             /********************* ADC-Poti-Test ********************************************/
         case ST_ADC:
 
-            if (!events_g.ActiveUntilMS(1000))       /*Nachdem 1s Starttext angezeigt*/
+            if (!events_g.ActiveUntilMS(1000))      /*Nachdem 1s Starttext angezeigt*/
             {
                 uint32_t result;                    /*Eingelesenes ADC-Resultat*/
                 uint8_t adc_dec;                    /*Wert vor Komma*/

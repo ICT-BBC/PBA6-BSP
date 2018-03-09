@@ -53,8 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_p_b_a6__hardwaretest_8c.html",
-"group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gae588fb3af88bfa1183faa83a81778783",
-"group___p_b_a___l_c_d.html#ga3adab8eab262bc17bd73e4cd0239d73f"
+"group___d_e_f___d_e_l_a_y.html#ga024148e99a7143db044a48216664d03d",
+"group___p_b_a___l_c_d.html#ga62ad39fd0f5458f1bc8f1299a3a98624"
 ];
 
 var SYNCONMSG = 'Klicken um Panelsynchronisation auszuschalten';

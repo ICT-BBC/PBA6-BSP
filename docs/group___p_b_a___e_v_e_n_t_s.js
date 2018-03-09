@@ -18,16 +18,19 @@ var group___p_b_a___e_v_e_n_t_s =
       [ "posEdge", "structevents__t.html#a81ad92fd153f97ca013c4566445a1c61", null ],
       [ "pressed1000ms", "structevents__t.html#a04983df1a2514591e903805697f638f5", null ],
       [ "pressed500ms", "structevents__t.html#ad91d7ee2f9b36c81e09582824498f075", null ],
+      [ "ResetTimeoutMS", "structevents__t.html#aa70c7217f790ef824cccd8628adccea1", null ],
       [ "TimeoutMS", "structevents__t.html#aa50bc5bd88fb2b3e981e1a04512b3337", null ],
       [ "valueEdge", "structevents__t.html#ad2d7a6e6c4bb07dd32fe256f808bfc55", null ],
       [ "valuePressed", "structevents__t.html#a24fd2f3e0fbba6d628520b18f2b60180", null ]
     ] ],
+    [ "timeevent_t", "structtimeevent__t.html", [
+      [ "active", "structtimeevent__t.html#a05c940dbc220f5a723afd70071aebff8", null ],
+      [ "end", "structtimeevent__t.html#afbcd798d035e37e733b567c2b0cb96dc", null ],
+      [ "eventOccured", "structtimeevent__t.html#ae1bca8041b151c5de51478d128bc7848", null ],
+      [ "ms", "structtimeevent__t.html#a8d03256977e8f265177523adc9bab6c0", null ]
+    ] ],
     [ "MAXTIMEOUTS", "group___p_b_a___e_v_e_n_t_s.html#ga4b87ecb9c34011c7f7073cf4e9f1e722", null ],
     [ "EVENTS_Init", "group___p_b_a___e_v_e_n_t_s.html#gaec5b207961d3f331bb644c27e84b72db", null ],
     [ "EVENTS_TimerISR", "group___p_b_a___e_v_e_n_t_s.html#ga8766b91fc0b648b6e608891ba91e4fb8", null ],
-    [ "EVENTS_Update", "group___p_b_a___e_v_e_n_t_s.html#ga926a101092ad5a3f0858546ccc11a370", null ],
-    [ "active", "group___p_b_a___e_v_e_n_t_s.html#ga4f2a99af6ccde762e6b10b6d08e94822", null ],
-    [ "end", "group___p_b_a___e_v_e_n_t_s.html#gae16d809c8a7835e43c2a8b1c36a36c29", null ],
-    [ "eventOccured", "group___p_b_a___e_v_e_n_t_s.html#gab02fab83308431ad7b98a1dc26eb54f9", null ],
-    [ "ms", "group___p_b_a___e_v_e_n_t_s.html#gacfa624fab56ec3a68d915ad923a0de13", null ]
+    [ "EVENTS_Update", "group___p_b_a___e_v_e_n_t_s.html#ga926a101092ad5a3f0858546ccc11a370", null ]
 ];

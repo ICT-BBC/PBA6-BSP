@@ -2,6 +2,7 @@ var _p_b_a__menu_8c =
 [
     [ "MAXCHARS", "group___p_b_a___m_e_n_u.html#gafd26c58b32fd5ab4b76982138487df5d", null ],
     [ "MAXLINES", "group___p_b_a___m_e_n_u.html#ga8759764610aff6d0cf94742c22856182", null ],
+    [ "MENU_LcdUpdate", "group___p_b_a___m_e_n_u.html#gaa628c1bc273481808207ef4444ef9812", null ],
     [ "POSEDGE_DOWN", "group___p_b_a___m_e_n_u.html#gad6a5ff02dfaf608c014c3d26e165d4d9", null ],
     [ "POSEDGE_ENTER", "group___p_b_a___m_e_n_u.html#ga5c9b00b31e068cd251e0284cd1fc17dd", null ],
     [ "POSEDGE_UP", "group___p_b_a___m_e_n_u.html#ga277a7f7690010a4776205644930954a1", null ],

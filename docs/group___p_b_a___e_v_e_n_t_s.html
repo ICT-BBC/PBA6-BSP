@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="bbc_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PIC Board Advanced 6 Board Support Package
-   &#160;<span id="projectnumber">V 1.3.1</span>
+   &#160;<span id="projectnumber">V 1.4.0</span>
    </div>
    <div id="projectbrief">HAL- und Peripheriefunktionen für das PBA6</div>
   </td>
@@ -117,6 +117,9 @@ Bitfeld zum speichern von Taster-Events  <a href="structtaster_byte__t.html#deta
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br />
 Events  <a href="structevents__t.html#details">Mehr ...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtimeevent__t.html">timeevent_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speichern von Events.  <a href="structtimeevent__t.html#details">Mehr ...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Makrodefinitionen</h2></td></tr>
@@ -194,7 +197,7 @@ Maximale Anzahl Timeouts welche gleichzeitig aktiv sein können </p>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00074">74</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00075">75</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
 
 </div>
 </div>
@@ -224,7 +227,7 @@ Maximale Anzahl Timeouts welche gleichzeitig aktiv sein können </p>
 
 <p>Aktualisieren der zeitlichen Events. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00152">152</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00154">154</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
 
 </div>
 </div>
@@ -246,72 +249,7 @@ Maximale Anzahl Timeouts welche gleichzeitig aktiv sein können </p>
 
 <p>Einlesen der Taster, Flanken Tastendrücke detektieren. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00107">107</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variablen-Dokumentation</h2>
-<a id="ga4f2a99af6ccde762e6b10b6d08e94822"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4f2a99af6ccde762e6b10b6d08e94822">&#9670;&nbsp;</a></span>active</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t active[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00054">54</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
-
-</div>
-</div>
-<a id="gae16d809c8a7835e43c2a8b1c36a36c29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae16d809c8a7835e43c2a8b1c36a36c29">&#9670;&nbsp;</a></span>end</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t end[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00057">57</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
-
-</div>
-</div>
-<a id="gab02fab83308431ad7b98a1dc26eb54f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab02fab83308431ad7b98a1dc26eb54f9">&#9670;&nbsp;</a></span>eventOccured</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t eventOccured[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00055">55</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
-
-</div>
-</div>
-<a id="gacfa624fab56ec3a68d915ad923a0de13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacfa624fab56ec3a68d915ad923a0de13">&#9670;&nbsp;</a></span>ms</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t ms[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00056">56</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a__events_8c_source.html#l00109">109</a> der Datei <a class="el" href="_p_b_a__events_8c_source.html">PBA_events.c</a>.</p>
 
 </div>
 </div>

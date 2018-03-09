@@ -80,6 +80,7 @@ typedef struct
     };
     uint8_t (* TimeoutMS)(uint16_t);    /**< Starten/Abrufen Timeout-Events*/
     uint8_t (* ActiveUntilMS)(uint16_t);/**< Starten/Abrufen Active-Until-Events*/
+    uint8_t (* ResetTimeoutMS)(uint16_t); /**< Zurücksetzen eines Timeout- oder Active-Until-Events */
 } events_t;
 
 

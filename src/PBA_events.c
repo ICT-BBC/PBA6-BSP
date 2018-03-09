@@ -49,20 +49,21 @@
 /**
  *@brief Speichern von Events
  */
-static struct
+typedef struct
 {
-uint8_t active[MAXTIMEOUTS];
-    uint8_t eventOccured[MAXTIMEOUTS];
-    uint16_t ms[MAXTIMEOUTS];
-    uint16_t end[MAXTIMEOUTS];
-} timeoutValues = {0};
+    uint8_t active;
+    uint8_t eventOccured;
+    uint16_t ms;
+    uint16_t end;
+} timeevent_t;
+static timeevent_t timeEvents[MAXTIMEOUTS] = {0};
 
 static events_t *p_toEvents;
 static uint8_t *p_toState;
 static volatile uint16_t timeoutCounter=0;
 static uint8_t EVENTS_TimeoutHandler(uint16_t t);
 static uint8_t EVENTS_ActiveUntilHandler(uint16_t t);
-
+static uint8_t EVENTS_ResetTimeoutHandler(uint16_t t);
 static  uint16_t loopDelayMS=0; /**< Eingestelltes Loopdelay */
 
 
@@ -99,6 +100,7 @@ void EVENTS_Init(void *p_state,events_t *p_events)
     p_toEvents=p_events;
     p_toEvents->TimeoutMS=EVENTS_TimeoutHandler;
     p_toEvents->ActiveUntilMS=EVENTS_ActiveUntilHandler;
+    p_toEvents->ResetTimeoutMS=EVENTS_ResetTimeoutHandler;
 }
 
 /**
@@ -154,16 +156,11 @@ inline void EVENTS_TimerISR(void)
     static uint8_t stateOld=0;
     uint8_t i;
     if(stateOld!=*p_toState)                    /*Bei Zustandswechsel alle Timeouts zurücksetzen*/
-        for(i=0;i<MAXTIMEOUTS;i++)
-        {
-            timeoutValues.eventOccured[i]=0;
-            timeoutValues.active[i]=0;
-            timeoutValues.ms[i]=0;
-        }
+        memset(timeEvents,0,sizeof(timeEvents));
     else
         for(i=0;i<MAXTIMEOUTS;i++)              /*Timoutereignisse prüfen*/
-            if((timeoutValues.active[i]==1) && (timeoutCounter==timeoutValues.end[i]))
-                timeoutValues.eventOccured[i]=1;
+            if((timeEvents[i].active==1) && (timeoutCounter==timeEvents[i].end))
+                timeEvents[i].eventOccured=1;
     stateOld=*p_toState;
     ++timeoutCounter;
 }
@@ -171,7 +168,7 @@ inline void EVENTS_TimerISR(void)
 /**
  * @brief Einrichten/Überprüfen von Timeout-Events.
  * @param timeoutMS Gewünschtes Timeout in ms
- * @return  1: Timeout eingetreten
+ * @return  1: Timeout eingetreten 0: Timeout nicht eingetreten, 0xFF: Timeout nicht erstellt
  */
 static uint8_t EVENTS_TimeoutHandler(uint16_t timeoutMS)
 {
@@ -183,29 +180,29 @@ static uint8_t EVENTS_TimeoutHandler(uint16_t timeoutMS)
     {
         uint8_t i;
         /*Prüfen ob Timeout schon vorhanden*/
-        for(i=0; i<MAXTIMEOUTS && timeoutValues.ms[i]!=timeoutMS; i++);
+        for(i=0; i<MAXTIMEOUTS && timeEvents[i].ms!=timeoutMS; i++);
         if(i==MAXTIMEOUTS)                              /*Timout noch nicht vorhanden*/
         {
             /*Prüfen ob noch Timeouts vorhanden sind*/
-            for(i=0; i<MAXTIMEOUTS && timeoutValues.active[i]>0; i++);
+            for(i=0; i<MAXTIMEOUTS && timeEvents[i].active>0; i++);
             if(i==MAXTIMEOUTS) return 0xFF;             /*Rückgabe: Fehler keine Timeouts mehr verfügbar*/
             /*neues Timeout speichern*/
             INTCONbits.GIE=0;                           /*Interrupts ausschalten (counter absichern)*/
-            timeoutValues.active[i] = 1;
-            timeoutValues.eventOccured[i]=0;
-            timeoutValues.ms[i] = timeoutMS;
-            timeoutValues.end[i] = timeoutCounter+timeoutMS-2*loopDelayMS;
+            timeEvents[i].active = 1;
+            timeEvents[i].eventOccured = 0;
+            timeEvents[i].ms = timeoutMS;
+            timeEvents[i].end = timeoutCounter+timeoutMS-2*loopDelayMS;
             INTCONbits.GIE=1;                           /*Interrupts wieder einschalten*/
             return 0;                                   /*Rückgabe: Kein Timeoutereignis eingetreten*/
         }
         else                                            /*Timeout bereits vorhanden*/
         {
-            if(timeoutValues.active[i] && timeoutValues.eventOccured[i])            /*Timeoutereignis eingetreten*/
+            if(timeEvents[i].active && timeEvents[i].eventOccured)            /*Timeoutereignis eingetreten*/
             {
                 /*Timeout zurücksetzen*/
-                timeoutValues.eventOccured[i]=0;
-                timeoutValues.active[i]=0;
-                timeoutValues.ms[i]=0;
+                timeEvents[i].eventOccured = 0;
+                timeEvents[i].active = 0;
+                timeEvents[i].ms = 0;
                 return 1;                               /*Rückgabe: Timeoutereignis eingetreten*/
             }
         }
@@ -222,36 +219,58 @@ static uint8_t EVENTS_ActiveUntilHandler(uint16_t activeUntilMS)
 {
     uint8_t i;
     /*Prüfen ob Timeout schon vorhanden*/
-    for(i=0; i<MAXTIMEOUTS && timeoutValues.ms[i]!=activeUntilMS; i++);
+    for(i=0; i<MAXTIMEOUTS && timeEvents[i].ms != activeUntilMS; i++);
     if(i==MAXTIMEOUTS)                              /*Timout noch nicht vorhanden*/
     {
         /*Prüfen ob noch Timeouts vorhanden sind*/
-        for(i=0; i<MAXTIMEOUTS && timeoutValues.active[i]>0; i++);
+        for(i=0; i<MAXTIMEOUTS && timeEvents[i].active>0; i++);
         if(i==MAXTIMEOUTS) return 0xFF;             /*Rückgabe: Fehler keine Timeouts mehr verfügbar*/
         /*neues Timeout speichern*/
         INTCONbits.GIE=0;                           /*Interrupts ausschalten (counter absichern)*/
-        timeoutValues.active[i] = 1;
-        timeoutValues.eventOccured[i]=0;
-        timeoutValues.ms[i] = activeUntilMS;
-        timeoutValues.end[i] = timeoutCounter+activeUntilMS-loopDelayMS;
+        timeEvents[i].active = 1;
+        timeEvents[i].eventOccured = 0;
+        timeEvents[i].ms = activeUntilMS;
+        timeEvents[i].end = timeoutCounter+activeUntilMS-loopDelayMS;
         INTCONbits.GIE=1;                           /*Interrupts wieder einschalten*/
         return 1;                                   /*Rückgabe: Kein Timeoutereignis eingetreten*/
     }
     else                                            /*Timeout bereits vorhanden*/
     {
-        if(timeoutValues.active[i]==2)              /*Ontime-Timemout bereits 1x abgelaufen*/
+        if(timeEvents[i].active == 2)              /*Ontime-Timemout bereits 1x abgelaufen*/
             return 0;
-        if(timeoutValues.active[i] && timeoutValues.eventOccured[i])    /*Timeoutereignis eingetreten*/
+        if(timeEvents[i].active && timeEvents[i].eventOccured)    /*Timeoutereignis eingetreten*/
         {
             /*Timeout zurücksetzen*/
-            timeoutValues.eventOccured[i]=0;
-            timeoutValues.active[i]=2;
+            timeEvents[i].eventOccured = 0;
+            timeEvents[i].active = 2;
             return 0;                               /*Rückgabe: Timeoutereignis eingetreten*/
         }
     }
     return 1;                                       /*Rückgabe: Kein Timeoutereignis eingetreten*/
 }
 
+/**
+ * @brief Zurücksetzen von Timeout- und Active-Until Events
+ * @param t Zeit in ms des Events welcher zurückgesetzt werden soll
+ * @return 0: Event erfolgreich zurückgesetzt, 1: zurücksetzen nicht möglich (Event nicht vorhanden)
+ */
+static uint8_t EVENTS_ResetTimeoutHandler(uint16_t t)
+{
+    uint8_t i;
+    for(i=0; (i<MAXTIMEOUTS) && (timeEvents[i].ms != t); i++);  /* Event suchen */
+     if( i == MAXTIMEOUTS)                                      /* Event nicht vorhanden */
+     {
+         return 1;   /* Timeout nicht gefunden, zurücksetzen nicht möglich */
+     }
+     else                                                       /* Event vorhanden */
+     {
+         timeEvents[i].active = 0;
+         timeEvents[i].end = 0;
+         timeEvents[i].eventOccured = 0;
+         timeEvents[i].ms = 0;
+        return 0;  /* Timeout erfolgreich zurückgesetzt */
+     }
+}
 #endif
 /**
  * @}

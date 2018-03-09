@@ -24,6 +24,7 @@
  *                          fix Beep-Funktion
  * @date        26.06.2017  Umstrukturierung Interrupts.
  * @date        26.06.2017  Fix LCD Init für f_xtal<20MHz
+ * @date        09.03.2018  ResetTimeout Funktion hinzugefügt. Menu-Fix
  *
  * @attention   PBA_Init zur Initialiserung und Konfigurations des PBAs.
  *              Um die Libraries zu verwenden, kopieren Sie die beiden Ordner
