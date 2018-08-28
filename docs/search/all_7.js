@@ -14,7 +14,6 @@ var searchData=
   ['int_5faddtmr1callbackfnc',['INT_AddTmr1CallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga61f82223ff621b1ab02faa21f408b240',1,'PBA_interrupts.c']]],
   ['int_5faddtmr2callbackfnc',['INT_AddTmr2CallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga5a622dc14a4aeff3234aa2cec52e5c1b',1,'PBA_interrupts.c']]],
   ['int_5fadduartcallbackfnc',['INT_AddUartCallbackFnc',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga07b872b0fac91ed782cc57e63ff367c2',1,'PBA_interrupts.c']]],
-  ['int_5fmanager',['INT_Manager',['../group___p_b_a___i_n_t_e_r_r_u_p_t_s.html#ga73e351037916682685dc2cde6dcadf4e',1,'PBA_interrupts.c']]],
   ['introedit',['IntroEdit',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga62e61cad59591485fb7549baa435c97b',1,'PBA6_hardwaretest.c']]],
   ['isr_5fsummer',['ISR_Summer',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga89352e8f44a3aff6506edfe502e1c1fd',1,'PBA6_hardwaretest.c']]],
   ['isr_5fuartrx',['ISR_UartRx',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gaf2e8c59bd803a61f0ea8b5144579b43a',1,'PBA6_hardwaretest.c']]]

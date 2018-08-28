@@ -74,7 +74,7 @@ static void UnhandledInterrupt(void);
 /**
  * @brief Globale Interruptroutine.
  */
-void interrupt INT_Manager(void)
+void __interrupt() INT_Manager(void)
 {
     /******* Timer 0 Interrupt **************************************************/
     if(INTCONbits.TMR0IF && INTCONbits.TMR0IE)

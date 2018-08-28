@@ -25,7 +25,7 @@ var NAVTREE =
 [
   [ "PIC Board Advanced 6 Board Support Package", "index.html", [
     [ "PBA6-BSP", "index.html", null ],
-    [ "LICENSE", "md__c_1__users_studm__desktop__p_b_a6-_b_s_p__l_i_c_e_n_s_e.html", null ],
+    [ "LICENSE", "md__c_1__users_studm__desktop__p_b_a__p_b_a6-_b_s_p__l_i_c_e_n_s_e.html", null ],
     [ "Module", "modules.html", "modules" ],
     [ "Datenstrukturen", "annotated.html", [
       [ "Datenstrukturen", "annotated.html", "annotated_dup" ],
@@ -54,7 +54,7 @@ var NAVTREEINDEX =
 [
 "_p_b_a6__hardwaretest_8c.html",
 "group___d_e_f___d_e_l_a_y.html#ga024148e99a7143db044a48216664d03d",
-"group___p_b_a___l_c_d.html#ga62ad39fd0f5458f1bc8f1299a3a98624"
+"group___p_b_a___l_c_d.html#ga69ccb0a605f771fc7c75178ff2be0b9e"
 ];
 
 var SYNCONMSG = 'Klicken um Panelsynchronisation auszuschalten';

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['beep',['Beep',['../group___p_b_a___h_e_l_p_e_r_s.html#ga7d6792a046c83e577d89c3687b6683b0',1,'PBA_helpers.c']]],
-  ['bintobcd',['BinToBcd',['../group___p_b_a___h_e_l_p_e_r_s.html#gae1d14e064092b856dd5cf27a8c28a59b',1,'PBA_helpers.c']]],
-  ['bitnumb',['BitNumb',['../group___p_b_a___h_e_l_p_e_r_s.html#ga41a7fbd11c46504857fcd6eb1e5c0615',1,'PBA_helpers.c']]],
-  ['bitsum',['BitSum',['../group___p_b_a___h_e_l_p_e_r_s.html#gad76eaff884e1026170495d5dc5280b83',1,'PBA_helpers.c']]],
-  ['bspmenufunction',['BspMenuFunction',['../group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga8cac6ccf53455cdc634409d80727110e',1,'PBA6_hardwaretest.c']]]
+  ['adc_5finit',['ADC_Init',['../group___p_b_a___a_d_c.html#gad9f971cf81dfcba6bd0005cd4548bdab',1,'PBA_driver_adc.c']]],
+  ['adc_5fread',['ADC_Read',['../group___p_b_a___a_d_c.html#ga61a3f6d05f7d6ea3dbef50cc7d01bc2e',1,'PBA_driver_adc.c']]],
+  ['adc_5fsetanaloganx',['ADC_SetAnalogANx',['../group___p_b_a___a_d_c.html#gac5d28d475aa5e1b8eb60dc90af56328a',1,'PBA_driver_adc.c']]],
+  ['adc_5fsetchannel',['ADC_SetChannel',['../group___p_b_a___a_d_c.html#gaf43ad9d3e9259845a1c78d557430ef52',1,'PBA_driver_adc.c']]]
 ];

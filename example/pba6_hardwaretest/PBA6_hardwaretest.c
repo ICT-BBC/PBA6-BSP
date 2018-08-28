@@ -5,11 +5,12 @@
  * @file        PBA6_hardwaretest.c
  * @brief       Hardwaretestsoftware für das PIC Board Advanced 6
  * @author      ICT Berufsbildungscenter AG
- * @version     2.1.0
+ * @version     2.1.1
  * @date        23.01.2017: Komplette Überarbeitung, Umsetzung als FSM
  *                          Implementierung aller Library-Features
- * @date        25.04.2047: SRF Zugriffe geändert (Bitfelder), fix Intro
+ * @date        25.04.2047: SFR Zugriffe geändert (Bitfelder), fix Intro
  * @date        26.06.2017: Anpassungen auf neue Interruptumsetzung BSP V1.3.0
+ * @date        28.08.2018: Anpassung für XC8 Compiler V2.00
  *******************************************************************************
  *
  * @copyright
@@ -45,7 +46,7 @@
 
 
 /********************* Defines / Makros / Konstanten ****************************************/
-const uint8_t UART_BUFFERSIZE   = 16;           /**< Anzahl Zeichen die maximal eingegeben werden können*/
+#define UART_BUFFERSIZE         (16)            /**< Anzahl Zeichen die maximal eingegeben werden können*/
 
 const uint8_t EEADDR_CHECKVALID = 0x00;         /**< EEPROM-Adresse, Überprüfung ob bereits Daten geschrieben*/
 const uint8_t EEADDR_INTRO      = 0x01;         /**< EEPROM-Adresse, Intro an/aus*/
@@ -53,9 +54,9 @@ const uint8_t EEADDR_SUMMER     = 0x02;         /**< EEPROM-Adresse, Summer Freq
 
 const uint8_t EE_VALID          = 0x00;         /**< EEPROM-Daten bestehend*/
 const uint8_t EE_DEFAULT_INTRO  = 0x01;         /**< EEPROM-Standard-Wert Intro an/aus. Standard: Intro an*/
-const uint16_t EE_DEFAULT_SUMMER = 500;         /**< EEPROM-Standard-Wert Summerfrequenz. Standard: 500Hz*/
+const uint8_t EE_DEFAULT_SUMMER = 500;          /**< EEPROM-Standard-Wert Summerfrequenz. Standard: 500Hz*/
 
-const uint16_t FREQ_MAX         = 500;          /**< Maximale Summerfrequenz*/
+const uint8_t FREQ_MAX          = 500;          /**< Maximale Summerfrequenz*/
 const uint8_t FREQ_STEP         = 100;          /**< Summer: 100Hz Schritt*/
 const uint8_t FREQ_MIN          = 100;          /**< Minimale Summerfrequenz*/
 

@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="bbc_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PIC Board Advanced 6 Board Support Package
-   &#160;<span id="projectnumber">V 1.4.0</span>
+   &#160;<span id="projectnumber">V 1.4.1</span>
    </div>
    <div id="projectbrief">HAL- und Peripheriefunktionen für das PBA6</div>
   </td>
@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_
 <div class="header">
   <div class="summary">
 <a href="#files">Dateien</a> &#124;
+<a href="#define-members">Makrodefinitionen</a> &#124;
 <a href="#enum-members">Aufzählungen</a> &#124;
 <a href="#func-members">Funktionen</a> &#124;
 <a href="#var-members">Variablen</a>  </div>
@@ -103,6 +104,12 @@ Dateien</h2></td></tr>
 <tr class="memitem:_p_b_a6__hardwaretest_8c"><td class="memItemLeft" align="right" valign="top">Datei &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_p_b_a6__hardwaretest_8c.html">PBA6_hardwaretest.c</a></td></tr>
 <tr class="memdesc:_p_b_a6__hardwaretest_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardwaretestsoftware für das PIC Board Advanced 6. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Makrodefinitionen</h2></td></tr>
+<tr class="memitem:gaff91a71ab6264359540cc3cfca459f31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gaff91a71ab6264359540cc3cfca459f31">UART_BUFFERSIZE</a>&#160;&#160;&#160;(16)</td></tr>
+<tr class="memdesc:gaff91a71ab6264359540cc3cfca459f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anzahl Zeichen die maximal eingegeben werden können.  <a href="#gaff91a71ab6264359540cc3cfca459f31">Mehr ...</a><br /></td></tr>
+<tr class="separator:gaff91a71ab6264359540cc3cfca459f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Aufzählungen</h2></td></tr>
@@ -144,9 +151,6 @@ Funktionen</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variablen</h2></td></tr>
-<tr class="memitem:gafdb94ddf28e2bad1f669c28f47881435"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gafdb94ddf28e2bad1f669c28f47881435">UART_BUFFERSIZE</a> = 16</td></tr>
-<tr class="memdesc:gafdb94ddf28e2bad1f669c28f47881435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anzahl Zeichen die maximal eingegeben werden können.  <a href="#gafdb94ddf28e2bad1f669c28f47881435">Mehr ...</a><br /></td></tr>
-<tr class="separator:gafdb94ddf28e2bad1f669c28f47881435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe55f25b501f7645f4f73d7b4073ebc1"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gabe55f25b501f7645f4f73d7b4073ebc1">EEADDR_CHECKVALID</a> = 0x00</td></tr>
 <tr class="memdesc:gabe55f25b501f7645f4f73d7b4073ebc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM-Adresse, Überprüfung ob bereits Daten geschrieben.  <a href="#gabe55f25b501f7645f4f73d7b4073ebc1">Mehr ...</a><br /></td></tr>
 <tr class="separator:gabe55f25b501f7645f4f73d7b4073ebc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,12 +166,12 @@ Variablen</h2></td></tr>
 <tr class="memitem:ga45d34a7cbc6a2cf3070f8a3de2057087"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga45d34a7cbc6a2cf3070f8a3de2057087">EE_DEFAULT_INTRO</a> = 0x01</td></tr>
 <tr class="memdesc:ga45d34a7cbc6a2cf3070f8a3de2057087"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM-Standard-Wert Intro an/aus.  <a href="#ga45d34a7cbc6a2cf3070f8a3de2057087">Mehr ...</a><br /></td></tr>
 <tr class="separator:ga45d34a7cbc6a2cf3070f8a3de2057087"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf6e4f245a806bc1e231ccf894c6fd86a"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gaf6e4f245a806bc1e231ccf894c6fd86a">EE_DEFAULT_SUMMER</a> = 500</td></tr>
-<tr class="memdesc:gaf6e4f245a806bc1e231ccf894c6fd86a"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM-Standard-Wert Summerfrequenz.  <a href="#gaf6e4f245a806bc1e231ccf894c6fd86a">Mehr ...</a><br /></td></tr>
-<tr class="separator:gaf6e4f245a806bc1e231ccf894c6fd86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadb205347b587374910177f36acb8e249"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gadb205347b587374910177f36acb8e249">FREQ_MAX</a> = 500</td></tr>
-<tr class="memdesc:gadb205347b587374910177f36acb8e249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximale Summerfrequenz.  <a href="#gadb205347b587374910177f36acb8e249">Mehr ...</a><br /></td></tr>
-<tr class="separator:gadb205347b587374910177f36acb8e249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d24b656702ef1ada547b64462ccf04c"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga4d24b656702ef1ada547b64462ccf04c">EE_DEFAULT_SUMMER</a> = 500</td></tr>
+<tr class="memdesc:ga4d24b656702ef1ada547b64462ccf04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM-Standard-Wert Summerfrequenz.  <a href="#ga4d24b656702ef1ada547b64462ccf04c">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga4d24b656702ef1ada547b64462ccf04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b3c3b9a3009c4b00ce88b41833a202c"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga6b3c3b9a3009c4b00ce88b41833a202c">FREQ_MAX</a> = 500</td></tr>
+<tr class="memdesc:ga6b3c3b9a3009c4b00ce88b41833a202c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximale Summerfrequenz.  <a href="#ga6b3c3b9a3009c4b00ce88b41833a202c">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga6b3c3b9a3009c4b00ce88b41833a202c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabf7ae2c90520e0bf505bf88046bfb200"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gabf7ae2c90520e0bf505bf88046bfb200">FREQ_STEP</a> = 100</td></tr>
 <tr class="memdesc:gabf7ae2c90520e0bf505bf88046bfb200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Summer: 100Hz Schritt.  <a href="#gabf7ae2c90520e0bf505bf88046bfb200">Mehr ...</a><br /></td></tr>
 <tr class="separator:gabf7ae2c90520e0bf505bf88046bfb200"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,9 +181,9 @@ Variablen</h2></td></tr>
 <tr class="memitem:ga0345cb08b1f5ab6641a4e91aa5974955"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga0345cb08b1f5ab6641a4e91aa5974955">uartHasReceived_g</a> = 0</td></tr>
 <tr class="memdesc:ga0345cb08b1f5ab6641a4e91aa5974955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag UART-String empfangen.  <a href="#ga0345cb08b1f5ab6641a4e91aa5974955">Mehr ...</a><br /></td></tr>
 <tr class="separator:ga0345cb08b1f5ab6641a4e91aa5974955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga363f59bf3deac29e917f4c3924f0e5b3"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga363f59bf3deac29e917f4c3924f0e5b3">uartBuffer_g</a> [<a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gafdb94ddf28e2bad1f669c28f47881435">UART_BUFFERSIZE</a>]</td></tr>
-<tr class="memdesc:ga363f59bf3deac29e917f4c3924f0e5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART-String.  <a href="#ga363f59bf3deac29e917f4c3924f0e5b3">Mehr ...</a><br /></td></tr>
-<tr class="separator:ga363f59bf3deac29e917f4c3924f0e5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78718a9db7d6aac5b70da5c84eb39d3d"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga78718a9db7d6aac5b70da5c84eb39d3d">uartBuffer_g</a> [(16)]</td></tr>
+<tr class="memdesc:ga78718a9db7d6aac5b70da5c84eb39d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART-String.  <a href="#ga78718a9db7d6aac5b70da5c84eb39d3d">Mehr ...</a><br /></td></tr>
+<tr class="separator:ga78718a9db7d6aac5b70da5c84eb39d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga13533f1e7f273118c386de1a189a482b"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga13533f1e7f273118c386de1a189a482b">summerCnt_g</a> = 0</td></tr>
 <tr class="memdesc:ga13533f1e7f273118c386de1a189a482b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zähler für Summer.  <a href="#ga13533f1e7f273118c386de1a189a482b">Mehr ...</a><br /></td></tr>
 <tr class="separator:ga13533f1e7f273118c386de1a189a482b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,6 +201,25 @@ Variablen</h2></td></tr>
 <tr class="separator:ga88ac260bfa54b50d18a6161d01cf7563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<h2 class="groupheader">Makro-Dokumentation</h2>
+<a id="gaff91a71ab6264359540cc3cfca459f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff91a71ab6264359540cc3cfca459f31">&#9670;&nbsp;</a></span>UART_BUFFERSIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART_BUFFERSIZE&#160;&#160;&#160;(16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Anzahl Zeichen die maximal eingegeben werden können. </p>
+
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00049">49</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
 <a id="gaa0aafed44fec19806d8f9ad834be1248"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa0aafed44fec19806d8f9ad834be1248">&#9670;&nbsp;</a></span>state_t</h2>
@@ -230,7 +253,7 @@ Variablen</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00067">67</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00068">68</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -260,7 +283,7 @@ Variablen</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>1:Funktion beenden, 0:erneut ausführen </dd></dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00572">572</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00573">573</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -289,7 +312,7 @@ Variablen</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>1:Funktion beenden, 0:Funktion erneut ausführen </dd></dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00447">447</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00448">448</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -320,7 +343,7 @@ Variablen</h2></td></tr>
 <p>Interruptroutine für Summer. </p>
 <p>Schaltet den Summer-IO mit der gewünschten Frequenz. Alle 1ms aufrufen. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00428">428</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00429">429</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -349,8 +372,9 @@ Variablen</h2></td></tr>
 </div><div class="memdoc">
 
 <p>UART Empfangsinterrupt Liest Zeichen ein, bis Carriage return empfangen. </p>
+<p>&lt; Anzahl Zeichen die maximal eingegeben werden können </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00389">389</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00390">390</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -372,7 +396,7 @@ Variablen</h2></td></tr>
 
 <p>Mainroutine Hardware-Testsoftware. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00121">121</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00122">122</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -401,7 +425,7 @@ Variablen</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>1:Funktion beenden, 0:erneut ausführen </dd></dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00506">506</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00507">507</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -421,18 +445,18 @@ Variablen</h2></td></tr>
 <p>EEPROM-Standard-Wert Intro an/aus. </p>
 <p>Standard: Intro an </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00055">55</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00056">56</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
-<a id="gaf6e4f245a806bc1e231ccf894c6fd86a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf6e4f245a806bc1e231ccf894c6fd86a">&#9670;&nbsp;</a></span>EE_DEFAULT_SUMMER</h2>
+<a id="ga4d24b656702ef1ada547b64462ccf04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d24b656702ef1ada547b64462ccf04c">&#9670;&nbsp;</a></span>EE_DEFAULT_SUMMER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint16_t EE_DEFAULT_SUMMER = 500</td>
+          <td class="memname">const uint8_t EE_DEFAULT_SUMMER = 500</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -440,7 +464,7 @@ Variablen</h2></td></tr>
 <p>EEPROM-Standard-Wert Summerfrequenz. </p>
 <p>Standard: 500Hz </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00056">56</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00057">57</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -458,7 +482,7 @@ Variablen</h2></td></tr>
 
 <p>EEPROM-Daten bestehend. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00054">54</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00055">55</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -476,7 +500,7 @@ Variablen</h2></td></tr>
 
 <p>EEPROM-Adresse, Überprüfung ob bereits Daten geschrieben. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00050">50</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00051">51</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -494,7 +518,7 @@ Variablen</h2></td></tr>
 
 <p>EEPROM-Adresse, Intro an/aus. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00051">51</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00052">52</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -512,7 +536,7 @@ Variablen</h2></td></tr>
 
 <p>EEPROM-Adresse, Summer Frequenz. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00052">52</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00053">53</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -530,25 +554,25 @@ Variablen</h2></td></tr>
 
 <p>Event-Struktur für Timing- und Tasterevents. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00094">94</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00095">95</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
-<a id="gadb205347b587374910177f36acb8e249"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadb205347b587374910177f36acb8e249">&#9670;&nbsp;</a></span>FREQ_MAX</h2>
+<a id="ga6b3c3b9a3009c4b00ce88b41833a202c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b3c3b9a3009c4b00ce88b41833a202c">&#9670;&nbsp;</a></span>FREQ_MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint16_t FREQ_MAX = 500</td>
+          <td class="memname">const uint8_t FREQ_MAX = 500</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Maximale Summerfrequenz. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00058">58</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00059">59</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -566,7 +590,7 @@ Variablen</h2></td></tr>
 
 <p>Minimale Summerfrequenz. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00060">60</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00061">61</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -584,7 +608,7 @@ Variablen</h2></td></tr>
 
 <p>Summer: 100Hz Schritt. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00059">59</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00060">60</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -599,14 +623,14 @@ Variablen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initialisierung:</b><div class="fragment"><div class="line">=</div><div class="line">{   </div><div class="line">    </div><div class="line">    {<span class="stringliteral">&quot;Einstellungen&quot;</span>,   0,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[1], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[3], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], NULL,       NULL},              </div><div class="line">    {<span class="stringliteral">&quot;foo&quot;</span>,             1,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[2], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga8cac6ccf53455cdc634409d80727110e">BspMenuFunction</a>},   </div><div class="line">    {<span class="stringliteral">&quot;foo2&quot;</span>,            2,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[3], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[1], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga8cac6ccf53455cdc634409d80727110e">BspMenuFunction</a>},   </div><div class="line">    {<span class="stringliteral">&quot;Exit&quot;</span>,            3,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[2], NULL,       NULL,       NULL},              </div><div class="line"></div><div class="line">    </div><div class="line">    {<span class="stringliteral">&quot;Intro&quot;</span>,           0,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[5], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[6], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga62e61cad59591485fb7549baa435c97b">IntroEdit</a>},         </div><div class="line">    {<span class="stringliteral">&quot;Summer&quot;</span>,          1,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[6], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga17aa99dbaf9aa931a11fd1b49a4279b0">SummerEdit</a>},        </div><div class="line">    {<span class="stringliteral">&quot;Return&quot;</span>,          2,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[5], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], NULL}               </div><div class="line">}</div><div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga62e61cad59591485fb7549baa435c97b"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga62e61cad59591485fb7549baa435c97b">IntroEdit</a></div><div class="ttdeci">uint8_t IntroEdit(uint8_t firstCall)</div><div class="ttdoc">Funktion zum ein-/ausschalten des Intros. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00447">PBA6_hardwaretest.c:447</a></div></div>
-<div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga8cac6ccf53455cdc634409d80727110e"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga8cac6ccf53455cdc634409d80727110e">BspMenuFunction</a></div><div class="ttdeci">uint8_t BspMenuFunction(uint8_t firstCall)</div><div class="ttdoc">Beispiel einer Funktion, welche durch das Menu aufgerufen werden kann. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00572">PBA6_hardwaretest.c:572</a></div></div>
-<div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga88ac260bfa54b50d18a6161d01cf7563"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a></div><div class="ttdeci">menuEntry_t myMenu[]</div><div class="ttdoc">Array mit Menueinträgen. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00100">PBA6_hardwaretest.c:100</a></div></div>
-<div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga17aa99dbaf9aa931a11fd1b49a4279b0"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga17aa99dbaf9aa931a11fd1b49a4279b0">SummerEdit</a></div><div class="ttdeci">uint8_t SummerEdit(uint8_t firstCall)</div><div class="ttdoc">Funktion zum Einstellen der Summerfrequenz für den Hardwaretest. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00506">PBA6_hardwaretest.c:506</a></div></div>
+<b>Initialisierung:</b><div class="fragment"><div class="line">=</div><div class="line">{   </div><div class="line">    </div><div class="line">    {<span class="stringliteral">&quot;Einstellungen&quot;</span>,   0,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[1], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[3], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], NULL,       NULL},              </div><div class="line">    {<span class="stringliteral">&quot;foo&quot;</span>,             1,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[2], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga8cac6ccf53455cdc634409d80727110e">BspMenuFunction</a>},   </div><div class="line">    {<span class="stringliteral">&quot;foo2&quot;</span>,            2,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[3], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[1], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga8cac6ccf53455cdc634409d80727110e">BspMenuFunction</a>},   </div><div class="line">    {<span class="stringliteral">&quot;Exit&quot;</span>,            3,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[2], NULL,       NULL,       NULL},              </div><div class="line"></div><div class="line">    </div><div class="line">    {<span class="stringliteral">&quot;Intro&quot;</span>,           0,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[5], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[6], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga62e61cad59591485fb7549baa435c97b">IntroEdit</a>},         </div><div class="line">    {<span class="stringliteral">&quot;Summer&quot;</span>,          1,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[6], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], <a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga17aa99dbaf9aa931a11fd1b49a4279b0">SummerEdit</a>},        </div><div class="line">    {<span class="stringliteral">&quot;Return&quot;</span>,          2,  &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[4], &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[5], NULL,       &amp;<a class="code" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a>[0], NULL}               </div><div class="line">}</div><div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga62e61cad59591485fb7549baa435c97b"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga62e61cad59591485fb7549baa435c97b">IntroEdit</a></div><div class="ttdeci">uint8_t IntroEdit(uint8_t firstCall)</div><div class="ttdoc">Funktion zum ein-/ausschalten des Intros. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00448">PBA6_hardwaretest.c:448</a></div></div>
+<div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga8cac6ccf53455cdc634409d80727110e"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga8cac6ccf53455cdc634409d80727110e">BspMenuFunction</a></div><div class="ttdeci">uint8_t BspMenuFunction(uint8_t firstCall)</div><div class="ttdoc">Beispiel einer Funktion, welche durch das Menu aufgerufen werden kann. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00573">PBA6_hardwaretest.c:573</a></div></div>
+<div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga88ac260bfa54b50d18a6161d01cf7563"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga88ac260bfa54b50d18a6161d01cf7563">myMenu</a></div><div class="ttdeci">menuEntry_t myMenu[]</div><div class="ttdoc">Array mit Menueinträgen. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00101">PBA6_hardwaretest.c:101</a></div></div>
+<div class="ttc" id="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t_html_ga17aa99dbaf9aa931a11fd1b49a4279b0"><div class="ttname"><a href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#ga17aa99dbaf9aa931a11fd1b49a4279b0">SummerEdit</a></div><div class="ttdeci">uint8_t SummerEdit(uint8_t firstCall)</div><div class="ttdoc">Funktion zum Einstellen der Summerfrequenz für den Hardwaretest. </div><div class="ttdef"><b>Definition:</b> <a href="_p_b_a6__hardwaretest_8c_source.html#l00507">PBA6_hardwaretest.c:507</a></div></div>
 </div><!-- fragment -->
 <p>Array mit Menueinträgen. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00100">100</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00101">101</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -624,7 +648,7 @@ Variablen</h2></td></tr>
 
 <p>Flag, speichert ob Intro ausgeführt wird beim Start. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00090">90</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00091">91</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -642,7 +666,7 @@ Variablen</h2></td></tr>
 
 <p>Zähler für Summer. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00089">89</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00090">90</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -660,43 +684,25 @@ Variablen</h2></td></tr>
 
 <p>Eingestellte Summerfrequenz. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00091">91</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00092">92</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
-<a id="gafdb94ddf28e2bad1f669c28f47881435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafdb94ddf28e2bad1f669c28f47881435">&#9670;&nbsp;</a></span>UART_BUFFERSIZE</h2>
+<a id="ga78718a9db7d6aac5b70da5c84eb39d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78718a9db7d6aac5b70da5c84eb39d3d">&#9670;&nbsp;</a></span>uartBuffer_g</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t UART_BUFFERSIZE = 16</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Anzahl Zeichen die maximal eingegeben werden können. </p>
-
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00048">48</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
-
-</div>
-</div>
-<a id="ga363f59bf3deac29e917f4c3924f0e5b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga363f59bf3deac29e917f4c3924f0e5b3">&#9670;&nbsp;</a></span>uartBuffer_g</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint8_t uartBuffer_g[<a class="el" href="group___p_b_a___h_a_r_d_w_a_r_e_t_e_s_t.html#gafdb94ddf28e2bad1f669c28f47881435">UART_BUFFERSIZE</a>]</td>
+          <td class="memname">volatile uint8_t uartBuffer_g[(16)]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>UART-String. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00088">88</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00089">89</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>
@@ -714,7 +720,7 @@ Variablen</h2></td></tr>
 
 <p>Flag UART-String empfangen. </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00087">87</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_p_b_a6__hardwaretest_8c_source.html#l00088">88</a> der Datei <a class="el" href="_p_b_a6__hardwaretest_8c_source.html">PBA6_hardwaretest.c</a>.</p>
 
 </div>
 </div>

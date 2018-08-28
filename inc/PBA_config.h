@@ -5,7 +5,7 @@
  * @file        PBA_config.h
  * @brief       Konfiguration des Board-Support-Packages für das PBA6
  * @author      ICT Berufsbildungscenter AG
- * @version     1.3.1
+ * @version     1.4.1
  * @date        06.12.2013: Aufbau PBA6-BSP mit Basis PBA5-BSP,
  *                          Unterstützung von PIC16F1787, Anpassungen
  *                          für XC8-Compiler, Interrupt-Library
@@ -25,6 +25,7 @@
  * @date        26.06.2017  Umstrukturierung Interrupts.
  * @date        26.06.2017  Fix LCD Init für f_xtal<20MHz
  * @date        09.03.2018  ResetTimeout Funktion hinzugefügt. Menu-Fix
+ * @date        28.08.2018  Anpassungen für XC8-Compiler V2.00
  *
  * @attention   PBA_Init zur Initialiserung und Konfigurations des PBAs.
  *              Um die Libraries zu verwenden, kopieren Sie die beiden Ordner
@@ -209,7 +210,7 @@
         #include "PBA_events.h"
     #endif
     #ifdef USE_INTERRUPT_LIBRARY
-        #include "PBA_interrupts.h";
+        #include "PBA_interrupts.h"
     #endif
     #ifdef USE_MENU_LIBRARY
         #include "PBA_menu.h"
@@ -221,11 +222,7 @@
      * @}
      */
     /******************** Prototypen für Board-support Library Funktionen ***********************/
-
     void PBA_Init(void);
-
-
-    void putch(uint8_t c);
 
     /************** Überprüfen der Bibliothek-Abhängigkeiten ************************************/
     #if defined(USE_LM75_LIBRARY) && !defined(USE_I2C_LIBRARY)

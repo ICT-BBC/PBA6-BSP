@@ -99,7 +99,7 @@ void PBA_Init(void)
 #endif
 }
 
-void putch(uint8_t c)
+void putch(char c)
 {
 #ifdef STDOUT_LCD
     LCD_Putc(c);

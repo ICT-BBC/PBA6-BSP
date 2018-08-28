@@ -35,6 +35,5 @@ var _p_b_a__config_8h =
     [ "USE_LOOPDELAY_LIBRARY", "group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga4e266d1f450fa5fb71ca733cbae85ec8", null ],
     [ "USE_MENU_LIBRARY", "group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#gacf8b2f38be86240437d87bf8aec5b32c", null ],
     [ "USE_UART_LIBRARY", "group___b_s_p-_k_o_n_f_i_g_u_r_a_t_i_o_n.html#ga732754e23079df4074b313c2954c8fdd", null ],
-    [ "PBA_Init", "group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a", null ],
-    [ "putch", "group___p_b_a___c_o_n_f_i_g.html#ga929c76236c43415b855552513e902293", null ]
+    [ "PBA_Init", "group___p_b_a___c_o_n_f_i_g.html#gafb5f95002b7e470a9e29ef4f253ba56a", null ]
 ];

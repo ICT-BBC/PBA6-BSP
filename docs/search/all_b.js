@@ -67,5 +67,5 @@ var searchData=
   ['pressed1000ms',['pressed1000ms',['../structevents__t.html#a04983df1a2514591e903805697f638f5',1,'events_t']]],
   ['pressed500ms',['pressed500ms',['../structevents__t.html#ad91d7ee2f9b36c81e09582824498f075',1,'events_t']]],
   ['prev',['prev',['../structs__menu_entry.html#a9f7a249504a9c9650b530386caee34f7',1,'s_menuEntry']]],
-  ['putch',['putch',['../group___p_b_a___c_o_n_f_i_g.html#ga929c76236c43415b855552513e902293',1,'PBA_config.c']]]
+  ['putch',['putch',['../group___p_b_a___c_o_n_f_i_g.html#ga58240cb98993a2f6b353e05bc8c38368',1,'PBA_config.c']]]
 ];
